@@ -2,7 +2,7 @@
 layout: post
 title: DCGAN
 author: Jaeheon Kwon
-categories: Paper
+categories: Papers
 tags: [cnn,gan]
 ---
 
