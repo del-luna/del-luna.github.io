@@ -2,7 +2,7 @@
 layout: post
 title: ESPCN
 author: Jaeheon Kwon
-categories: Paper
+categories: Papers
 tags: [sr]
 ---
 
