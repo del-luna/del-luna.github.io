@@ -2,7 +2,7 @@
 layout: post
 title: Batch Normalization
 author: Jaeheon Kwon
-categories: Paper
+categories: Papers
 tags: [tech]
 ---
 
