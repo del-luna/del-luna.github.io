@@ -1,0 +1,73 @@
+---
+layout: page
+title: Kaggle
+---
+
+<style>
+  .selected{
+    display: inline-block;
+    background: #6a9fb5;
+    padding: 0 .5rem;
+    margin-right: .5rem;
+    border-radius: 3px;
+    color: #fff;
+    font-family: $font-sans;
+    font-size: 70%;
+  }
+</style>
+
+
+<div class="tags-expo">
+  <div class="tags-expo-list">
+        <span class="post-each" data-tag="ALL">ALL</span>
+    {% for tag in site.tags %}
+      {% if tag[1][0].categories contains "Kaggle" %}
+        <span class="post-each" data-tag="{{ tag[0] }}">{{ tag[0] }}</span>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div class="tags-expo-section">
+   <ul class="tags-expo-posts">  
+          {% for post in site.categories.Kaggle %}
+              <li class="temp" 
+                  {% for i in (0..post.tags.size)%}
+                    {% if i == post.tags.size %}
+                      {% break %}
+                    {% else %}
+                      data-{{post.tags[i]}}
+                    {% endif %}
+                  {% endfor %}>
+                <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">    
+                    {{post.title}}
+                  <small class="post-date">{{ post.date | date_to_string }}</small>
+                  {% for top_tag in post.tags %}
+                    <span class="post-each" data-tag="{{top_tag}}">{{top_tag}}</span>
+                  {% endfor %}
+                </a>  
+              </li>  
+          {% endfor %}    
+   </ul>           
+  </div>
+</div>
+
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+  $("[data-tag]").click((e) => {
+   currentTag = e.target.dataset.tag;
+   filterByTagName(currentTag);
+  })
+  function filterByTagName(tagName) {
+    $('.hidden').removeClass('hidden');
+    if (tagName != 'ALL'){
+    $('.temp').each((index, elem) => {
+      if (!elem.hasAttribute(`data-${tagName}`)) {
+        $(elem).addClass('hidden');
+      } 
+    });
+    }  
+    $(`.post-each`).removeClass('selected');
+    $(`.post-each[data-tag=${tagName}]`).addClass('selected');
+  }
+</script>

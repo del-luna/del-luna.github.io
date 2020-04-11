@@ -1,0 +1,70 @@
+# Site Info
+title: 'Py-tonic'
+#tagline: 
+description: 'Undergraduate'
+baseurl: ""
+url: https://py-tonic.github.io
+logo: '/images/avatar.jpg'
+
+# Site configurations
+gems:
+  - jekyll-paginate
+markdown: kramdown
+kramdown:
+  input: GFM
+excerpt_separator: "<!-- more -->"
+sass:
+  style: compressed
+  sass_dir: _scss
+paginate: 5
+paginate_path: '/blog/page:num'
+permalink: pretty
+
+version: 1.0.0
+
+# About/contact
+author:
+  name: Jaeheon Kwon
+  description: Undergraduate Dev Blog
+  # gravatar: 3c2986ad7ac1f2230ea3596f44563328 # md5 hash of your email address
+  contact:
+    #linkedin:  https://www.linkedin.com/in/onsemy
+    github:    https://github.com/pytonic
+    # facebook:  <hide>
+    #twitter:   https://twitter.com/onsemy
+    # weibo:     http://weibo.com/41173780
+    email:     jaeheon.dev@gmail.com
+
+# Navigation (2nd level links supported)
+nav:
+  Home:
+    - '/'
+  #Blog:
+  #  - '/blog/'
+  Categories:
+    - '/blog/categories/'
+    - { Ai: '/blog/ai/' }
+    - { Papers: '/blog/papers/' }
+    - { Python: '/blog/python/' }
+    - { Kaggle: '/blog/kaggle/' }
+    - { Mathematics: '/blog/mathematics/' }
+  #Temp:
+  #  - '/blog/temp/'
+  #Tags:
+  #  - '/blog/tags/'
+  About:
+    - '/about/'
+
+# Where are tags and categories displayed
+tag_page: '/blog/tags/'
+category_page: '/blog/categories/'
+
+hero:
+  image: /images/home_1.jpg
+  caption: Hakuna Matata
+
+# Plugins
+mathjax: true # whether support mathjax
+google_analytics_token: 'UA-163332215-1' # leave blank if you don't want google analytics
+disqus_short_name: 'jaeheondev' # leave blank if you don't want disqus
+
