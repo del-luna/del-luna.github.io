@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-![]({{ site.baseurl }}/images/moon.jpg)
+![]({{ site.baseurl }}/images/cola.jpg)
 
 컴퓨터공학과 학부생입니다.
 <br>
