@@ -2,7 +2,7 @@
 layout: post
 title: Dropout
 author: Jaeheon Kwon
-categories: Paper
+categories: Papers
 tags: [tech]
 ---
 
