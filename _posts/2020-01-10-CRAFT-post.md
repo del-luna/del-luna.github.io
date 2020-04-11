@@ -2,7 +2,7 @@
 layout: post
 title: CRAFT
 author: Jaeheon Kwon
-categories: Paper
+categories: Papers
 tags: [ocr]
 ---
 
