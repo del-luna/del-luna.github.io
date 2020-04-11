@@ -2,7 +2,7 @@
 layout: post
 title: AlexNet
 author: Jaeheon Kwon
-categories: Paper
+categories: Papers
 tags: [cnn]
 ---
 
