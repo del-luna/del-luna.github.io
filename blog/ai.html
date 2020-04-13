@@ -19,13 +19,14 @@ title: Ai
 
 <div class="tags-expo">
   <div class="tags-expo-list">
-        <span class="post-each" data-tag="ALL">ALL</span>
+        <span class="post-tag" data-tag="ALL">ALL</span>
     {% for tag in site.tags %}
       {% if tag[1][0].categories contains "Ai" %}
-        <span class="post-each" data-tag="{{ tag[0] }}">{{ tag[0] }}</span>
+        <span class="post-tag" data-tag="{{ tag[0] }}">{{ tag[0] }}</span>
       {% endif %}
     {% endfor %}
   </div>
+  <hr/>
   <div class="tags-expo-section">
    <ul class="tags-expo-posts">  
           {% for post in site.categories.Ai %}
@@ -41,10 +42,11 @@ title: Ai
                     {{post.title}}
                   <small class="post-date">{{ post.date | date_to_string }}</small>
                   {% for top_tag in post.tags %}
-                    <span class="post-each" data-tag="{{top_tag}}">{{top_tag}}</span>
+                    <span class="mini-post-tag" data-tag="{{top_tag}}">{{top_tag}}</span>
                   {% endfor %}
                 </a>  
               </li>  
+              <hr/>
           {% endfor %}    
    </ul>           
   </div>
