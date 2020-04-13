@@ -20,20 +20,35 @@
   @include transition(all .1s ease-in-out);
 }
 
-.hidden {
-  display: none;
-}
-
-.selected-color{
+.mini-post-tag {
   display: inline-block;
+  background: rgba($theme-color, 0.15);
   padding: 0 .5rem;
   margin-right: .5rem;
-  border-radius: 3px;
-  text-decoration: none;
+  border-radius: 4px;
+  color: $theme-color;
   font-family: $font-sans;
   font-size: 70%;
-  background: $theme-color;
-  color: $white;
+  &:hover {
+    text-decoration: none;
+    background: $theme-color;
+    color: $white;
+  }
+  @include transition(all .1s ease-in-out);
+}
+
+
+.post-minitag-date{
+  position: relative;
+  margin-bottom: 8px;
+}
+// .post-minitag-span{
+//   float: left; 
+//   width: 70%
+// }
+
+.post-date-span{
+  width: 30%
 }
 
 .post-each {
@@ -58,7 +73,11 @@
   @include transition(all .1s ease-in-out);
 }
 
-
+.tag-selected {
+  text-decoration: none;
+  background: $theme-color;
+  color: $white;
+}
 
 .tags-expo {
   :target:before {
