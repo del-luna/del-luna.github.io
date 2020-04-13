@@ -45,10 +45,12 @@ title: Ai
                     <br>
                     &nbsp;
                     &nbsp;
+                    &nbsp;
                   {% for top_tag in post.tags %}
                     <span class="mini-post-tag" data-tag="{{top_tag}}">{{top_tag}}</span>
                   {% endfor %}
                   <br>
+                  &nbsp;
                   &nbsp;
                   &nbsp;
                   <small class="post-date">{{ post.date | date_to_string }}</small>
