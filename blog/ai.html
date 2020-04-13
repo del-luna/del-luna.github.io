@@ -40,13 +40,15 @@ title: Ai
                   {% endfor %}>
                 <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">    
                     {{post.title}}
-                  <small class="post-date">{{ post.date | date_to_string }}</small>
+                    <br>
                   {% for top_tag in post.tags %}
                     <span class="mini-post-tag" data-tag="{{top_tag}}">{{top_tag}}</span>
                   {% endfor %}
+                  <br>
+                  <small class="post-date">{{ post.date | date_to_string }}</small>
                 </a>  
+                <hr/>
               </li>  
-              <hr/>
           {% endfor %}    
    </ul>           
   </div>
