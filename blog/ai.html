@@ -71,7 +71,9 @@ title: Ai
       } 
     });
     }  
-    $(`.post-each`).removeClass('selected');
-    $(`.post-each[data-tag=${tagName}]`).addClass('selected');
+    $(`.post-tag`).removeClass('selected');
+    $(`.post-tag[data-tag=${tagName}]`).addClass('selected');
+    $(`.mini-post-tag`).removeClass('selected');
+    $(`.mini-post-tag[data-tag=${tagName}]`).addClass('selected');
   }
 </script>
