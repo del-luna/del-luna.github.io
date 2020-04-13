@@ -78,9 +78,10 @@
 }
 
 .tag-selected {
+  display: inline-block;
   text-decoration: none;
-  background: $theme-color;
-  color: $white;
+  background: #6a9fb5;
+  color: #fff;
 }
 
 .tags-expo {
