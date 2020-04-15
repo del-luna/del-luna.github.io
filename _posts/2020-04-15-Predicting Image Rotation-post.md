@@ -70,13 +70,13 @@ ConvNet 모델이 이미지에 적용된 회전 변환을 인식할 수 있으�
 
 ConvNet : $F(.)$ 
 
-set of K discrete geometric transformations : $G = {g(.|y)}^{K}_{y=1}$
+set of K discrete geometric transformations : $G = {g(.\vert y)}^{K}_{y=1}$
 
- operator that applies to image X the geometric transformation with label y that yields the transformed image $X^y = g(X|y)$ : $g(.|y)$
+ operator that applies to image X the geometric transformation with label y that yields the transformed image $X^y = g(X\vert y)$ : $g(.\vert y)$
 
  $F(.)$ 는 $X^y$를 입력으로 받고, 가능한 모든 geometric transformations에 대한 확률 분포를 출력합니다.
 
-$F(X^{y∗}|θ) = {F^y(X^{y∗}|θ)}^{K}_{y=1}\tag{1}$
+$F(X^{y∗}\vert θ) = {F^y(X^{y∗}\vert θ)}^{K}_{y=1}\tag{1}$
 
  $F(X^{y∗} |θ) $는 레이블 y를 사용한 geometric transformations의 예측 확률이고, $θ$는 모델의 파라미터 입니다.
 
@@ -86,7 +86,7 @@ $\underset{θ}{min} \frac{1}{N} \sum\limits_{n=1}^{N}loss(X_i,θ)\tag{2}$
 
 이 될것이고, loss fuction은 아래와 같이 정의될 것 입니다.
 
-$loss(X_i,θ) = -\frac{1}{K}\sum\limits_{y=1}^{K}log(F^y(g(X_i|y)|θ))\tag{3}$
+$loss(X_i,θ) = -\frac{1}{K}\sum\limits_{y=1}^{K}log(F^y(g(X_i\vert y)\vert θ))\tag{3}$
 
 ###  CHOOSING GEOMETRIC TRANSFORMATIONS: IMAGE ROTATIONS 
 
