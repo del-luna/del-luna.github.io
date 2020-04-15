@@ -40,11 +40,9 @@ tags: [self_supervised]
 >
 > 네트워크가 어떤 문제를 해결하는 과정에서 영상 내의 semantic한 정보들을 이해할 수 있도록 학습되게 하는 임의의 task
 >
-> 이렇게 pretext task를 통해 어더진 feature를 다른 task로 transfer 시켜서 사용한다고 합니다.
+> 이렇게 pretext task를 통해 얻어진 feature를 다른 task로 transfer 시켜서 사용한다고 합니다.
 >
 > [출처 : seongkyun]( https://seongkyun.github.io/study/2019/11/29/unsupervised/ )
->
-> Unsupervised learning 방식에서 우리 네트워크는 레이블 없이 visual information만을 가지고 문제를 해결합니다. 이 논문에서는 어떤 이미지의 회전을 인식할 수 있으면 그 네트워크는 이미지에 대해 어느정도는 이해하고 있다는 뜻이 되므로 이미지의 회전을 학습시키는게 pretext task가 되겠죠?
 
 실제로 위의 SSL(self supervised learning)을 통해 얻은 image representation은 supervised-learned representation과 일치하진 않지만 객체 인식, 객체 감지와 같은 다른 비전 작업으로 transferring하기 위한 좋은 대안임을 이미 여러 논문에서 입증 했습니다.
 
@@ -78,7 +76,7 @@ set of K discrete geometric transformations : $G = {g(.|y)}^{K}_{y=1}$
 
  $F(.)$ 는 $X^y$를 입력으로 받고, 가능한 모든 geometric transformations에 대한 확률 분포를 출력합니다.
 
-$F(X^{y∗} |θ) = {F^y(X^{y∗}|θ)}^{K}_{y=1}\tag{1}$
+$F(X^{y∗}|θ) = {F^y(X^{y∗}|θ)}^{K}_{y=1}\tag{1}$
 
  $F(X^{y∗} |θ) $는 레이블 y를 사용한 geometric transformations의 예측 확률이고, $θ$는 모델의 파라미터 입니다.
 
@@ -100,7 +98,7 @@ $loss(X_i,θ) = -\frac{1}{K}\sum\limits_{y=1}^{K}log(F^y(g(X_i|y)|θ))\tag{3}$
 
 모데링 성공적으로 예측을 하기 위해서는 반드시 이미지 내에서 두드러진 객체를 localize하고 방향과 객체 유형을 인식한 다음 사용 가능한 이미지 내에 각 유형의 객체가 묘사되는 지배적인 방향과 객체의 방향을 연관시키는 방법을 배워야 합니다.
 
-> 앞서 말했듯 레이블 없이 이미지를 줬을 때 그 방향을 예측하려면
+> 레이블 없이 이미지를 줬을 때 그 방향을 예측하려면
 >
 > 적어도 객체가 어디를 보고 있는지 알아야 된다는 뜻이고 그 뜻은 이미지에 대한 어느정도의 이해를 바탕으로 하겠죠?
 
@@ -136,11 +134,9 @@ Supervised manner와 동일한 계산 비용, 유사한 수렴 속도(image reco
 
 Supervised manner를 위해 고안된 효율적인 병렬화 체계를 사용할 수 있고, 인터넷 규모의 데이터(엄청 많다는 뜻인듯)를 사용할 수 있다는 점입니다.
 
-> image reconstruction은 아마도 autoencoder 방식이 아닐까 싶습니다. 
-
 또한 우리의 접근 방식은 다른 Unsupervised or Self-Supervised와는 달리 trivial features를 배우지 않기 위해 특별한 이미지 사전 처리 루틴이 필요하지 않습니다.
 
-> 제가 SSL논문을 읽는게 처음이라 다른 모델들에서 정의하는 pretext task에서는 이미지에서 쓸모없는 features도 배워서 사전처리를 해줘야 하는건가..? 라고 해석했습니다.
+> 제가 SSL논문을 읽는게 처음이라 "다른 모델들에서 정의하는 pretext task에서는 이미지에서 쓸모없는 features도 배워서 사전처리를 해줘야 하나보다." 라고 해석했습니다.
 
 Self-Supervised formulation의 단순함에도 불구하고, 논문의 실험 섹션에서 볼 수 있듯 우리의 접근 방식으로 학습한 features는 Unsupervised features learning 벤치 마크에서 크게 개선되었습니다.
 
