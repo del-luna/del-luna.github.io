@@ -78,7 +78,7 @@ set of K discrete geometric transformations : $G = {g(.\vert y)}^{K}_{y=1}$
 
 $F(X^{y∗}\vert θ) = {F^y(X^{y∗}\vert θ)}^{K}_{y=1}\tag{1}$
 
- $F(X^{y∗} |θ) $는 레이블 y를 사용한 geometric transformations의 예측 확률이고, $θ$는 모델의 파라미터 입니다.
+ $F(X^{y∗} \vert θ) $는 레이블 y를 사용한 geometric transformations의 예측 확률이고, $θ$는 모델의 파라미터 입니다.
 
 그러므로 N개의 이미지 집합 $D=\{X_i\}^{N}_{i=0}$가 주어질 때 ConvNet모델이 해결하기 위해 배워야하는 SSL의 목표는 
 
