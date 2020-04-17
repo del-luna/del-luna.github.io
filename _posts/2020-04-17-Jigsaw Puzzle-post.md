@@ -18,15 +18,17 @@ Self Supervised 원칙을 준수하여 Pretext task로 직소 퍼즐을 풀도�
 
 수동으로 라벨링이 필요하지 않으며 나중에 객체 분류 와 객체 감지를 해결하기 위해 용도를 변경했습니다.
 
-여러 작업에서 호환성을 유지하기 위해 siamese-ennead CNN인 Context Free Network(CFN)을 소개합니다.(siamese 네트워크란? 두 이미지를 입력으로 받아서 두 이미지를 벡터화 시킨 후 두 벡터간의 유사도를 반환하는 네트워크 네트워크는 이미지의 feature를 데이터에서 직접 학습하므로 유사도를 최적화 할 수 있는 feature를 추출해준다.)
+여러 작업에서 호환성을 유지하기 위해 siamese-ennead CNN인 Context Free Network(CFN)을 소개합니다.
 
-CFN은 이미지 타일을 입력으로 사용하고 early processing units의 receptive field(or context)를 한번에 하나의 타일로 명시적으로 제한합니다. 
+> siamese 네트워크란? 두 이미지를 입력으로 받아서 두 이미지를 벡터화 시킨 후 두 벡터간의 유사도를 반환하는 네트워크 네트워크는 이미지의 feature를 데이터에서 직접 학습하므로 유사도를 최적화 할 수 있는 feature를 추출해준다.
+
+CFN은 이미지 타일을 입력으로 사용하고 
+
+early processing units의 receptive field(or context)를 한번에 하나의 타일로 명시적으로 제한합니다. 
 
 CFN은 동일한 semantic learning capabilities를 가지지만 더 적은 파라미터를 가집니다. 
 
 직소 퍼즐을 풀기 위해 CFN을 훈련시킴으로써, 모델은 객체 부분의 특징 매핑과 공간 배열을 배웁니다.
-
-실험 평가는 학습된 features가 의미적으로 관련된 content를 caputre하는 것을 보여줍니다.
 
 Visual representation을 위해 제안된 방법은 여러 transfer learning 벤치 마크에서 SOTA 방법보다 우수합니다.
 
@@ -35,20 +37,14 @@ Visual representation을 위해 제안된 방법은 여러 transfer learning 벤
 ## Introduction
 
 <hr>
-
-객체 분류와 인식 같은 visual task는 Supervised learning 패러다임으로 성공적으로 문제를 해결해왔습니다.
-
-하지만 수동으로 라벨링한 데이터는 비용이 너무 많이 들기 때문에 Unsupervised method 그 중에서도 Self-Supervised 분야가 최근에 각광받고 있습니다.
-
-SSL의 다양한 접근 방식으로 얻은 features는 분류 및 디텍션 작업으로 잘 전환되었으며 Supervised method로 훈련된 features와 비교할 때 성능이 매우 고무적입니다.
-
 우리는 디텍션 및 분류 작업으로 transfer될 때 높은 성능을 제공하는 features를 구축하는 새로운 Self Supervised task인 직소 퍼즐 재조립 문제를 소개합니다.
 
  <img src = "https://py-tonic.github.io/images/jigsaw/1.PNG">
 
 논문은 직소 퍼즐을 푸는 것이 객체가 어떤 parts로 구성되어 있고 이 parts가 무엇인지 모델을 가르치는데 사용될 수 있다고 주장합니다.
 
-(단순히 말해서 jigsaw puzzle이 이 논문에서 pretext task라고 말하는 것 같습니다.)
+> 단순히 말해서 jigsaw puzzle이 이 논문에서 pretext task라고 말하는 것 같습니다.
+>
 
 각각의 개별 퍼즐 타일과 정확한 물체 부분의 연관성은 모호할 수 있습니다.
 
@@ -153,7 +149,7 @@ Representation learning은 머신 러닝의 작업을 해결하는데 유용한 
 
 대조적으로 직소 퍼즐 방식은 타일의 color & texture와 같은 localization에 도움이 되지 않는 low-level 유사성을 무시하고, 패치간의 차이에 초점을 맞춥니다.
 
-!<img src = "https://py-tonic.github.io/images/jigsaw/2.PNG">
+<img src = "https://py-tonic.github.io/images/jigsaw/2.PNG">
 
  
 
@@ -179,21 +175,27 @@ Representation learning은 머신 러닝의 작업을 해결하는데 유용한 
 
 여기서는 범용 features를 배우면서 직소 퍼즐을 풀 수 있는 CNN 구조에 어떻게 도달했는지 간략하게 설명합니다.
 
-직소 퍼즐을 해결하기 위한 즉각적인 접근 방식은 채널을 따라 퍼즐 타일을 쌓은 다음 (즉, 입력 데이터는 9x3 = 27 채널) AlexNet에서 첫 번째 필터의 깊이를 증가시키는 것입니다.(한 번에 9개의 타일을 다 겹쳐서 인풋으로 넣는 방식)
+직소 퍼즐을 해결하기 위한 즉각적인 접근 방식은 채널을 따라 퍼즐 타일을 쌓은 다음 (즉, 입력 데이터는 9x3 = 27 채널) AlexNet에서 첫 번째 필터의 깊이를 증가시키는 것입니다.
 
 하지만 이 방식은 네트워크가 low-level 유사성을 배우도록 했기 때문에 다른 방식을 사용합니다.
 
-(low level을 이토록 싫어하는 이유? 최종 목표는 직소 퍼즐이라는 pretext task를 통해 representation을 학습한 네트워크를 사용해서 다른 visual task에 적용할 것인데 결과적으로 pretext를 통해 직소 퍼즐을 푸는 것 뿐만 아니라 그 과정에 있어서 이미지 그 자체에 대한 정보와 객체에 대한 정보를 모델이 캐치해야 합니다. 하지만 low-level 을 학습하게 되면 글로벌 객체에 대한 이해없이도 문제를 풀기 때문에 우리가 최종적으로 하려는 목표에 부합하지 않게 됩니다.)
+> low level을 이토록 싫어하는 이유? 
+>
+> 최종 목표는 직소 퍼즐이라는 pretext task를 통해 representation을 학습한 네트워크를 사용해서 다른 visual task에 적용할 것인데 
+>
+> 결과적으로 pretext를 통해 직소 퍼즐을 푸는 것 뿐만 아니라 그 과정에 있어서 이미지 그 자체에 대한 정보와 객체에 대한 정보를 모델이 캐치해야 합니다. 
+>
+> 하지만 low-level 을 학습하게 되면 글로벌 객체에 대한 이해없이도 문제를 풀기 때문에 우리가 최종적으로 하려는 목표에 부합하지 않게 됩니다.
 
  
 
-따라서 여러 타일에 대한 통계 계산을 지연시키는 네트워크를 제시합니다.(Fig.3)
+따라서 여러 타일에 대한 통계 계산을 지연시키는 네트워크를 제시합니다.
 
 네트워크는 먼저 각 타일 내의 픽셀만을 기준으로 feature를 연산합니다.
 
 그런 다음 이러한 feature를 사용하여 parts들의 배열을 찾습니다.
 
-목표는 상대 위치를 결정하기 위해 네트워크가 각 객체 부분에서 가능한 대표적이고 구별 가능한 features를 학습하도록 하는 것입니다.(와 어떻게 이런생각을…)
+목표는 상대 위치를 결정하기 위해 네트워크가 각 객체 부분에서 가능한 대표적이고 구별 가능한 features를 학습하도록 하는 것입니다.
 
 학습 시에 이미지에서 225x225의 이미지를 무작위로 crop하고 이를 3x3 grid로 나눈 뒤 각 grid에서 무작위로 64x64로 crop한 것을 하나의 타일로 이용해 총 9개의 타일을 만듭니다.
 
@@ -448,7 +450,6 @@ CFN은 Doersh와 매우 비슷해 보입니다.
 ## Conclusion
 
 <hr/>
-
 CFN이 각각 이미지 패치를 object part로 학습하고, 각각의 part가 object에서 어떻게 재 조합 되는지(직소 퍼즐)를 학습합니다.
 
 그렇게 학습된 CFN의 features들은 다른 visual task에서도 좋은 성능을 보였습니다.
