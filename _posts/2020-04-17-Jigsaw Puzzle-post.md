@@ -20,13 +20,11 @@ Self Supervised 원칙을 준수하여 Pretext task로 직소 퍼즐을 풀도�
 
 여러 작업에서 호환성을 유지하기 위해 siamese-ennead CNN인 Context Free Network(CFN)을 소개합니다.
 
-> siamese 네트워크란? 두 이미지를 입력으로 받아서 두 이미지를 벡터화 시킨 후 두 벡터간의 유사도를 반환하는 네트워크 네트워크는 이미지의 feature를 데이터에서 직접 학습하므로 유사도를 최적화 할 수 있는 feature를 추출해준다.
+> siamese 네트워크란? 두 이미지를 입력으로 받아서 두 이미지를 벡터화 시킨 후 두 벡터간의 유사도를 반환하는 네트워크 
+>
+> 네트워크는 이미지의 feature를 데이터에서 직접 학습하므로 유사도를 최적화 할 수 있는 feature를 추출해준다.
 
 CFN은 이미지 타일을 입력으로 사용하고 
-
-early processing units의 receptive field(or context)를 한번에 하나의 타일로 명시적으로 제한합니다. 
-
-CFN은 동일한 semantic learning capabilities를 가지지만 더 적은 파라미터를 가집니다. 
 
 직소 퍼즐을 풀기 위해 CFN을 훈련시킴으로써, 모델은 객체 부분의 특징 매핑과 공간 배열을 배웁니다.
 
@@ -41,7 +39,7 @@ Visual representation을 위해 제안된 방법은 여러 transfer learning 벤
 
  <img src = "https://py-tonic.github.io/images/jigsaw/1.PNG">
 
-논문은 직소 퍼즐을 푸는 것이 객체가 어떤 parts로 구성되어 있고 이 parts가 무엇인지 모델을 가르치는데 사용될 수 있다고 주장합니다.
+논문은 직소 퍼즐을 푸는 것이 객체가 어떤 부분(parts)로 구성되어 있고 이 parts가 무엇인지 모델을 가르치는데 사용될 수 있다고 주장합니다.
 
 > 단순히 말해서 jigsaw puzzle이 이 논문에서 pretext task라고 말하는 것 같습니다.
 >
@@ -86,7 +84,7 @@ Representation learning은 머신 러닝의 작업을 해결하는데 유용한 
 
  
 
-일반적으로 **Unsupervised learning methods**를 **Probabilistics, Direct mapping(autoencoders), Manifold learning**으로 그룹화 할 수 있습니다.
+일반적으로 Unsupervised learning methods를 Probabilistics, Direct mapping(autoencoders), Manifold learning으로 그룹화 할 수 있습니다.
 
 **Probabilistic** 방법은 네트워크의 변수를 관측 및 잠재 변수로 나눕니다.
 
@@ -148,6 +146,10 @@ Representation learning은 머신 러닝의 작업을 해결하는데 유용한 
   동일한 물체의 다른 이미지를 사용하면 학습된 features들은 high-level이 아닌 유사성(ex: color & texture)에 중점을 둡니다.
 
 대조적으로 직소 퍼즐 방식은 타일의 color & texture와 같은 localization에 도움이 되지 않는 low-level 유사성을 무시하고, 패치간의 차이에 초점을 맞춥니다.
+
+> 다른 모델이라면 아래의 차와 개는 같은 카테고리이며 color와 texture만 다르니까 같다 라고 표현하겠지만,
+>
+> CFN은 다르다고 표현합니다.
 
 <img src = "https://py-tonic.github.io/images/jigsaw/2.PNG">
 
@@ -317,7 +319,9 @@ transfer learning의 맥락에서 범용 -> 특정 작업으로의 transfer는 �
 
 이번 섹션에서는 학습된 표현이 어디서 발생하는지를 확인해보려 합니다.
 
-> 그러니까 첫 문장에서 말했듯이 각 레이어별로 어디가 task에 specific이 되는지 레이어를 freeze했다가 풀면서 알아보겠다는 뜻인 것 같습니다.
+> 첫 문장에서 말했듯이 각 레이어별로 어떤 레이어가 task에 specific이 되는지 
+>
+> 레이어를 freeze했다가 풀면서 알아보겠다는 뜻인 것 같습니다.
 
 <img src = "https://py-tonic.github.io/images/jigsaw/5.PNG">
 
@@ -329,7 +333,7 @@ transfer learning의 맥락에서 범용 -> 특정 작업으로의 transfer는 �
 
 > 이게 제가 말했던 하위 레이어가 어떤 task에 더 specific해진다는 의미인 것 같습니다. 
 >
-> 컨볼루션 레이어는 feature extract의 느낌이 강하지만 사실상 depth에따라 역할이 제각각이고(실제로 알지는 못하지만) 
+> 컨볼루션 레이어는 feature extract의 느낌이 강하지만 사실상 depth에따라 역할이 다르고(실제로 알지는 못하지만) 
 >
 > 논문에서 언급한 것 처럼 첫 번째 계층은 범용적이지만 마지막으로 갈수록 task에 specific 해집니다.
 
