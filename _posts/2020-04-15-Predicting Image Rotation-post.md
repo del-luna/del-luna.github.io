@@ -184,9 +184,9 @@ classifier는 객체 인식 작업에 대해 Supervised manner로 학습됩니�
 
 > 구체적이라는 뜻이 뭘까요?
 >
-> 저는 크게 CNN을 feature extract와 classifier로 나눴을 때 extract의 끝쪽(거의 맨 마지막CNN layer)은 실제로는 특징을 추출한다기 보다는 Classifier에 영향을 더 줄 것이라고 생각합니다.
+> 크게 CNN을 feature extract와 classifier로 나눴을 때 extract의 끝쪽(거의 맨 마지막CNN layer)은 실제로는 특징을 추출한다기 보다는 Classifier에 영향을 더 줄 것이라고 생각합니다.
 >
-> 그래서 좀 더 뒤쪽 층으로 갈수록 extract의 기능 보다는 Classifier에 영향을 주는 기능을 많이 학습해서.. 라고 멋대로 생각해봤습니다.
+> 그래서 "좀 더 뒤쪽 층으로 갈수록 extract의 기능 보다는 Classifier에 영향을 주는 기능을 많이 학습해서 더 구체적이 된다" 라고 해석했습니다.
 
 또한 RotNet 모델의 전체 깊이를 늘리면 이전 레이어에서 생성된 feature map(첫 번째 블록 이후)에 의해 객체 인식 성능이 향상됩니다.
 
