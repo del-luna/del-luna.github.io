@@ -173,9 +173,9 @@ information retrieval에 IDF를 사용하는 것은 희귀 품목이 흔한 품�
 
 $S_{uv} = \sum\limits_{i \in I}((f_i - 1)^{\rho}+1)^{-1}\frac{r_{ui}r_{vi}}{\vert \vert R_u \vert \vert_2 \vert \vert R_v \vert \vert_2 } \tag{4}$
 
-<img src = "https://py-tonic.github.io/images/eknn/eknn.1.PNG">
+<img src = "https://py-tonic.github.io/images/eknn/1.PNG">
 
-<img src = "https://py-tonic.github.io/images/eknn/eknn.2.PNG">
+<img src = "https://py-tonic.github.io/images/eknn/2.PNG">
 
 최적의 $\rho$값은 약 0.4입니다.
 
@@ -223,6 +223,6 @@ $s_{uv} = \sum\limits_{i \in I} \frac{\tilde{r}_{ui}r_{vi}}{\vert \vert R_u \ver
 
 모델 또는 하이퍼파라미터를 비교할 때 우리는 NDCG점수를 비교하는데 의존했습니다. 이 점수는 세 가지 기준중 전체 성과를 가장 잘 나타냅니다.
 
-<img src = "https://py-tonic.github.io/images/eknn/eknn.3.PNG">
+<img src = "https://py-tonic.github.io/images/eknn/3.PNG">
 
-<img src = "https://py-tonic.github.io/images/eknn/eknn.4.PNG">
+<img src = "https://py-tonic.github.io/images/eknn/4.PNG">
