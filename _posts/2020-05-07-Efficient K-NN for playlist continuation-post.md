@@ -87,7 +87,7 @@ task의 세 가지 평가 기준중 NDCG에 맞게 솔루션을 최적화 했습
 
 플레이리스트의 이름을 사전 처리하기 위해 모든 문자를 소문자로 변환하고 특수문자를 제거했습니다.
 
-일부 플레이르스트 이름은 이모티콘만으로 구성돼서 이 경우 중복 무자를 제거하고 나머지 문자를 정렬하여 이름을 정규화 했습니다.
+일부 플레이리스트 이름은 이모티콘만으로 구성돼서 이 경우 중복 무자를 제거하고 나머지 문자를 정렬하여 이름을 정규화 했습니다.
 
 이러한 정규화 단계를 통해 원래 92,941개의 플레이리스트 이름 수가 16,752개로 줄어들어 챌린지 셋에 6개의 일치하지 않는 이름이 남았습니다.
 
@@ -111,7 +111,7 @@ pairwise similarities $s_{uv}$ of all playlist pairs $u$, $v$ 일 때,
 
 플레이리스트 $u$에 속하는 트랙 $i$의 점수를 아래와 같이 표기합니다.
 
-$\hat{r}_{ui} = \frac{\sum_{v\in N_{k}(u)}s_{uv}r_{vi}}{\sum_{v\in N_{k}(u)}s_{uv}} \tag{1}$
+$ \hat{r}_{ui} = \frac{\sum_{v\in N_{k}(u)}s_{uv}r_{vi}}{\sum_{v\in N_{k}(u)}s_{uv}} \tag{1} $
 
 여기서 $\hat{r}_{ui}$는 플레이리스트 $u$에 대한 트랙 $i$의 predict relevance이고, 
 
@@ -137,11 +137,11 @@ relevance value는 트랙이 플레이리스트에 존재하는지 여부에 따
 
 또한 우리는 증폭을 적용하기 전에 스코어를 구간[0,1]로 정규화 하는 것이 유용하다는 것을 알았습니다.
 
-$S_u = \{s_{uv}\vert v \in N_k(u)\}$
+$S_u =$ {$s_{uv}\vert v \in N_k(u)$}
 
-
-
+<br>
 $\tilde{s}_{uv} = \frac{s_{uv}-minS_u}{maxS_u - minSu} \tag{3}$
+<br>
 
 위와 같이 정의하고 식(1)에서 $s_{uv}$대신 $\tilde{s}_{uv}^{\alpha}$를 사용합니다.
 
@@ -173,9 +173,9 @@ information retrieval에 IDF를 사용하는 것은 희귀 품목이 흔한 품�
 
 $S_{uv} = \sum\limits_{i \in I}((f_i - 1)^{\rho}+1)^{-1}\frac{r_{ui}r_{vi}}{\vert \vert R_u \vert \vert_2 \vert \vert R_v \vert \vert_2 } \tag{4}$
 
-<img src = "https://py-tonic.github.io/images/eknn.1.PNG">
+<img src = "https://py-tonic.github.io/images/eknn/eknn.1.PNG">
 
-<img src = "https://py-tonic.github.io/images/eknn.2.PNG">
+<img src = "https://py-tonic.github.io/images/eknn/eknn.2.PNG">
 
 최적의 $\rho$값은 약 0.4입니다.
 
@@ -190,14 +190,16 @@ $S_{uv} = \sum\limits_{i \in I}((f_i - 1)^{\rho}+1)^{-1}\frac{r_{ui}r_{vi}}{\ver
 플레이리스트에서의 위치에 따라 플레이리스트의 항목 $i$의 관련성을 수정합니다.
 
 위치 $p$에 대한 가중치를 정의하고 재생목록 $u$에서 항목 $i$의 관련성을 다음과 같이 수정합니다.
+<br>
 
 $\tilde{r}_{ui} = r_{ui}(1+\frac{max(l,p_{u}(i))}{d}) \tag{5}$
+<br>
 
 여기서 $p_u(i)$는 $u$에서 항목 $i$의 위치를 나타내며 변수 $l,d$는 공식에서 하이퍼파라미터로 처리됩니다.
 
 공식의 이론적 근거는 쿼리 플레이리스트 $u$에 가까운 트랙에 더 높은 가중치를 할당하고, 첫 번째 $l$트랙에 동일한 값 $1+l/d$를 사용하는 것입니다.
 
-이것에 의해 식(2)는 아래와 같이 변경됩니다.
+이것에 의해 식(2)는 아래와 같이 변경됩니다.<br>
 
 $s_{uv} = \sum\limits_{i \in I} \frac{\tilde{r}_{ui}r_{vi}}{\vert \vert R_u \vert \vert_2 \vert \vert R_v \vert \vert_2 } \tag{6}$
 
@@ -221,6 +223,6 @@ $s_{uv} = \sum\limits_{i \in I} \frac{\tilde{r}_{ui}r_{vi}}{\vert \vert R_u \ver
 
 모델 또는 하이퍼파라미터를 비교할 때 우리는 NDCG점수를 비교하는데 의존했습니다. 이 점수는 세 가지 기준중 전체 성과를 가장 잘 나타냅니다.
 
-<img src = "https://py-tonic.github.io/images/eknn.3.PNG">
+<img src = "https://py-tonic.github.io/images/eknn/eknn.3.PNG">
 
-<img src = "https://py-tonic.github.io/images/eknn.4.PNG">
+<img src = "https://py-tonic.github.io/images/eknn/eknn.4.PNG">
