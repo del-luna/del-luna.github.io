@@ -5,6 +5,9 @@ author: Jaeheon Kwon
 categories: Papers
 tags: [recommendation,knn]
 ---
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
 #  Efficient K-NN for Playlist Continuation 
 
@@ -87,7 +90,7 @@ task의 세 가지 평가 기준중 NDCG에 맞게 솔루션을 최적화 했습
 
 플레이리스트의 이름을 사전 처리하기 위해 모든 문자를 소문자로 변환하고 특수문자를 제거했습니다.
 
-일부 플레이리스트 이름은 이모티콘만으로 구성돼서 이 경우 중복 무자를 제거하고 나머지 문자를 정렬하여 이름을 정규화 했습니다.
+일부 플레이리스트 이름은 이모티콘만으로 구성돼서 이 경우 중복 자를 제거하고 나머지 문자를 정렬하여 이름을 정규화 했습니다.
 
 이러한 정규화 단계를 통해 원래 92,941개의 플레이리스트 이름 수가 16,752개로 줄어들어 챌린지 셋에 6개의 일치하지 않는 이름이 남았습니다.
 
