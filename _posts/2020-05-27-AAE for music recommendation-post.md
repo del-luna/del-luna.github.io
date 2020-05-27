@@ -68,7 +68,7 @@ AAE는 입력을 재구성 할 뿐만 아니라 선택된 사전 분포와 일�
 
 우리의 목적은 missing occurences를 예측하는 것입니다.
 
-결과적으로 AAE가 다른 모델보다 지속적으로 성능이 우수하며 여러 입력 방ㅎ식을 통합하는 기능이 모델의 성능을 향상시킨다는 것을 보여줍니다.
+결과적으로 AAE가 다른 모델보다 지속적으로 성능이 우수하며 여러 입력 방식을 통합하는 기능이 모델의 성능을 향상시킨다는 것을 보여줍니다.
 
 ## Problem Statement
 
@@ -86,25 +86,13 @@ m개의 재생 목록 $P$와 n개의 트랙 $T$가 주어질 때, 전형적인 �
 
 우리는 binary occurrence만 생각합니다. 트랙이 재생 목록에 존재하면 1이고 L1 norm을 통해 플레이리스트 내의 트랙의 수를 정규화합니다.
 
-> 재생 목록 내의 트랙 수를 정규화 한다는게 무슨 의미가 있지..?
-
-학습하는 동안, 모델에는 Side information(title, album, artist)과 함께재생 목록에 트랙이 완전히 나타나는 것이 제공됩니다.
-
->  For training, the models are supplied with the complete occurrences of the tracks in the playlists, $X_{train} = P_{train} ▹◃ X$, along with side information, $S_{train} = P_{train} ▹◃ S$.
+학습하는 동안은 모델에는 Side information(title, album, artist)과 함께재생 목록에 트랙이 완전히 나타납니다.
 
 테스트 시에는, representation $X_{test}$와 $S_{test}$가 유사하게 얻어집니다.
 
 예비 실험을 하기 위해 우리는 선행 연구의 설정과 비슷하게 인위적인 test set을 생성합니다.
 
 우리는 각 행에서 0이 아닌 entry 하나를 0으로 설정하여$X_{test}$에서 무작위로 선택된 item을  제거합니다.
-
-> ...? 뭔 의미지..?
->
-> 각 행에서 0이아닌 entry(항목) 하나를 0으로 설정한다...
->
-> 그리곤 X_test에서 임의로 선택된 item을 제거한다..?
->
->  we remove randomly selected items in $X_{test}$ by setting one non-zero entry in each row to zero. 
 
 그리고 이 테스트 셋을 $\hat X_{test}$로 표기합니다.
 
@@ -122,8 +110,6 @@ real test set은 대회에서 제공되지만 우리가 인위적으로 구성�
 
 예비 실험에서 item 동시 발생 기준으로 두 가지 기준을 활용했습니다.
 
-> item co-occurrence의 의미..?
-
 먼저 이러한 기준을 제시한 다음 두 개의 AE의 변형에 대한 building block으로 multi-layer perceptron을 소개합니다.
 
 마지막으로, 불완전한 AE를 간략하게 설명하고 AAE를 얻기 위해 확장할 수 있는 방법과 재생 목록의 타이틀, 트랙 타이틀, 아티스트 이름 및 앨범 제목과 같은 부가 정보를 두 모델에 통합하는 방법을 보여줍니다.
@@ -132,7 +118,7 @@ real test set은 대회에서 제공되지만 우리가 인위적으로 구성�
 
 이론적 근거는 과거에 같은 재생 목록에서 함께 발생했던 두 개의 트랙이 앞으로도 함께 발생할 가능성이 높다는 것입니다.
 
-training data $X_{train}$이 주어지면, 우리는 전체 item co-occurrence matrix $C = X_{train}^{T} \cdot X_{train} \in \R^{n \times n}$를 계산합니다.
+training data $X_{train}$이 주어지면, 우리는 전체 item co-occurrence matrix $C = X_{train}^{T} \cdot X_{train} \in R^{n \times n}$를 계산합니다.
 
 예측 시간에 행렬 곱셈 $X_{test} \cdot C$를 통해 동시 발생 값을 집계하여 점수를 얻습니다.
 
@@ -178,11 +164,11 @@ AE는 재구성을 위한 가장 중요한 변형 요소를 포착하도록 훈�
 
 인코더와 디코더 모두 MLP-2 모듈을 선택했습니다.
 
-$r = MLP-2_{dec}(MLP-2_{enc}(x))$
+$r = {MLP-2}_{dec}({MLP-2}_{enc}(x))$
 
 side information을 이용가능한 경우 디코더에 추가 입력으로 제공합니다.
 
-$r = MLP-2_{dec}([MLP-2_{enc}(x);s])$
+$r = {MLP-2}_{dec}([{MLP-2}_{enc}(x);s])$
 
 사전 훈련된 단어 임베딩을 사용하여 textual features를 저차원 공간에 임베딩합니다.
 
