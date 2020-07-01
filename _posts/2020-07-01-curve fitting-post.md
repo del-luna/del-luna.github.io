@@ -77,7 +77,7 @@ $E(w) = \frac{1}{2} \sum\limits_{n=1}^{N} \{y(x_n,w)-t_n\}^2 \tag{2}$
 
 
 
-<img src = "https://py-tonic.github.io/images/curve/Figure1.3.png
+<img src = "https://py-tonic.github.io/images/curve/Figure1.3.png">
 
 이제 이 함수 근사 문제를 $E(w)$ 값을 최소로 만드는 $w$를 구하는 문제로 생각하면 된다.
 
