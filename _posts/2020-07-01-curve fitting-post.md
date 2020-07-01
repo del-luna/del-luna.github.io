@@ -77,7 +77,7 @@ $E(w) = \frac{1}{2} \sum\limits_{n=1}^{N} \{y(x_n,w)-t_n\}^2 \tag{2}$
 
 
 
-<img src = "https://py-tonic.github.io/images/curve/Figure1.3.png">
+<img src = "https://py-tonic.github.io/images/curve/Figure1.3.png
 
 이제 이 함수 근사 문제를 $E(w)$ 값을 최소로 만드는 $w$를 구하는 문제로 생각하면 된다.
 
@@ -98,7 +98,7 @@ $E(w) = \frac{1}{2} \sum\limits_{n=1}^{N} \{y(x_n,w)-t_n\}^2 \tag{2}$
 
 빈도론적 관점에서는 $\mathbf{w}$는 알려지지 않은 고정된 파라미터 값이다.(그리고 이를 추정한다.)
 
-Maximum Likelihood가 대표적인 estimator로 보통 $p(D\vert \mathbf{w}_{ML})$를 최대로 만드는 $\mathbf{w}_{ML}$를 구한다.
+Maximum Likelihood가 대표적인 estimator로 보통 $p(D\vert \mathbf w_{ML})$를 최대로 만드는 $\mathbf w_{ML}$를 구한다.
 
 $\mathbf{w}_{ML}$은 고정된 값이지만 알려져 있지 않기 때문에 데이터로 부터 추정해야 한다.
 
