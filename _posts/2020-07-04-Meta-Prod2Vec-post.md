@@ -3,7 +3,7 @@ layout: post
 title: Meta-Prod2Vec
 author: Jaeheon Kwon
 categories: Papers
-tags: [Recommendation]
+tags: [recommendation]
 ---
 
 # Meta-Prod2Vec - Product Embeddings Using Side-Information for Recommendation
@@ -166,6 +166,12 @@ $\:\:\:\:\:\:\:\quad = \sum\limits_i X_iH(p_{.\vert i},q_{.\vert i}(\theta))$
 
 여기서 $H(p_{.\vert i},q_{.\vert i}(\theta))$는 입력 제품 $i\in I$ 에 의해 조절된 출력 공간 $J$에서 임의의 제품을 볼 수 있는 경험적 확률 $p_{.\vert i}$ cross-entropy 입니다.
 
+$p_{.\vert i}$ : empirical conditional probability of any product given product $i$
+
+$q_{.\vert i}(\theta)$: predicted conditional probability, modeled as softmax of the dot product between embedding vectors
+
+
+
 예측된 조건부 확률 $q_{.\vert i}$는 다음과 같습니다.
 
 $q_{j\vert i}(\theta) = \frac{exp(w_i^Tw_j)}{exp(w_i^Tw_j)+\sum_{j'\in(V_{J-j})}exp(w_i^Tw'_j)}$
@@ -207,6 +213,16 @@ Related-Work 섹션에서 본 것 처럼, 특히 CF방법과 CB방법을 결합�
 
 우리는 Fig.2와 같이 신경망의 입력 및 출력 공간에 추가 정보를 통합하고 내장될 아이템 메타 데이터 사이의 각각의 상호 작용을 개별적으로 파라미터화 하는 유사한 아키텍처를 제안합니다.
 
+> 페이퍼를 읽다보면 constraints라는 용어가 자주 나온다.
+>
+> "external info를 사용해서 product co-occurrences자체에 대한 constraints를 걸어서 더 연관성이 높아야만 임베딩이 되도록 만든다." 라고 해석했다.
+>
+> 아래의 4 가지 term도 결국 모두 추가적인 제약조건으로 해석 가능하다.
+>
+> We place additional constraints on prodcut co-occurrences using external info.
+>
+> We can create more noise-robust embeddings for product suffering from cold-start
+
 **Meta-Prod2Vec Objective.**
 
 Meta-Prod2Vec loss는 아이템의 메타 데이터와 관련된 4가지 추가 상호작용 용어를 고려하려 Prod2Vec loss를 확장합니다.
@@ -230,6 +246,16 @@ $L_{J\vert M}$ : 입력 제품의 메타 데이터가 주어질 때 주변 제�
 $L_{M\vert I}$: 입력 제품에 대해 주변 제품의 메타 데이터 값에 대한 관측된 조건부 확률과 예측된 조건부 확률 사이의 가중 cross-entropy.
 
 $L_{M\vert M}$: 입력 제품 메타 데이터가 주어진 주변 제품의 메타 데이터 값에 대한 관측된 조건부 확률과 예측된 조건부 확률 사이의 가중 cross-entropy. 이는 관찰된 메타 데이터의 시퀀스를 모델링하고 그 자체로 메타 데이터의 Word2Vec과 같은 임베딩을 나타냅니다. 
+
+
+
+> 솔직히 논문읽으면서 제일 와닿지 않았던 부분인데,
+>
+> 나는 추천시스템을 노래에 적용하려하고, Word2Vec모델의 심플하지만 강력한 성능에 meta-data를 쓰고자 하는 목적으로 이 논문을 읽게 되었는데 Recsys에서 만든 slide share에 아주 좋은 그림이 있어서 가져왔다.
+
+
+
+<img src = "https://py-tonic.github.io/images/meta-prod2vec/3.png">
 
 
 
@@ -260,14 +286,6 @@ $L_{J\vert I}(\theta) = \sum\limits_{ij}(-X_{ij}^{POS}log\:q_{j\vert i}(\theta)-
 $P_D$ 확률 분포는 negative context 예시를 샘플링하는데 사용되며 $k$는 긍정적인 예시당 음성 예시의 수를 지정하는 하이퍼 파라미터입니다.
 
 Meta-Prod2Vec의 경우 $L_{SG-NS}(\theta)$손실에 대한 공동 임베딩 제품 및 해당 메타데이터에 대한 결정의 영향은 아이템과 메타데이터 값입니다.
-
-
-
-## Experiments
-
----
-
-
 
 
 

@@ -3,7 +3,7 @@ layout: post
 title: Prod2Vec
 author: Jaeheon Kwon
 categories: Papers
-tags: [Recommendation]
+tags: [recommendation]
 ---
 
 # E-commerce in Your Inbox: Product Recommendations at Scale
