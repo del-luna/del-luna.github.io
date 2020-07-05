@@ -281,7 +281,7 @@ Word2Vec의 주요 장점 중 하나는 확장성입니다. Negative sampling을
 
 수정된 likelihood 함수 $L_{SG-NS}(\theta)$를 최대화 하기 위해 네거티브 예시의 작은 샘플과 함께 포지티브 동시 발생에만 모형을 적합시킵니다.
 
-$L_{J\vert I}(\theta) = \sum\limits_{ij}(-X_{ij}^{POS}log\:q_{j\vert i}(\theta)-(X_{ij}^{NEG}log(1-q_{j\vert i}(\theta))\approx L_{SG-NS}(\theta)\\ and: \\ L_{SG-NS}(\theta) = \sum\limits_{ij}-X_{ij}^{POS}(log\:\sigma (w_i^Tw_j)-kE_{N\sim P_D}\:log\:\sigma(-w_i^Tw_N)) \tag{4}$
+$L_{J\vert I}(\theta) = \sum\limits_{ij}(-X_{ij}^{POS}log\:q_{j\vert i}(\theta)-(X_{ij}^{NEG}log(1-q_{j\vert i}(\theta))\approx L_{SG-NS}(\theta)\\ and: \\ L_{SG-NS}(\theta) = \sum\limits_{ij}-X_{ij}^{POS}(log\:\sigma (w_i^Tw_j)-kE_{N\sim P_D}\:log\:\sigma(-w_i^Tw_N)) $
 
 $P_D$ 확률 분포는 negative context 예시를 샘플링하는데 사용되며 $k$는 긍정적인 예시당 음성 예시의 수를 지정하는 하이퍼 파라미터입니다.
 
@@ -301,7 +301,7 @@ Meta-Prod2Vec의 경우 $L_{SG-NS}(\theta)$손실에 대한 공동 임베딩 제
 
 마지막으로, Meta-Prod2Vec은 globally 및 cold-start체제 모두 추천 작업에서 Pord2Vec 보다 지속적으로 우수한 성능을 보이며 표준 Collaborative Filtering 방식과 결합하면 테스트 된 모든 다른 방법보다 성능이 우수함을 보여주었습니다.
 
-이러한 결과는 구현 비용 절감 및 우리의 방법이 온라인 추천 시스템 아키텍처에 영향을 미치지 않는다는 사실과 함께 아이템 임베잉이 이미 사용중인 경우 이 솔루션을 매력적으로 만듭니다.
+이러한 결과는 구현 비용 절감 및 우리의 방법이 온라인 추천 시스템 아키텍처에 영향을 미치지 않는다는 사실과 함께 아이템 임베딩이 이미 사용중인 경우 이 솔루션을 매력적으로 만듭니다.
 
 앞으로의 작업은 아이템 메타 데이터를 추가 정보로 사용하는 방법과 이미지 및 연속 변수와 같은 비 범주적 정보의 지원으로 확장 될 것입니다.
 
