@@ -50,4 +50,5 @@ ps. 정리용 글이다 보니 생략과 잘못된 표현이 있을 수도 있�
 
 - [Introduction](https://www.notion.so/pytonic/Introduction-and-Motivation-cebf1cca830447e68f783fd454106df3)
 - [LinearAlgebra](https://www.notion.so/pytonic/Linear-Algebra-cf7a22a65c5b4c4394b17964e3c70816)
+    - [System of Linear Equations](https://www.notion.so/pytonic/System-of-Linear-Equations-df6209b0b9cf4d2681714335b289ea4a)
 
