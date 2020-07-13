@@ -117,6 +117,8 @@ $argmin \sum\limits_{i,j}c_{ij}(R_{i,j}-U_iV_j)^2 + \lambda_U \vert\vert U_i\ver
 $c_{ij} = 1+\alpha R_{i,j}$입니다. $c_{ij}$의 $\alpha$는 관측 된 재생 목록-노래 쌍에 얼마나 많은 가중치가 부여 되는지를 제어합니다. 실험 결과 $\alpha = 100, \lambda_U = \lambda_V = 0.001$을 사용하면 성능이 우수하다는 것을 알았습니다.
 
 > implicit feedback에 대한 CF논문에서 사용하는 계수 c와 같이 confidence를 나타내는 것 같은데 ..?
+>
+> --> 그냥 그 논문 맞았다... collaborative filtering for implicit feedback datasets
 
 **CNN** CF에서 시각적 패턴을 모델링하는 기존의 연구는 주로 RNN에 중점을 두었습니다.
 
@@ -291,3 +293,22 @@ Greedy 최적화 후에 우리는 다음 가중치 조합을 선택합니다. $w
 경험적으로, 이 작업에 대한 binary cross entropy보다 ranking loss가 더 좋습니다.
 
 모든 제출에서 우리는 150tree, depth10의 모델을 사용합니다.
+
+> Ranking loss라는 용어는 처음 듣는데 직관적으로도 순서랑 관련이 있을 듯 하다.
+>
+> 일반적으로 입력에 대해 레이블, 값 등을 직접 예측하도록 배우는 것이 목적인 Cross entropy or Mean Sqaure error와 달리 Ranking loss는 상대적인 거리를 예측하는 것 같다.
+>
+> 우리의 XGBoost 모델의 인풋은 재생목록-노래 피쳐 + 모델 점수(= relevance scores = Embedding? = 유사도?) 이기 때문에 각 노래별로 유사도를 가지고 거리 측정을 통해 순서를 매길 수 있을 것 같음.
+
+
+
+
+
+
+
+## Reference
+
+<hr>
+
+[Paper](http://www.cs.toronto.edu/~mvolkovs/recsys2018_challenge.pdf)
+
