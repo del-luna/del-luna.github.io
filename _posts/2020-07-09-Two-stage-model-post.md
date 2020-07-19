@@ -196,7 +196,7 @@ $k$가 주어질 때 우리는 위치 $k$ 다음에 나타나고, $j \notin V(i)
 
 User-User 접근 방식은 $R$의 행 간 유사성을 계산하여 관련성을 추정합니다. 공식적으로 주어진 재생 목록-노래 쌍$(i,j$)에 대해 User-Users는 $j$가 $i$에서 나타나는 재생 목록을 비교합니다.
 
-$S_{ij}^{user} = \sum\limits_{i'\in U(i)}\frac{R_{i:}R_{i':}}{\vert\vert R_{i:}\vert\vert\vert\vert R_{i':}\vert\vert} \tag{5}$
+$S_{ij}^{user} = \sum\limits_{i'\in U(j)}\frac{R_{i:}R_{i':}}{\vert\vert R_{i:}\vert\vert\vert\vert R_{i':}\vert\vert} \tag{5}$
 
 $R_{i:}$는 $R$의 $i$번째 행입니다.
 
