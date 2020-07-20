@@ -3,7 +3,7 @@ layout: post
 title: Word2Vec
 author: Jaeheon Kwon
 categories: Ai
-tags: [NLP,Recommendation]
+tags: [NLP]
 ---
 
 
