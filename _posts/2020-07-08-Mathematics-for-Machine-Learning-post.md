@@ -2,7 +2,7 @@
 layout: post
 title: Mathematics for Machine Learning
 author: Jaeheon Kwon
-categories: Mathematics
+categories: 
 tags: [Mathmatics]
 ---
 
@@ -11,6 +11,8 @@ tags: [Mathmatics]
 # Mathematics for Machine Learning
 
 
+
+수정중..
 
 
 
