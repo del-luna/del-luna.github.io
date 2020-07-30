@@ -40,7 +40,7 @@ tags: [tech]
 
 드롭아웃의 효과를 설명하려면 오버피팅에 대한 얘기를 해야합니다.
 
-![g](/Users/devcat/Desktop/g.png)
+<img src = "https://py-tonic.github.io/images/dropout/o.png">
 
 
 
