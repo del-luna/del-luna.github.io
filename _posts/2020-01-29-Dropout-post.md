@@ -128,7 +128,7 @@ $$ h'=\begin{cases}0 \\ \frac{h}{1-p} \end{cases} \tag{1}$$
 
 <img src = "https://py-tonic.github.io/images/dropout/g.png">
 
-
+> P.S 오버피팅이 모델 복잡도랑 관련이 있는데 사실 딥러닝의 복잡도 하면 제일 먼저 떠올랐던건 activation function입니다. 애초에 이게 없으면 linear해지니까요 이 부분을 건드려도 오버피팅을 막을 수 있진 않을까? 생각해봤습니다. 물론 그냥 빼버리면 애초에 쌓는 이유가 없으니까.. 어떤 기믹이 있긴 있어야 겠죠..?
 
 ## Reference
 
