@@ -6,11 +6,11 @@ categories: Papers
 tags: [tech]
 ---
 
-# Batch Normalization: Accelerating Deep Network Training b y Reducing Internal Covariate Shift
+# Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift
 
 논문의 저자들은 기본적으로 딥러닝 학습이 어려운 이유를 이전 레이어가 가진 파라미터가 변화하고 이로 인한 레이어의 입력 분포가 변경되기 때문이라고 주장합니다.
 
-이를 'Internal Covariance Shift' 라고 말합니다. 그럼 어떻게 해결할 수 있을까요?
+논문에선 이를 'Internal Covariance Shift' 라고 말하는데요, 그럼 어떻게 해결할 수 있을까요?
 
 
 
@@ -124,7 +124,7 @@ BN의 원리와 동작 방식을 살펴봤습니다. 그렇다면 BN을 사용�
 ---
 
 1. 입력 분포가 일정하므로 높은 learning rate를 사용하여 더 빠르게 학습할 수 있습니다.
-2. 어떻게 보면 입력 분포를 통해 activation을 규제하는 것으로도 볼 수 있습니다. 그로 인해 dropout을 사용하지 않아도 정규화를 할 수 있습니다.
+2. 어떻게 보면 입력 분포를 통해 activation을 규제하는 것으로도 볼 수 있습니다. 그로 인해 dropout의 의존성을 낮출 수 있습니다.
 3. BN을 사용하기만 해도 정확도가 올라갑니다.
 4. weight initialization에 덜 민감합니다.
 
