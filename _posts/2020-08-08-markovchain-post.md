@@ -57,7 +57,7 @@ $$a_{ij}=P(o_t=v_j\vert o_{t-1}=v_i) \\ a_{ij}>0\: and\: \sum\limits_{j=1}^m a_{
 
 상태와 상태 전이 확률을 정리하여 diagram으로 아래와 같이 표현 할 수 있습니다.
 
-![1](/Users/devcat/git/blog/images/markov/1.png)
+<img src = "https://py-tonic.github.io/images/markov/1.png">
 
 
 
@@ -78,7 +78,7 @@ MRP는 마르코프 프로세스<$S$, $P$>의 각 상태에 리워드를 추가�
 >
 > Discount factor로 인해 수렴성이 증명이 된다고 하십니다. 수렴이 되야 거리함수를 정의할 수 있어서가 아닐까 조심스럽게 넘겨짚어봅니다.
 
-![2](/Users/devcat/git/blog/images/markov/2.png)
+<img src = "https://py-tonic.github.io/images/markov/2.png">
 
 return $G_t$는 $t$시간 이후 얻을 수 있는 리워드의 합을 의미하며 $\gamma$를 통해 다음과 같이 정의됩니다.
 
@@ -129,7 +129,7 @@ $$P^a_{ss'} = P(S_{t+1}=s'\vert S_t =s,A_t=a)$$
 
 MRP에서는 state마다 리워드를 받지만 MRP에서는 action마다 리워드를 받고 action을 통해 바로 state로 가는 것이 아니라 각 action에는 확률이 존재합니다.
 
-![3](/Users/devcat/git/blog/images/markov/3.png)
+<img src = "https://py-tonic.github.io/images/markov/3.png">
 
 MRP에서는 Policy가 존재하지 않습니다. 그냥 state에 있으면 자동으로 어떤 확률에 의해 다음 state로 넘어갔습니다. 하지만 MDP는 action에 의해 넘어가므로 Policy가 필요합니다.
 
@@ -171,7 +171,7 @@ $$q_{\pi}(s,a) = E_{\pi}[G_t\vert S_t=s,A_t=a]$$
 
 아래는 State-value function의 예시입니다.
 
-![4](/Users/devcat/git/blog/images/markov/4.png)
+<img src = "https://py-tonic.github.io/images/markov/4.png">
 
 벨만 기댓값 방정식을 통해 수식으로 나타내봅시다.(optimal 버전도 있음!)
 
@@ -193,7 +193,7 @@ $$v_{\pi}(s) = \sum\limits_{a\in A}\pi(a\vert s)q_{\pi}(s,a)$$
 
 > state 에서 action을 할 확률들이 있고, action을 했을 때 action value function이 $q$니까, 걔들의 가중치 합이 $v$이다. 좀 어려운데 그냥 action이 없다고 가정하려면 모든 action에 대해 action-value function을 계산해주면? 되니까 뭔가 marginalize?처럼 각 action에 대해서 밀어버리는 느낌으로 이해했다.
 
-![5](/Users/devcat/git/blog/images/markov/5.png)
+<img src = "https://py-tonic.github.io/images/markov/5.png">
 
 $$q_{\pi}(s,a) = R_a^s + \gamma \sum\limits_{s' \in S}P_{ss'}^a v_{\pi}(s')$$
 
@@ -201,13 +201,13 @@ $$q_{\pi}(s,a) = R_a^s + \gamma \sum\limits_{s' \in S}P_{ss'}^a v_{\pi}(s')$$
 >
 > 밑에 그림을 보면 좀 이해가 쉬운데 각 action에서 다음 state(s')로 갈 확률 x 그 state(s')에서의 value를 더하고 s에서의 value를 더해준다
 
-![6](/Users/devcat/git/blog/images/markov/6.png)
+<img src = "https://py-tonic.github.io/images/markov/6.png">
 
 $v$에 나오는 $q$자리에 위 식을 대입해 봅시다.
 
 $$v_{\pi}(s) = \sum\limits_{a\in A}\pi(a\vert s)(R_a^s + \gamma \sum\limits_{s' \in S}P_{ss'}^a v_{\pi}(s'))$$
 
-![7](/Users/devcat/git/blog/images/markov/7.png)
+<img src = "https://py-tonic.github.io/images/markov/7.png">
 
 > 진짜 그림이 이래서 중요하구나 싶다...
 >
@@ -219,7 +219,7 @@ $$v_{\pi}(s) = \sum\limits_{a\in A}\pi(a\vert s)(R_a^s + \gamma \sum\limits_{s' 
 
 $$q_{\pi}(s,a) = R_s^a + \gamma \sum\limits_{s' \in S}P_{ss'}^a \sum\limits_{a\in A}\pi(a'\vert s')q_{\pi}(s',a')$$
 
-![8](/Users/devcat/git/blog/images/markov/8.png)
+<img src = "https://py-tonic.github.io/images/markov/8.png">
 
 > 저희에겐 그림이 있습니다. 그림으로 생각합시다
 >
