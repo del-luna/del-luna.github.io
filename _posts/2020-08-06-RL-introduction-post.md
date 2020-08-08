@@ -141,3 +141,7 @@ State는 우리가 정의하기 나름입니다. $H=\{h1,h2,h3\}$가 있을 때,
 
 <img src = "https://py-tonic.github.io/images/rl/2.png">
 
+## Reference
+
+[팡요랩](https://www.youtube.com/channel/UCwkGvF7xKz2E0Lv-fZ9wv2g)
+
