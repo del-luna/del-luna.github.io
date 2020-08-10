@@ -191,15 +191,23 @@ $$q_{\pi}(s,a) = E_{\pi}[R_{t+1}+\gamma q_{\pi}(S_{t+1},A_{t+1})\vert S_t=s,A_t=
 
 $$v_{\pi}(s) = \sum\limits_{a\in A}\pi(a\vert s)q_{\pi}(s,a)$$
 
-> state 에서 action을 할 확률들이 있고, action을 했을 때 action value function이 $q$니까, 걔들의 가중치 합이 $v$이다. 좀 어려운데 그냥 action이 없다고 가정하려면 모든 action에 대해 action-value function을 계산해주면? 되니까 뭔가 marginalize?처럼 각 action에 대해서 밀어버리는 느낌으로 이해했다.
+> state 에서 action을 할 확률 들이 있고(policy), action을 했을 때 action value function이 $q$니까, 걔들의 가중치 합이 $v$이다. 
+>
+> 좀 어려운데 그냥 action이 없다고 가정하려면 모든 action에 대해 action-value function을 계산해주면? 되니까 뭔가 marginalize?처럼 각 action에 대해서 밀어버리는 느낌으로 이해했다.
+>
+> 한줄 요약 : state s에서 action a를 했을 때 policy $\pi$를 따라서 게임을 끝까지 진행하면 얻을 수 있는 value
 
 <img src = "https://py-tonic.github.io/images/markov/5.png">
 
 $$q_{\pi}(s,a) = R_a^s + \gamma \sum\limits_{s' \in S}P_{ss'}^a v_{\pi}(s')$$
 
-> 이건 이 글에서 맨 위에 나오는 state-value function에서 모든 state에 확률 x 그 state에서의 value로 풀어서 쓰는 기믹을 사용했다 -> 근데 이거 기댓값의 정의 아닌가?
+> 우선 위 식의 원래 형태는 $R_{t+1}+\gamma q_\pi(S_{t+1},A_{t+1})$이다. (이젠 익숙해야한다.)
 >
-> 밑에 그림을 보면 좀 이해가 쉬운데 각 action에서 다음 state(s')로 갈 확률 x 그 state(s')에서의 value를 더하고 s에서의 value를 더해준다
+> 밑에 그림을 보면 좀 이해가 쉬운데 각 action에서 다음 state(s')로 갈 확률 x 그 state(s')에서의 value를 더하고 s에서의 Reward를 더해준다.
+>
+> 벨만 방정식의 재귀적인 형태를 떠올려보자(첫 줄에 적은 식). 우선 한 스텝을 진행하고 거기에 대한 reward를 받은 뒤 다음 스텝에 대한 value를 더 하는 것으로 해석 가능하다. 
+>
+> $P^a_{ss'}$는 action후에 s'에 떨어질 확률이고, $v_\pi(s')$은 떨어진 state $s'$에서 value function이다.
 
 <img src = "https://py-tonic.github.io/images/markov/6.png">
 
@@ -209,9 +217,17 @@ $$v_{\pi}(s) = \sum\limits_{a\in A}\pi(a\vert s)(R_a^s + \gamma \sum\limits_{s' 
 
 <img src = "https://py-tonic.github.io/images/markov/7.png">
 
-> 진짜 그림이 이래서 중요하구나 싶다...
+> 당황하지 말고 천천히 해석해보자.
 >
-> 별거없다 그냥 각 action별로 action-value function이 존재할텐데 이 action-value function을 바로 위처럼 각 action에서 다음 state(s')로 갈 확률 x 그 state(s')에서의 value를 곱해주고 s에서의 value를 더해준다. 그리고 최종적으로 이게 action의 종류만큼 발생할테니 action마다 모두 수행해준다.
+> $v(s)$는 각 state에서 action을 할 확률을 갖고 있고, action을 하여 도착한 state에서 action-value function을 곱해준다. 여기서 action-value function이 뒤에 나오는 괄호 안의 식으로 바뀔 수 있다.
+>
+> 괄호 안의 식을 해석해보자.(어차피 바로 위에 적은 내용을 v에 대해 다시 해석하는 것이다.)
+>
+> 우선 리워드를 하나 받는다. $R^a_s$
+>
+> action 후에 s->s'에 떨어질 확률 x s'에서의 value function을 곱해준다.
+>
+> 여기서 s'에 떨어질 확률은 MDP에서 트랜지션 매트릭스와 동일하다.
 
 
 
@@ -221,21 +237,13 @@ $$q_{\pi}(s,a) = R_s^a + \gamma \sum\limits_{s' \in S}P_{ss'}^a \sum\limits_{a\i
 
 <img src = "https://py-tonic.github.io/images/markov/8.png">
 
-> 저희에겐 그림이 있습니다. 그림으로 생각합시다
+> 우선 state s에서 Reward를 하나 받습니다. $R^a_s$
 >
-> 맨위의 노드(action)의 의미는 $R^a_s$이고,  s에서 action a를 했을 때의 value입니다.
->
-> 그 아래 노드는 state이므로 각 state에서 action a를통해 s'로 가는 확률을 정의해주고($P^a_{ss'}$),
->
-> 최종적으로는 state노드에서 action노드로 가야 하므로, 각 action으로 가야 하는 policy에 대한 확률분포를 적어주고($\pi(a'\vert s')$) 거기서 action에 대한 value function을 곱해주면 됩니다!
+> action a를 통해 state s'에 떨어질 확률과, 그 state s'에서의 actionvaluefunction을 모두 곱해서 더해줘야합니다.
 
 
 
-조금 복잡하지만 미래를 위해서 정리해봅시다.
-
-- State노드에서 action으로 가려면 각 action으로 가기 위한 확률인 policy가 필요하다.($\pi(a\vert s)$)
-    - action 노드에 도착했으면 그곳에선 action이 필요하므로 value는 action-value function을 통해 구한다($q_{\pi}(s,a)$) 
-        - 최종적으로는 각 action으로 갈 확률 x  그 action에서의 value function을 action에 대해 모두 수행하고 더해준다. $v_{\pi} = \sum\limits_{a\in A}\pi(a\vert s)q_{\pi}(s,a)$
+지금 당장은 안보고 손으로 쓸 수 있고, 이해했다고 생각하지만... 휘발성 지식인 것을 알기 때문에 자주 보거나 개념서를 사서 한번 더 읽어봐야 할 것 같습니다 ... :(
 
 
 
