@@ -45,6 +45,10 @@ pbar = trange(training_epoch, desc='Loss : 0', leave=True, position=0)
 for epoch in pbar:
 ```
 
+
+
+
+
 ## Parameter
 
 model을 정의하고 <br>
