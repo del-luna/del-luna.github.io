@@ -1,5 +1,9 @@
 ---
-
+layout: post
+title: CapsuleNet
+author: Jaeheon Kwon
+categories: Papers
+tags: [vision]
 ---
 
 
@@ -19,7 +23,7 @@ augmentation을 예시로 들면 조금씩 회전된 이미지의 경우 각각�
 
 Maxpool이 resolution을 줄이면서 Global한 feature를 보게한 점은 좋았습니다. 그러나 pooling을 통해 Position에 영향을 받지 않는 피처를 학습하고자 했지만, 반대로 position이 달라도 component만 잘 가지고 있으면 높은 확률 값을 출력하게 되었습니다.
 
-![1](/Users/devcat/git/blog/images/capsule/1.jpg)
+<img src = "https://py-tonic.github.io/images/capsule/1.jpg">
 
 논문에서 주장하는 바는 캡슐이 이것을 해결할 수 있다!
 
@@ -30,7 +34,7 @@ CNN의 기본 단위가 뉴런 하나라면, 캡슐은 뉴런들의 벡터를 �
 - Length: Object가 존재할 확률
 - Orientation: Object angle, position과 같은 parameter
 
-![2](/Users/devcat/git/blog/images/capsule/2.jpg)
+<img src = "https://py-tonic.github.io/images/capsule/2.jpg">
 
 
 
@@ -54,45 +58,45 @@ FCN에서 처럼 $W_{ij}$를 곱해줘서 회전 변환을 시켜줍니다. 여�
 
 그리고 어떤 계수 $c_{ij}$를 곱한 뒤 weighted sum을 통해 나온 $\sum\limits_i c_{ij}\hat u_{j\vert i} = s_j$를 squash에 넣은 뒤 나온 아웃풋 $v_j$(아래 그림에선 $u_j$)을 다음 레이어의 인풋으로 넣어줍니다.
 
-![3](/Users/devcat/git/blog/images/capsule/3.jpg)
+<img src = "https://py-tonic.github.io/images/capsule/3.jpg">
 
 Predict vector와 아웃풋 벡터간 코사인 유사도를 구해서 비슷한 방향인지를 확인하고, 방향이 비슷하면 coefficient를 강하게 업데이트하는 식인 것 같습니다.
 
 
 
-![4](/Users/devcat/git/blog/images/capsule/4.jpg)
+<img src = "https://py-tonic.github.io/images/capsule/4.jpg">
 
 첫 번째 캡슐의 첫 번 째 뉴런?에 대한 prediction vector를 계산했을 때 위와 같이 나왔습니다.
 
 그 다음 뉴런에 대해서 예측하면 아래와 같다고 합시다.
 
-![5](/Users/devcat/git/blog/images/capsule/5.jpg)
+<img src = "https://py-tonic.github.io/images/capsule/5.jpg">
 
 각각의 prediction vector의 왼쪽은 집, 오른쪽은 보트라고 얘기하겠습니다.
 
 보트들은 첫 번째나 그 다음 뉴런에 대해서도 비슷한 예측을 뱉어냈지만 집은 회전이 섞인 다른 형태의 모양을 예측했습니다.
 
-![6](/Users/devcat/git/blog/images/capsule/6.jpg)
+<img src = "https://py-tonic.github.io/images/capsule/6.jpg">
 
 처음에는 모두 같은 가중치로 시작합니다.
 
 하지만 weighted sum을 해주게 되면 보트는 비슷한 형태로 유지되지만, 집은 아래와 같이 이상한 방향을 보이게 됩니다.
 
-![7](/Users/devcat/git/blog/images/capsule/7.jpg)
+<img src = "https://py-tonic.github.io/images/capsule/7.jpg">
 
 이제 아웃풋으로 activation vector가 나왔으니 기존의 predict vector들과 코사인 유사도를 바탕으로 가중치를 업데이트 할 수 있습니다.
 
-![8](/Users/devcat/git/blog/images/capsule/8.jpg)
+<img src = "https://py-tonic.github.io/images/capsule/8.jpg">
 
-![9](/Users/devcat/git/blog/images/capsule/9.jpg)
+<img src = "https://py-tonic.github.io/images/capsule/9.jpg">
 
 보시는 것 처럼 비슷한 방향을 가지는 녀석들 끼리는 유사도가 높으므로 높은 가중치로 업데이트 될 것입니다.
 
 
 
-![10](/Users/devcat/git/blog/images/capsule/10.jpg)
+<img src = "https://py-tonic.github.io/images/capsule/10.jpg">
 
-![11](/Users/devcat/git/blog/images/capsule/11.jpg)
+<img src = "https://py-tonic.github.io/images/capsule/11.jpg">
 
 결국 최종적으로 나온 벡터의 Length를 가지고 분류할 수 있습니다.
 
@@ -100,7 +104,7 @@ Predict vector와 아웃풋 벡터간 코사인 유사도를 구해서 비슷한
 
 > low layer에서 length는 삼각형, 사각형의 유무 겠지만, high layer에서는 집, 보트의 유무로 생각할 수 있습니다.
 
-![12](/Users/devcat/git/blog/images/capsule/12.jpg)
+<img src = "https://py-tonic.github.io/images/capsule/12.jpg">
 
 
 
@@ -108,6 +112,30 @@ Predict vector와 아웃풋 벡터간 코사인 유사도를 구해서 비슷한
 
 오토 인코더의 구조를 따르는 것 같고, Mnist기 때문에 28*28=784의 아웃풋이며, 마지막 16차원의 캡슐 10개 에서 사용하고자 하는 클래스에 대한 캡슐만 남기고 나머지는 0으로 마스킹해버립니다.
 
-![13](/Users/devcat/git/blog/images/capsule/13.jpg)
+<img src = "https://py-tonic.github.io/images/capsule/13.jpg">
 
-![14](/Users/devcat/git/blog/images/capsule/14.jpg)
+<img src = "https://py-tonic.github.io/images/capsule/14.jpg">
+
+16차원의 벡터에 대한 각각의 파라미터가 의미하는 건 뭘까요? 아래의 사진처럼 thickness, scale등의 변화를 볼 수 있습니다.
+
+<img src = "https://py-tonic.github.io/images/capsule/15.jpg">
+
+<img src = "https://py-tonic.github.io/images/capsule/16.jpg">
+
+하위레벨의 캡슐과 상위레벨의 캡슐이 보는 부분이 다르기 때문에 위와 같은 overlap에 대해서 각각을 분리해서 볼 수 있다고 합니다.
+
+> 데이콘 대회랑 태스크가 똑같네요...?
+
+이미지넷 같은 큰 데이터셋에서도 잘 동작하냐고 저자들에게 물어봐도 해봐야 된다고만 대답하고 트레이닝이 느리다고 합니다.
+
+우선 제가 이 논문을 읽은 이유는 Mnist데이터에 대해 적용하기 위해서 읽었지만
+
+cnn이 정말 spatial 정보를 잘 포착하지 못하는가? 못한다면 어떻게 증명할 수 있을까?라는 본질적인 고민을 하게 되는 논문인 것 같습니다.
+
+
+
+## Reference
+
+[PR-12 재준님 발표 영상](https://www.youtube.com/watch?v=_YT_8CT2w_Q)
+
+[CapsuleNet Paper](https://arxiv.org/pdf/1710.09829.pdf)
