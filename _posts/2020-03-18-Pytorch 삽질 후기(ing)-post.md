@@ -311,3 +311,54 @@ def init_weights(m):
     nn.init.constant_(m.bias.data, 0)
 ```
 
+
+
+## for문으로 여러 레이어 생성
+
+```python
+nn.ModuleList([ nn.Conv2d(in_channels=in_channels, out_channels=out_channels, kernel_size=kernel_size, stride=2, padding=0) 
+                          for _ in range(num_capsules)])
+```
+
+
+
+
+
+모듈리스트를 사용해서 for문으로 한번에 Sequential같은 블럭을 생성 할 수 있습니다.
+
+위 코드의 출력은 아래와 같습니다.
+
+```python
+ModuleList(
+  (0): Conv2d(256, 32, kernel_size=(9, 9), stride=(2, 2))
+  (1): Conv2d(256, 32, kernel_size=(9, 9), stride=(2, 2))
+  (2): Conv2d(256, 32, kernel_size=(9, 9), stride=(2, 2))
+  (3): Conv2d(256, 32, kernel_size=(9, 9), stride=(2, 2))
+  (4): Conv2d(256, 32, kernel_size=(9, 9), stride=(2, 2))
+  (5): Conv2d(256, 32, kernel_size=(9, 9), stride=(2, 2))
+  (6): Conv2d(256, 32, kernel_size=(9, 9), stride=(2, 2))
+  (7): Conv2d(256, 32, kernel_size=(9, 9), stride=(2, 2))
+)
+```
+
+https://michigusa-nlp.tistory.com/26
+
+
+
+## Nan Loss
+
+```python
+your_loss = ...
+if not torch.isfinite(loss):
+	print('WARNING: non-finite loss, ending training ')
+	exit(1)
+your_loss.backward()
+optimizer.step()
+```
+
+CrossEntropy쓸 때 NaN로스가 나오는 경우 early stop시키는 방법입니다. 근데 이걸로 원인을 파악하긴 힘들어서 저는 아래 처럼 사용했습니다.
+
+```python
+if not torch.isfinite(tensor): #nan을 발생시키는 지점에서 조건문 걸기
+	import pdb;pdb.set_trace() 
+```
