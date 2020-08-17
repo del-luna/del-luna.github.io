@@ -3,7 +3,7 @@ layout: post
 title: GoogLeNet
 author: Jaeheon Kwon
 categories: Papers
-tags: [cnn]
+tags: [vision]
 ---
 
 #   Going Deeper with Convolutions 
