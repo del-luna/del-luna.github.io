@@ -1,18 +1,18 @@
 ---
 layout: post
-title: Pytorch Tips
+title: 알아두면 쓸데있는 신비한 파이토치팁
 author: Jaeheon Kwon
 categories: Python
-tags: [pytorch,tips]
+tags: [tips]
 ---
 
 
 
-# Pytorch 삽질 후기
 
-매번 논문만 읽다가 pytorch로 구현중인데 생각보다 많은 삽질을 하게 되어서 여기에 기록하려 합니다.<br>
 
 **계속 업데이트 될 예정입니다!**<br>
+
+
 
 ## 공부하기 좋은 사이트
 
@@ -89,7 +89,7 @@ fc3.bias     torch.Size([10])
 
 ## Scehduler
 
-Scheduler는 종류가 많은데 우선 제가 사용한 것은 loss에따라 learning rate를 바꿔주는 것입니다.
+Scheduler는 종류가 많은데 제가 자주 사용하는 것은 loss에따라 learning rate를 바꿔주는 것입니다.
 
 optimizer와 scheduler를 정의한 뒤<br>
 
@@ -99,6 +99,8 @@ scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer,'min')
 ```
 
 epoch별로 도는 loop 안에다가<br>
+
+
 
 ```python
 for param_group in optimizer.param_groups:
@@ -110,6 +112,8 @@ for param_group in optimizer.param_groups:
 
 
 위와 같이 사용하면 loss의 변화량을 볼 수 있습니다.<br>
+
+
 
 ## Max & ArgMax
 
@@ -362,3 +366,68 @@ CrossEntropy쓸 때 NaN로스가 나오는 경우 early stop시키는 방법입�
 if not torch.isfinite(tensor): #nan을 발생시키는 지점에서 조건문 걸기
 	import pdb;pdb.set_trace() 
 ```
+
+
+
+## View, Permute, Reshape
+
+텐서의 shape을 바꾸는 3가지 함수입니다.
+
+각각의 차이점을 알아봅시다.
+
+우선 View와 Reshape은 거의 비슷하게 동작합니다.
+
+```python
+>>>x = torch.arange(4*10*2).view(4,10,2)
+>>>print('origin shape',x.size())
+>>>x.view(4,2,10)
+>>>print('view shape',x.size())
+>>>x.reshape(4,2,10)
+>>>print('reshape shape',x.size())
+
+origin shape torch.Size([4, 10, 2])
+view shape torch.Size([4, 10, 2])
+reshape shape torch.Size([4, 10, 2])
+```
+
+그러나 view는 contiguous tensor에만 사용할 수 있습니다.
+
+아래의 코드를 봅시다.
+
+```python
+>>>x = torch.arange(4*10*2).view(4,10,2)
+>>>y = x.permute(2,0,1)
+>>>print(x.is_contiguous())
+>>>print(y.is_contiguous())
+>>>y.view(-1)
+
+True
+False
+RuntimeError: view size is not compatible with input tensors size and stride (at least one dimension spans across two contiguous subspaces). Use .reshape(...) instead.
+```
+
+위와 같이 에러가 발생합니다. non-contigous 텐서를 contigous로 바꾸거나, reshape을 사용하면 됩니다. 여기서 contigous 개념이 나오는데, 파이토치는 데이터를 storage라는 1차원 배열에 순서대로 저장해서 메모리를 효율적으로 관리합니다. 그런데 view, reshape, permute같은 함수를 사용 시 데이터의 shape이 변경되면서 storage가 순차적으로 데이터에 접근하는게 불가능해져서 contiguous == False가 된다고 이해했습니다.(관련 자료가 별로 없더라구요 ㅜㅜ)
+
+
+
+view와 reshape은 비슷하게 동작하는 것을 알았습니다. permute는 어떨까요?
+
+```python
+>>>x = torch.arange(2*4).view(2, 4)
+>>>print(x)
+>>>print(x.view(4,2))
+>>>print(x.permute(1,0))
+
+tensor([[0, 1, 2, 3],
+        [4, 5, 6, 7]])
+tensor([[0, 1],
+        [2, 3],
+        [4, 5],
+        [6, 7]])
+tensor([[0, 4],
+        [1, 5],
+        [2, 6],
+        [3, 7]])
+```
+
+보는 것 처럼 완전 다르게 동작하는 것을 볼 수 있습니다.
