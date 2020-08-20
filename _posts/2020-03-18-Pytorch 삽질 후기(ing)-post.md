@@ -431,3 +431,31 @@ tensor([[0, 4],
 ```
 
 보는 것 처럼 완전 다르게 동작하는 것을 볼 수 있습니다.
+
+
+
+## Augmentation
+
+토치는 torchvision.transform 이라는 강력한 augmentation 모듈이 있지만,
+
+저는 albumentation이라는 라이브러리를 주로 사용합니다.
+
+[albumentation github](https://github.com/albumentations-team/albumentations)
+
+상당히 다양한 기법들이 적용 가능하고 저에게 매력적으로 다가왔던 부분은 아래와 같은 부분입니다.
+
+```python
+train_transform = A.Compose([
+    A.ShiftScaleRotate(shift_limit=0,scale_limit=0,rotate_limit=30,p=0.5),
+    A.OneOf([
+        A.IAAAdditiveGaussianNoise(),
+        A.GaussNoise(),
+    ],p=0.5),
+    A.GridDropout(ratio=0.1, holes_number_x=1, holes_number_y=1, random_offset=True, p=0.5),
+    ToTensor()
+])
+```
+
+토치와 같이 compose로 기법들을 묶어서 처리할 수 있는데, Oneof라는 Sequential 같은 블록으로 저기 묶인 기법들중 한가지를 확률적으로 선택해서 적용할 수 있었습니다.
+
+저기 적힌 기법들 이외에도 다양한 기법들을 지원하니 자세한건 공식 문서를 참조해주세요.(심지어 torchvision.transform과 사용법도 유사합니다!)
