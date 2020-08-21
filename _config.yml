@@ -48,7 +48,7 @@ nav:
     - { Python: '/blog/python/' }
     - { Kaggle: '/blog/kaggle/' }
     - { Mathematics: '/blog/mathematics/' }
-    - { Tips: '/blog/tips/' }
+    - { Tips: '/blog/c++/' }
   #Temp:
   #  - '/blog/temp/'
   #Tags:
