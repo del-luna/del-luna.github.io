@@ -46,9 +46,10 @@ nav:
     - { Ai: '/blog/ai/' }
     - { Papers: '/blog/papers/' }
     - { Python: '/blog/python/' }
+    - { Tips: '/blog/c++/' }
     - { Kaggle: '/blog/kaggle/' }
     - { Mathematics: '/blog/mathematics/' }
-    - { Tips: '/blog/c++/' }
+    
   #Temp:
   #  - '/blog/temp/'
   #Tags:
