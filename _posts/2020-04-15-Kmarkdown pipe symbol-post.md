@@ -2,8 +2,7 @@
 layout: post
 title: Kmarkdown pipe symbol
 author: Jaeheon Kwon
-categories: Tips
-tags: [markdown]
+tags: 
 ---
 
 # Kmarkdown pipe symbol problem
