@@ -126,31 +126,7 @@ $f(\int xp(x)dx) \leq \int f(x)p(x)dx \tag{8}$
 
 
 
-## KLD & CrossEntropy
 
-<hr>
-
-이산 변수에 대한 CrossEntropy는 다음과 같이 정의된다.
-
-$H(P,Q) = E[-logQ(x)] = -\sum P(x)logQ(x) \tag{9}$
-
-풀어서 쓰면 아래와 같다.
-
-$D_{KL}(P\vert\vert Q)$
-
-$= - \sum P(x)log(\frac{Q(x)}{P(X)})$
-
-$= -\sum P(x)\{logQ(x) - logP(x)\}$
-
-$= - \sum\{P(x)logQ(x) - P(x)logP(x)\}$
-
-$= - \sum P(x)logQ(x) + \sum P(x)logP(x)$
-
-$= H(P,Q) - H(P)$
-
-이를 크로스 엔트로피 기준으로 다시 정리하면 아래와 같다.
-
-$H(P,Q) = H(P) + D_{KL}(P\vert\vert Q)$
 
 
 
