@@ -16,7 +16,7 @@ MLE, MSE, OLS, KLD 등등 머신러닝 문제를 풀기 위해서 적용하는 �
 
 
 
-![1](/Users/devcat/Desktop/estimation/1.jpeg)
+<img src = "https://py-tonic.github.io/images/estimation/1.jpeg">
 
 
 
@@ -78,7 +78,7 @@ Likelihood는 가능도 라고 불립니다. (오래된 자료에선 우도라�
 
 실제로 $\theta=0.6$이 좋은 추정인지 확인해봅시다.
 
-![2](/Users/devcat/Desktop/estimation/2.png)
+<img src = "https://py-tonic.github.io/images/estimation/2.png">
 
 실제로 0~1 사이의 $\theta$값을 비교해봤을 때 0.6이 가장 확률이 높습니다. 
 

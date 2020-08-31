@@ -1,10 +1,12 @@
 ---
 layout: post
-title: Statistics modeling : two cultures
+title: Statistics modeling two cultures
 author: Jaeheon Kwon
 categories: Papers
 tags: [statistics]
 ---
+
+
 
 
 
