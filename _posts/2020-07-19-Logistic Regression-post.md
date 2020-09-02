@@ -156,6 +156,10 @@ $\beta^T\mathbf x > 0$
 
 
 
+<img src = "https://py-tonic.github.io/images/logistic/logistic_direction_vector.png">
+
+
+
 좀 더 들어가 봅시다 각각의 $\theta$는 일종의 클래스 대표 벡터가 됩니다.
 
 $\theta_1$은 파란 점들의 대표 벡터, $\theta_2$는 빨간 점들의 대표 벡터입니다.
@@ -174,4 +178,4 @@ $\theta_1$은 파란 점들의 대표 벡터, $\theta_2$는 빨간 점들의 대
 
 [Ratsgo]([https://ratsgo.github.io/machine%20learning/2017/04/02/logistic/](https://ratsgo.github.io/machine learning/2017/04/02/logistic/))
 
-[Lovit]([https://lovit.github.io/nlp/machine%20learning/2018/03/22/logistic_regression/](https://lovit.github.io/nlp/machine learning/2018/03/22/logistic_regression/))
+[Lovit](https://lovit.github.io/nlp/machine%20learning/2018/03/22/logistic_regression/)
