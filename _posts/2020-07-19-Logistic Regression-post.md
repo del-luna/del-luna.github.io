@@ -76,7 +76,7 @@ $P(Y=1\vert X=\mathbf x) = \beta_0 + \beta_1x_1 + \cdot\cdot\cdot + \beta_px_p =
 
 위 식의 좌변의 범위는 0~1 사이입니다.
 
-하지만 좌변은 $(-\infin,\infin)$범위를 가지기 때문에 식이 성립하지 않는 경우가 존재합니다.
+하지만 좌변은 $(-\infty,\infty)$범위를 가지기 때문에 식이 성립하지 않는 경우가 존재합니다.
 
 여기서 다시한번 식을 바꿔서 좌변을 Odds로 설정합니다.
 
@@ -84,7 +84,7 @@ $\frac{P(Y=1\vert X=\mathbf x)}{1-P(Y=1\vert x=\mathbf x)} = \beta^T\mathbf x \t
 
 하지만 이번에도 양 변의 범위가 맞지 않습니다.
 
-Odds는 $(0,\infin)$의 범위를 갖습니다.
+Odds는 $(0,\infty)$의 범위를 갖습니다.
 
 여기서 좌변에 로그를 취하는 기믹을 사용하면 양변의 범위가 맞춰집니다.
 
