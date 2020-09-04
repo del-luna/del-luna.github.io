@@ -161,7 +161,19 @@ CE Loss는 우리가 들었던 예시처럼 누가봐도 정답인데 오답을 
 
 그리고 또 하나의 문제점은 역전파 시에 발생합니다.
 
-output은 확률값이고 역전파 시에 output*(1-output)이 계속해서 지속된다면 gradient vanshing이 생길 수도 있습니다. 이건 앞서 말했듯 CE를 사용할 경우 Negative-log likelihood이기 때문에 깔끔하게 사라집니다.
+output은 0~1사이 값이고 역전파 시에 output*(1-output)이 계속해서 지속된다면 gradient vanshing이 생길 수도 있습니다. 
+
+> 이 부분이 좀 애매할 수 있는데... logistic regression이라서 아웃풋이 Sigmoid이고 그것에 대한 미분을 하게 되면  $\sigma(x)' = \sigma(x)*(1-\sigma(x))$ 라서 위처럼 gradient가 점점 작아질 수 있다는 건 납득이 갑니다. 
+>
+> 그리고 CE Loss에 대하여 $\frac{\partial L}{\partial x} = \sigma(x) - label$ 이고, 한 번 더 미분한 Hessian은 위처럼  $\sigma(x)' = \sigma(x)*(1-\sigma(x))$ 값이 나오므로 $0\leq\sigma(x)\leq1$이기 때문에 항상 양수라서 Convex보장되는 CE Loss가 더 좋다고 말할 수도 있을 것 같습니다.
+>
+> 그러나...
+>
+> Softmax의 경우 Convex가 보장되는가?
+>
+> 그래서 CE Loss가 MSE보다 좋다고 말할 수 있는가? 는 잘 모르겠습니다.. 혹시 아시는분 계시면 댓글 달아주세요!
+
+이건 앞서 말했듯 CE를 사용할 경우 Negative-log likelihood이기 때문에 깔끔하게 사라집니다.
 
 
 
