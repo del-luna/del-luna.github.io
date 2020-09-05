@@ -22,7 +22,7 @@ tags: [Loss]
 
 그렇다면 "MLE를 하는 것이 CrossEntropy loss를 최소화 하는 것과 동일하다." 라는 전제를 깔고 시작해봅시다.
 
-우선 MSE와 CE를 비교하기에 앞서 왜 CE가 MLE와 같고, 수식전개가 들어간 포스팅에선 한번씩 들어봤을 Negative-log likelihood를 최소화하는 것과 같은지 알아봅시다.
+우선 MSE와 CE를 비교하기에 앞서 왜 CE를 최소화 하는 것이 MLE와 같고, 수식전개가 들어간 포스팅에선 한번씩 들어봤을 Negative-log likelihood를 최소화 하는 것과 같은지 알아봅시다.
 
 > 여담이지만 저는 왜 이렇게 CrossEntropy 수식이 외워지지 않을까요..
 
