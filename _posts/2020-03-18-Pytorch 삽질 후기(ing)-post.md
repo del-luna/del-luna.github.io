@@ -459,3 +459,21 @@ train_transform = A.Compose([
 토치와 같이 compose로 기법들을 묶어서 처리할 수 있는데, Oneof라는 Sequential 같은 블록으로 저기 묶인 기법들중 한가지를 확률적으로 선택해서 적용할 수 있었습니다.
 
 저기 적힌 기법들 이외에도 다양한 기법들을 지원하니 자세한건 공식 문서를 참조해주세요.(심지어 torchvision.transform과 사용법도 유사합니다!)
+
+
+
+## Runtime Error: Expected object of scalar type Byte but got scalar type Float ...
+
+주로 image trasform부분에서 생기는 오류입니다.
+
+custom dataset을 구현할 때 타입을 아래와 같이 맞춰주면 해결됩니다.
+
+```python
+def __getitem__(self, idx):
+	img = self.x.astype(np.float32) << 요 부분이랑
+	label = self.y.astype(np.float32) << 요 부분
+```
+
+
+
+이외에도 trasform할 때 Pillow image로 불러오면서 생기는 오류가 몇 개 있던데...협업에서 trasform을 torchvision껄로 맞춰놔서 다음 부터는 albumentation 쓰자고 어필해야겠습니다.
