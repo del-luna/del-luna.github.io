@@ -2,9 +2,13 @@
 layout: post
 title: MLE & CrossEntropy
 author: Jaeheon Kwon
-categories: Mathematics
-tags: [statistics]
+categories: 
+tags: 
 ---
+
+
+
+working....
 
 
 
