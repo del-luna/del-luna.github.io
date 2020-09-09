@@ -477,3 +477,56 @@ def __getitem__(self, idx):
 
 
 이외에도 trasform할 때 Pillow image로 불러오면서 생기는 오류가 몇 개 있던데...협업에서 trasform을 torchvision껄로 맞춰놔서 다음 부터는 albumentation 쓰자고 어필해야겠습니다.
+
+
+
+
+
+### IndexError: too many indices for tensor of dimension 0
+
+```python
+transform_submission = transforms.Compose([
+     transforms.ToTensor(),
+     transforms.Normalize(mean, std),
+])
+```
+
+위 코드를
+
+```
+transform_submission = transforms.Compose([
+     transforms.ToTensor(),
+     transforms.Normalize([mean,], [std,]),
+])
+```
+
+이렇게 바꾸면 해결 됩니다. 흑백 채널(mnist)이라 생긴 문제인 것 같습니다.
+
+
+
+
+
+### Label Smoothing in pytorch
+
+```python
+class LabelSmoothingLoss(nn.Module):
+    def __init__(self, classes, smoothing=0.0, dim=-1):
+        super(LabelSmoothingLoss, self).__init__()
+        self.confidence = 1.0 - smoothing
+        self.smoothing = smoothing
+        self.cls = classes
+        self.dim = dim
+
+    def forward(self, pred, target):
+        pred = pred.log_softmax(dim=self.dim)
+        with torch.no_grad():
+            # true_dist = pred.data.clone()
+            true_dist = torch.zeros_like(pred)
+            true_dist.fill_(self.smoothing / (self.cls - 1))
+            true_dist.scatter_(1, target.data.unsqueeze(1).long(), self.confidence)
+        return torch.mean(torch.sum(-true_dist * pred, dim=self.dim))
+    
+LSloss = LabelSmoothingLoss(classes=10, smoothing=0.2)
+LSloss.to(device)
+```
+
