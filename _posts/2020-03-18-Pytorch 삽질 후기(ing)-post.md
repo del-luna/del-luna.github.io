@@ -478,6 +478,14 @@ def __getitem__(self, idx):
 
 이외에도 trasform할 때 Pillow image로 불러오면서 생기는 오류가 몇 개 있던데...협업에서 trasform을 torchvision껄로 맞춰놔서 다음 부터는 albumentation 쓰자고 어필해야겠습니다.
 
+> 그런 줄 알았는데 굳이 np.float32로 안하고,
+>
+> astype('uint8') 로 받아버리니까 해결 됐습니다.
+>
+> 애초에 왜 생긴거지...?
+>
+> 그리고 한가지 더 배운 점은 float32로 이미지의 pixel mean, var를 계산하는 것과 uint8일 때 값이 다릅니다.
+
 
 
 
@@ -500,7 +508,7 @@ transform_submission = transforms.Compose([
 ])
 ```
 
-이렇게 바꾸면 해결 됩니다. 흑백 채널(mnist)이라 생긴 문제인 것 같습니다.
+이렇게 바꾸면 해결 됩니다. 흑백 채널(mnist)이라 생긴 문제인 것 같은데...정확한건 모르겠습니다.
 
 
 
