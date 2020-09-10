@@ -434,62 +434,6 @@ tensor([[0, 4],
 
 
 
-## Augmentation
-
-토치는 torchvision.transform 이라는 강력한 augmentation 모듈이 있지만,
-
-저는 albumentation이라는 라이브러리를 주로 사용합니다.
-
-[albumentation github](https://github.com/albumentations-team/albumentations)
-
-상당히 다양한 기법들이 적용 가능하고 저에게 매력적으로 다가왔던 부분은 아래와 같은 부분입니다.
-
-```python
-train_transform = A.Compose([
-    A.ShiftScaleRotate(shift_limit=0,scale_limit=0,rotate_limit=30,p=0.5),
-    A.OneOf([
-        A.IAAAdditiveGaussianNoise(),
-        A.GaussNoise(),
-    ],p=0.5),
-    A.GridDropout(ratio=0.1, holes_number_x=1, holes_number_y=1, random_offset=True, p=0.5),
-    ToTensor()
-])
-```
-
-토치와 같이 compose로 기법들을 묶어서 처리할 수 있는데, Oneof라는 Sequential 같은 블록으로 저기 묶인 기법들중 한가지를 확률적으로 선택해서 적용할 수 있었습니다.
-
-저기 적힌 기법들 이외에도 다양한 기법들을 지원하니 자세한건 공식 문서를 참조해주세요.(심지어 torchvision.transform과 사용법도 유사합니다!)
-
-
-
-## Runtime Error: Expected object of scalar type Byte but got scalar type Float ...
-
-주로 image trasform부분에서 생기는 오류입니다.
-
-custom dataset을 구현할 때 타입을 아래와 같이 맞춰주면 해결됩니다.
-
-```python
-def __getitem__(self, idx):
-	img = self.x.astype(np.float32) << 요 부분이랑
-	label = self.y.astype(np.float32) << 요 부분
-```
-
-
-
-이외에도 trasform할 때 Pillow image로 불러오면서 생기는 오류가 몇 개 있던데...협업에서 trasform을 torchvision껄로 맞춰놔서 다음 부터는 albumentation 쓰자고 어필해야겠습니다.
-
-> 그런 줄 알았는데 굳이 np.float32로 안하고,
->
-> astype('uint8') 로 받아버리니까 해결 됐습니다.
->
-> 애초에 왜 생긴거지...?
->
-> 그리고 한가지 더 배운 점은 float32로 이미지의 pixel mean, var를 계산하는 것과 uint8일 때 값이 다릅니다.
-
-
-
-
-
 ### IndexError: too many indices for tensor of dimension 0
 
 ```python
@@ -537,4 +481,108 @@ class LabelSmoothingLoss(nn.Module):
 LSloss = LabelSmoothingLoss(classes=10, smoothing=0.2)
 LSloss.to(device)
 ```
+
+
+
+
+
+## Augmentation
+
+
+
+### Albumentation
+
+토치는 torchvision.transform 이라는 강력한 augmentation 모듈이 있지만,
+
+저는 albumentation이라는 라이브러리를 주로 사용합니다.
+
+[albumentation github](https://github.com/albumentations-team/albumentations)
+
+상당히 다양한 기법들이 적용 가능하고 저에게 매력적으로 다가왔던 부분은 아래와 같은 부분입니다.
+
+```python
+train_transform = A.Compose([
+    A.ShiftScaleRotate(shift_limit=0,scale_limit=0,rotate_limit=30,p=0.5),
+    A.OneOf([
+        A.IAAAdditiveGaussianNoise(),
+        A.GaussNoise(),
+    ],p=0.5),
+    A.GridDropout(ratio=0.1, holes_number_x=1, holes_number_y=1, random_offset=True, p=0.5),
+    ToTensor()
+])
+```
+
+토치와 같이 compose로 기법들을 묶어서 처리할 수 있는데, Oneof라는 Sequential 같은 블록으로 저기 묶인 기법들중 한가지를 확률적으로 선택해서 적용할 수 있었습니다.
+
+저기 적힌 기법들 이외에도 다양한 기법들을 지원하니 자세한건 공식 문서를 참조해주세요.(심지어 torchvision.transform과 사용법도 유사합니다!)
+
+
+
+### Runtime Error: Expected object of scalar type Byte but got scalar type Float ...
+
+주로 image trasform부분에서 생기는 오류입니다.
+
+custom dataset을 구현할 때 타입을 아래와 같이 맞춰주면 해결됩니다.
+
+```python
+def __getitem__(self, idx):
+	img = self.x.astype(np.float32) << 요 부분이랑
+	label = self.y.astype(np.float32) << 요 부분
+```
+
+라고 생각했는데...!
+
+```python
+def __getitem__(self, idx):
+	img = self.x.astype('uint8')
+```
+
+astype('uint8') 로 받아버리니까 해결 됐습니다.
+
+애초에 위 오류는 transforms.ToTensor() 변환 때 생기는 오류인데,
+
+소스코드의 주석을 보면 이렇게 적혀있습니다.
+
+```python
+class ToTensor(object):
+    """Convert a ``PIL Image`` or ``numpy.ndarray`` to tensor.
+    Converts a PIL Image or numpy.ndarray (H x W x C) in the range
+    [0, 255] to a torch.FloatTensor of shape (C x H x W) in the range [0.0, 1.0]
+    if the PIL Image belongs to one of the modes (L, LA, P, I, F, RGB, YCbCr, RGBA, CMYK, 1)
+    or if the numpy.ndarray has dtype = np.uint8
+```
+
+그리고 한가지 추가적으로 배운 점은 float32로 이미지의 pixel mean, var를 계산하는 것과 uint8일 때 값이 다릅니다.
+
+
+
+### TypeError: img should be PIL Image. Got <class 'numpy.ndarray'>
+
+Transforms 에서 rotation과 같은 이미지 변환시에 입력 이미지 타입이 ndarray면 발생하는 문제입니다. 어차피 나중에 ToTensor로 바꿀 거니까 Tensor로 바꿔서 넣던지 Pillow이미지 타입으로 받으면 해결됩니다.
+
+소스코드에 명시되어있는 부분입니다.
+
+```python
+def rotate(
+        img: Tensor, angle: float, resample: int = 0, expand: bool = False,
+        center: Optional[List[int]] = None, fill: Optional[int] = None
+) -> Tensor:
+    """Rotate the image by angle.
+    The image can be a PIL Image or a Tensor, in which case it is expected
+    to have [..., H, W] shape, where ... means an arbitrary number of leading dimensions.
+```
+
+
+
+보통 데이터 로더에서 데이터 인덱싱을 통해 접근할 때 trasform이 수행되므로 커스텀데이터셋 소스를 아래와 같이 짤텐데 여기에 ndarray인 부분을 Pillow로 바꿔주면 됩니다.
+
+```python
+def __getitem__(self, idx):
+        img_np = (self.train_pd.iloc[idx][-784:].values).reshape(28, 28).astype('uint8')
+        img = Image.fromarray(img_np, mode='L')
+        if self.transform is not None:
+            img = self.transform(img_np)
+```
+
+이런느낌으로 말이죠!
 
