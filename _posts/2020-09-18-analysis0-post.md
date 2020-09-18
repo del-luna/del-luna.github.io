@@ -18,7 +18,7 @@ $a,b,c \in \R$ 및 연산 $+,\cdot$ 에 대해 다음 성질들이 성립한다.
 
 
 
-- 덧셈에 대한 폐쇄성 : $a + b \in \R$
+- 덧셈에 대한 폐쇄성 : $a + b \in \mathbb R$
 - 덧셈에 대한 결합법칙 : $(a+b)+c = a+(b+c)$
 - 덧셈에 대한 교환법칙 : $a+b = b+a$
 - 덧셈에 대한 항등원 : 모든 실수 $a$에 대해 $a+0 = 0+a = a$를 만족하는 0이 유일하게 존재함.
@@ -26,7 +26,7 @@ $a,b,c \in \R$ 및 연산 $+,\cdot$ 에 대해 다음 성질들이 성립한다.
 
 
 
-- 곱셈에 대한 폐쇄성 : $a\cdot b \in \R$
+- 곱셈에 대한 폐쇄성 : $a\cdot b \in \mathbb R$
 - 곱셈에 대한 결합법칙 : $(a\cdot b)\cdot c = a\cdot (b\cdot c)$
 - 곱셈에 대한 교환법칙 : $a\cdot b$ = $b\cdot a$
 - 곱셈에 대한 항등원 : 모든 실수 $a$에 대해, $a\cdot 1 = 1\cdot a = a$를 만족하는 1이 유일하게 존재함.
@@ -42,7 +42,7 @@ $a,b,c \in \R$ 및 연산 $+,\cdot$ 에 대해 다음 성질들이 성립한다.
 
 
 
-$a,b,c \in \R$에 대해, 다음의 성질들이 성립한다고 받아들이자.
+$a,b,c \in \mathbb R$에 대해, 다음의 성질들이 성립한다고 받아들이자.
 
 
 
@@ -57,7 +57,7 @@ $a,b,c \in \R$에 대해, 다음의 성질들이 성립한다고 받아들이자
 
 
 
-- $E\subset \R $ , $E \neq \phi$ 인 집합 $E$가 bounded above이면 supremum $sup(E)<\infty$ 이 존재한다.
+- $E\subset \mathbb R $ , $E \neq \phi$ 인 집합 $E$가 bounded above이면 supremum $sup(E)<\infty$ 이 존재한다.
 
 
 
