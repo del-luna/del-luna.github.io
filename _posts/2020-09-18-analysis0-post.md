@@ -14,7 +14,7 @@ tags: [analysis]
 
 
 
-$a,b,c \in \R$ 및 연산 $+,\cdot$ 에 대해 다음 성질들이 성립한다.(공리니까 받아들이자.)
+$a,b,c \in \mathbb R$ 및 연산 $+,\cdot$ 에 대해 다음 성질들이 성립한다.(공리니까 받아들이자.)
 
 
 
@@ -48,7 +48,7 @@ $a,b,c \in \mathbb R$에 대해, 다음의 성질들이 성립한다고 받아�
 
 - 삼분성 : 주어진 $a,b$에 대해서, $a<b$ 혹은 $a>b$ 혹은 $a=b$이어야 한다.
 - 추이성 : $a<b$ 이고 $b<c$ 이면 $a<c$
-- 가산성 : $a<b$ 이고 $c\in\R$ 이면 $a+c<b+c$
+- 가산성 : $a<b$ 이고 $c\in\mathbb R$ 이면 $a+c<b+c$
 - 승산성 : $a<b$ 이고 $c>0$ 이면 $ac<bc,$ 혹은 $c<0$ 이면 $ac>bc$
 
 
@@ -82,3 +82,8 @@ $a,b,c \in \mathbb R$에 대해, 다음의 성질들이 성립한다고 받아�
 > - 이러한 조건을 만족시키는 $m$을 모두 $E$의 lower bound라고 부른다. 
 > - $inf(E)$는 $E$의 가장 큰 lower bound를 뜻하며, 모든 $E$의 lower bound $m $에 대해서 $inf(E)\geq m$을 만족하는 수 이다.
 
+
+
+## Reference
+
+[생새우초밥집](https://freshrimpsushi.tistory.com/178?category=806329)
