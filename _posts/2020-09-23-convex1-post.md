@@ -2,8 +2,8 @@
 layout: post
 title: Convex Optimization Chapter.1
 author: Jaeheon Kwon
-categories: Ai
-tags: [islr]
+categories: Mathematics
+tags: [optimization]
 ---
 
 
@@ -24,8 +24,6 @@ $$x1,x2 \in C, 0\leq a\leq 1 \rightarrow ax_1+(1-a)x_2 \in C$$
 
 - Affine은 $x_1,x_2$를 지나는 직선이다. (외분점)
 - Convex는 $x_1,x_2$를 연결하는 선분이다. (내분점)
-
-
 
 
 
@@ -83,6 +81,10 @@ Convex function은 다음과 같은 특성을 가진다.
 - $f(y)<f(x)$ 가 성립하려면 $f(z)\leq\theta f(y)+(1-\theta)f(x)<\theta f(x)+(1-\theta)f(x)=f(x)$를 만족해야함
 - 그러나 $f(z)\geq f(x)$에 모순.
 - $QED$
+
+
+
+
 
 
 
