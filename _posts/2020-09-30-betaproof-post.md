@@ -8,7 +8,7 @@ tags: [statistics]
 
 
 
-$yi = \beta_0+\beta_1x_i + \epsilon_i$
+$y_i = \beta_0+\beta_1x_i + \epsilon_i$
 
 - $\hat\beta_0 = \bar y - \hat\beta_1\bar x$
 - $\hat\beta_1 = \frac{\sum_{i=1}^n(x_i - \bar x)(y_i-\bar y)}{\sum_{i=1}^n (x_i-\bar x)}$
