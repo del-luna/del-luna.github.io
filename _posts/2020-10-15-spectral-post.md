@@ -22,7 +22,7 @@ $$\frac{\vert\vert f(x)-f(y)\vert\vert}{\vert\vert x-y\vert\vert}\leq K $$
 
 이고 이는 기울기가 $K$이하인 함수로 아주 직관적으로 생각할 수 있다.
 
-![1](/Users/devcat/Desktop/lipschitz/1.gif)
+<img src = "https://py-tonic.github.io/images/lipschitz/1.gif">
 
 $f$의 기울기가 색칠된 영역 안에 존재함을 볼 수 있다!
 
@@ -112,15 +112,25 @@ $$L(f)\leq \prod\limits_{i=1}^l L(\phi_i)$$
 
 $$\vert\vert f\vert\vert_{Lip} = \sup\limits_{x}\sigma(\nabla f(x)) = \sup\limits_x\sigma(W) = \sigma(W)$$
 
-위의 선형의 예시처럼 $f$의 Lipschitz norm은 단순히 $W$의 Largest singular value값으로 나타난다.
+위의 선형의 예시처럼 $f$의 Lipschitz norm은 단순히 $W$의 Largest singular value값으로 나타난다.(또한 $f$ 그래디언트에 대한 spectral norm!)
+
+> 직관을 좀 써보자.. 미천한 인간이 추상적인 개념을 이해하기 위해선 직관이 필수이다..
+>
+> 일단 그래디언트의 정의는 변화가 가장 큰 쪽을 나타내는 방향와 그 값일 것이다.
+>
+> 그렇다면 우리가 앞서 계속 설명했던 특이값(가장 큰 특이값)은 직관적으로 그래디언트와 어떤 연관성이 있어 보인다.(SVD에서 특이값을 늘릴수록 원본 이미지와 비슷해지는 것을 떠올려보자.)
+>
+> 즉, 레이어의 행렬 곱 부분의 Lipschitz norm은 각 레이어의 행렬 $W$의 spectral norm(가장 큰 특이값)이 될 것이다.
 
 Spectral norm 논문에서는 $f$의 립시츠 상수인 $\sigma(W)$로 나누어서 $W$의 spectral norm이 1이되도록 정규화 해준다.
 
 $$W_{SN}(W):=W/\sigma(W)$$
 
-모든 레이어에 대해 spectral normalization해주면 $f$의 Lipshitz norm이 1이하로 bounded 된다. 
+모든 레이어에 대해 spectral normalization에 대해 나눠주면 (가장 큰 그래디언트쪽? 혹은 가장 큰 특이값?에 대해 나눠주자!) $f$의 Lipshitz norm이 1이하로 bounded 된다. 
 
+아무튼 이게 핵심 정리이고, 논문에서는 이를 어떻게 연산할 것인지(SVD를 계산해야 뭘 하든 할테니..) 말해주는데 그 부분은 다 읽지 못했다.
 
+우선 핵심만 말하면 가장 큰 그래디언트(가장 큰 특이값)쪽 에 대해 보정을 해준다는 것은 레어이에서 일아는 연산이 너무 한 가지 방향으로만 급격하게 변하는 것을 막아준다.(안정적이다.)
 
 ### Interaction with Dropout
 
