@@ -8,6 +8,18 @@ tags: [linear algebra]
 
 
 
+선대가 ML/DL에서 필요한 부분?
+
+- 일단 단순히 계산할 때도 필요함
+
+- PCA를 고유값과 고유벡터를 통해 설명할 수 있음
+
+- Spectral norm과 Singular vector
+
+    
+
+
+
 ### Vector Space
 
 linear combination에 대해 닫혀있는 공간(더하거나 스칼라배에 대해 닫혀있어야 됨)
@@ -211,8 +223,6 @@ Null space의 차원은 어떻게 될까? 우리의 앞선 개념을 잘 생각�
 
 ### Four Fundamental Subspace
 
-
-
 **Row Space**
 
 row vector들의 선형 조합으로 만들 수 있는 공간이지만... 조금 어색하다. 어떻게 구할 수 있을까?
@@ -290,4 +300,58 @@ Col space는 $R^m$에 존재하므로 2차원 공간에 존재하고, rank=2이�
 - $N(A^T)$
     - basis : special solution of $A^Tx=0$
     - dim : m-r
+
+
+
+### Eigenvalue, Eigenvector
+
+$Ax=\lambda x$
+
+직관적인 의미는 선형 변환을 해도 방향이 보존되는 벡터가 존재한다. 이 벡터가 고유벡터
+
+어차피 방향이 같으면 크기는 스칼라를 통해 맞춰주면 되는데, 이 때 값이 고유값.
+
+일반적으로 $n\times n$ 행렬은 $n$개의 고유벡터를 가진다.
+
+또한 이런식의 변형도 가능하다.
+
+$AP = P\lambda I$
+
+여기서 P는 고유벡터들을 열벡터로 하는 행렬이고, $\lambda I$는 고유값들을 대각 원소로 하는 대각 행렬이다.
+
+위와 같은 분해를 eigen decomposition이라고 한다.
+
+- 단 고유값 분해가 가능하려면 $A$가 $n$개의 선형 독립인 고유 벡터를 가져야함. ($n$개의 기저!)
+
+
+
+대칭행렬은 고유값 분해와 관련하여 좋은 성질 2가지를 가짐.
+
+- (실수)대칭 행렬은 항상 고유값 대각화가 가능하다
+- 직교 행렬로 대각화가 가능하다(직교 행렬은 역행렬이 전치행렬임!)
+
+
+
+
+
+### Singular Value Decomposition
+
+모든 $m\times n$행렬에 대해 적용 가능함!
+
+$$A=U\Sigma V^T$$
+
+- $U=m\times m$ 직교행렬 
+    - $AA^T$를 고유값 분해해서 얻어진 직교 행렬, $U$의 열벡터들을 $A$의 left singular vector라고 부른다.
+- $V = n\times n$ 직교행렬
+    - $A^TA$를 고유값 분해해서 얻어진 직교 행렬, $V$의 열벡터들을 $A$의 right singular vector라고 부른다.
+- $\Sigma = m\times n$ 직사각 대각행렬
+    - $AA^T,A^TA$를 고유값 분해해서 나오는 고유값들의 square root를 대각원소로 하는 직사각 대각 행렬, 대각 원소를 $A$의 Singular value라고 부른다.(특이값은 항상 0 이상)
+
+
+
+직교행렬의 기하학적 의미는 회전 변환, 혹은 반전 변환이고, 대각 행렬의 기하학적 의미는 스케일 변환 이다. 즉 행렬의 특이값은 이 행렬로 표현되는 선형 변환의 스케일 변환을 나타내는 값을 나타냄!
+
+
+
+
 
