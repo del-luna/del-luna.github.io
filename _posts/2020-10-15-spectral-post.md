@@ -2,9 +2,17 @@
 layout: post
 title: Lipschitz & Spectral norm
 author: Jaeheon Kwon
-categories: Mathematics
-tags: [analysis]
+categories: Papers
+tags: [tech]
 ---
+
+### Summary
+
+- 함수가 립시츠 연속이면 학습을 안정적으로 할 수 있다.
+- Spectral norm은 가장 큰 특이값이다.
+- 선형 함수의 가장 큰 특이값은 L2norm이다.
+- 가장 큰 특이값은 그래디언트와 비슷한(추상적으로) 의미를 가진다.
+- 
 
 
 
@@ -73,7 +81,9 @@ $$<Ax,Ax>\leq K^2<x,x>$$
 
 그리고 이렇게 변형할 수 있다. (i.e. $x=\sum_ix_iv_i$)
 
-$$<(A^TA-K^2)x,x>\leq 0$$
+$$<(A^TA-K^2)x,x>\leq 0$$ (위식을 다 전개했다가 다시 이렇게 묶을 수 있음)
+
+$A^TA$의 고유벡터는 orthonormal이므로,
 
 $$<(A^TA-K^2)x,x>\\ = <(A^TA-K^2)\sum\limits_ix_iv_i,\sum\limits_jx_jv_j> \\ = \sum\limits_i\sum\limits_jx_ix_j<(A^TA-K^2)v_i,v_j>\\ =\sum\limits_i(\lambda_i-K^2)x_i^2 \leq 0 \Rightarrow \sum\limits_i(K^2-\lambda_i)x_i^2\geq0$$
 
