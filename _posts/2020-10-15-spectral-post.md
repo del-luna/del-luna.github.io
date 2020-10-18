@@ -12,7 +12,6 @@ tags: [tech]
 - Spectral norm은 가장 큰 특이값이다.
 - 선형 함수의 가장 큰 특이값은 L2norm이다.
 - 가장 큰 특이값은 그래디언트와 비슷한(추상적으로) 의미를 가진다.
-- 
 
 
 
@@ -132,6 +131,8 @@ $$\vert\vert f\vert\vert_{Lip} = \sup\limits_{x}\sigma(\nabla f(x)) = \sup\limit
 >
 > 즉, 레이어의 행렬 곱 부분의 Lipschitz norm은 각 레이어의 행렬 $W$의 spectral norm(가장 큰 특이값)이 될 것이다.
 
+
+
 Spectral norm 논문에서는 $f$의 립시츠 상수인 $\sigma(W)$로 나누어서 $W$의 spectral norm이 1이되도록 정규화 해준다.
 
 $$W_{SN}(W):=W/\sigma(W)$$
@@ -141,6 +142,8 @@ $$W_{SN}(W):=W/\sigma(W)$$
 아무튼 이게 핵심 정리이고, 논문에서는 이를 어떻게 연산할 것인지(SVD를 계산해야 뭘 하든 할테니..) 말해주는데 그 부분은 다 읽지 못했다.
 
 우선 핵심만 말하면 가장 큰 그래디언트(가장 큰 특이값)쪽 에 대해 보정을 해준다는 것은 레어이에서 일아는 연산이 너무 한 가지 방향으로만 급격하게 변하는 것을 막아준다.(안정적이다.)
+
+
 
 ### Interaction with Dropout
 
