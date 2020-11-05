@@ -1,13 +1,10 @@
 ---
 layout: post
-title: The Marginal Value of Adaptive Gradient Methods
-in Machine Learning
+title: The Marginal Value of Adaptive Gradient Methods in Machine Learning
 author: Jaeheon Kwon
 categories: Papers
 tags: [tech]
 ---
-
-
 
 ## Abactract
 
