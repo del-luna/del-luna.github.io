@@ -44,7 +44,7 @@ overparameterized problems인 경우 adaptive(적응형) 방식은 기존의 gra
 
 - Adaptive gradient, Adaptive momentum methods
 
-    - $w_{k+1} = w_k - \alpha_kH^{-1}_k \tilde\nabla f(w_k+\gamma_k(w_k - w_{k-1}))+\beta_kH^{-1}_kH_{k-1}(w_k-w_{k-1})$
+    - $w_{k+1} = w_k - \alpha_kH^{-1}_k \nabla f(w_k+\gamma_k(w_k - w_{k-1}))+\beta_kH^{-1}_kH_{k-1}(w_k-w_{k-1})$
 
     - $H_k := H(w_1,..,w_l)$ is positive definite matrix
 
@@ -103,8 +103,6 @@ $w_{k+1}=\{\lambda_k - \frac{\alpha_k\mu_k}{v_k}+\frac{\beta_kv_{k-1}}{v_k}(\lam
 
 > 자세한 수식 전개는 논문을 참조하세요.
 >
-> $k\leq t$일 때 맨 첫번째 수식이 어디서 나온건지 잘 모르겠음..
->
 > 첫 번째 $\rightarrow$ 두 번째 수식으로 갈 때는 $w_k=\lambda_k sign(X^Ty)$를 대입.
 >
 > 두 번째 $\rightarrow$ 세 번째 수식으로 갈 때는 $Xsign(X^Ty)=cy$를 대입.
@@ -144,4 +142,3 @@ $w^{ada},x^{test}$에서 둘 다 0이 아닌 피처는 처음 3가지 dim뿐이�
 > Deep reinforcement learning에서 RMSProp을 쓰는 주된 이유 중에 하나는 현재의 gradient update로 policy가 크게 바뀌면 앞으로 들어올 data가 망가지고 다음 policy에 악영향을 미쳐 전체 학습을 망치게 되는데 이를 방지하기 위함으로 알고 있습니다. 논문에서 최적화 문제가 아니라고 함은 아마 주어진 데이터셋이 있고 loss minimization을 하는 상황이 아니라는 걸 의미하지 않나 생각합니다.
 >
 > 출처: [재준님 블로그](http://jaejunyoo.blogspot.com/2017/06/marginal-value-of-adaptive-gradient-methods-in-ML2.html)
-
