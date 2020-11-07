@@ -44,7 +44,7 @@ overparameterized problems인 경우 adaptive(적응형) 방식은 기존의 gra
 
 - Adaptive gradient, Adaptive momentum methods
 
-    - $w_{k+1} = w_k - \alpha_kH^{-1}_k \nabla f(w_k+\gamma_k(w_k - w_{k-1}))+\beta_kH^{-1}_kH_{k-1}(w_k-w_{k-1})$
+    - $w_{k+1}$ $=$ $w_k - \alpha_kH^{-1}_k \nabla f(w_k+\gamma_k(w_k - w_{k-1}))+\beta_kH^{-1}_kH_{k-1}(w_k-w_{k-1})$
 
     - $H_k := H(w_1,..,w_l)$ is positive definite matrix
 
@@ -102,6 +102,10 @@ $H_k = v_kdiag(\vert X^Ty\vert)$
 $w_{k+1}=\{\lambda_k - \frac{\alpha_k\mu_k}{v_k}+\frac{\beta_kv_{k-1}}{v_k}(\lambda_k - \lambda_{k-1}) \}sign(X^Ty)$
 
 > 자세한 수식 전개는 논문을 참조하세요.
+>
+> $\nabla Rs(w_k+\gamma_k(w_k-w_{k-1})) = X^T(X(w_k+\gamma_k(w_k-w_{k-1}))-y)$
+>
+> 위 식은 $Rs[w]:=\vert\vert Xw-y\vert\vert_2^2$에서 양변을 미분한 식
 >
 > 첫 번째 $\rightarrow$ 두 번째 수식으로 갈 때는 $w_k=\lambda_k sign(X^Ty)$를 대입.
 >
