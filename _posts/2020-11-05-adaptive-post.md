@@ -99,9 +99,13 @@ $g_k=\nabla Rs(w_k+\gamma_k(w_k-w_{k-1}))$로 설정.
 
 $H_k = v_kdiag(\vert X^Ty\vert)$
 
+$w_{k+1} =$$w_k - \alpha_kH^{-1}_k \nabla f(w_k+\gamma_k(w_k - w_{k-1}))+\beta_kH^{-1}_kH_{k-1}(w_k-w_{k-1})$
+
 $w_{k+1}=\{\lambda_k - \frac{\alpha_k\mu_k}{v_k}+\frac{\beta_kv_{k-1}}{v_k}(\lambda_k - \lambda_{k-1}) \}sign(X^Ty)$
 
 > 자세한 수식 전개는 논문을 참조하세요.
+>
+> $(k\leq t)$ 를 기준으로 증명하는 수식에서
 >
 > $\nabla Rs(w_k+\gamma_k(w_k-w_{k-1})) = X^T(X(w_k+\gamma_k(w_k-w_{k-1}))-y)$
 >
@@ -110,6 +114,9 @@ $w_{k+1}=\{\lambda_k - \frac{\alpha_k\mu_k}{v_k}+\frac{\beta_kv_{k-1}}{v_k}(\lam
 > 첫 번째 $\rightarrow$ 두 번째 수식으로 갈 때는 $w_k=\lambda_k sign(X^Ty)$를 대입.
 >
 > 두 번째 $\rightarrow$ 세 번째 수식으로 갈 때는 $Xsign(X^Ty)=cy$를 대입.
+>
+>
+> 맨 아래 $w_{k+1}$은 $H_k=v_kdiag(\vert X^Ty\vert)$, $w_k = \lambda_ksign(X^Ty)$, $\nabla f = \mu_kX^Ty$ 대입하고 전개하면 나옴.
 
 
 
