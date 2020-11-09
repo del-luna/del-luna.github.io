@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Random Vector
+title: Symmetric & Positive Definites
 author: Jaeheon Kwon
 categories: Mathematics
 tags: [linear algebra]
