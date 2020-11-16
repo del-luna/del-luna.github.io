@@ -14,6 +14,12 @@ tags: [Reinforcement Learning]
 
 제가 수식속에 들어간 직관이 이해된다면 최대한 적으려고 노력하겠습니다... :(
 
+> 발표용 ppt
+>
+> [GoogleDrive](https://drive.google.com/drive/u/0/folders/1eJscbAKj5ImG7kjKOxyOlvklDDBDgzWC)
+>
+> 저퀄이지만 도움이 됐으면 좋겠습니다 :D
+
 
 
 강화학습 문제를 해결하는 여러가지 방법이 존재하지만, 최종 목표는 환경으로 부터 받는 리워드를 최대화하는 optimal policy를 찾는 것입니다.
