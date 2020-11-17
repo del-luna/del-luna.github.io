@@ -8,6 +8,12 @@ tags: [Reinforcement Learning]
 
 
 
+> 발표용 ppt입니다.
+>
+> [GoogleDrive](https://drive.google.com/drive/u/0/folders/1eJscbAKj5ImG7kjKOxyOlvklDDBDgzWC)
+>
+> 저퀄이지만 도움이 됐으면 좋겠습니다 :D
+
 이제 목적함수 $J(\theta)$를 최대로 만드는 $\theta$를 계산하기 위해 미분해봅시다.
 
 $$\frac{\partial J(\theta)}{\partial \theta} = \nabla_\theta J(\theta) = \nabla_\theta \int_\tau p_\theta(\tau)\sum\limits_{t=0}^T\gamma^tr(x_t,u_t)d\tau$$
