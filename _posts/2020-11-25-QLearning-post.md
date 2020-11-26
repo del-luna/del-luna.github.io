@@ -57,7 +57,7 @@ $$Q(s_t,a_t) = \int(R_t + \gamma Q(s',a'))p(a'\vert s')p(s'\vert s_t,a_t)ds',a'$
 
 (아래 이미지 참조)
 
-![optim](/Users/devcat/git/blog/images/qlearning/optim.jpg)
+<img src = "https://py-tonic.github.io/images/qlearning/optim.jpg">
 
 
 
@@ -82,5 +82,5 @@ $Q^*$를 구하기 위한 학습 방법엔 두 가지가 존재함
 
 
 
-이 두개를 여기서 다 설명하긴 어려우니 따로 포스팅 하도록 하겠다.
+두 가지 방법을 여기서 다 설명하긴 어려우니 따로 포스팅 하도록 하겠다.
 
