@@ -17,7 +17,7 @@ tags: [compression]
 
 
 
-![0](/Users/devcat/git/blog/images/compression_survey/0.png)
+<img src = "https://py-tonic.github.io/images/compression_survey/0.png">
 
 ### Parameter Pruning and Quantization
 
@@ -58,7 +58,7 @@ stochastic rounding 기반 CNN에서 16-bit fixed-point를 사용하여 분류 �
 
 즉, 중복 연결을 제거하고 가중치를 양자화한 다음 허프만 코딩을 사용하여 양자화된 가중치를 인코딩한 방법을 사용.
 
-![1](/Users/devcat/git/blog/images/compression_survey/1.png)
+<img src = "https://py-tonic.github.io/images/compression_survey/1.png">
 
 위 그림에서 볼 수 있듯, 정상적인 네트워크 훈련을 통해 연결을 학습한 다음, 소규모 연결을 잘라내는 것으로 시작함.
 
