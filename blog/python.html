@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Python
+title: Vision
 ---
 
 
@@ -8,7 +8,7 @@ title: Python
   <div class="tags-expo-list">
         <span class="post-tag" data-tag="ALL">ALL</span>
     {% for tag in site.tags %}
-      {% if tag[1][0].categories contains "Python" %}
+      {% if tag[1][0].categories contains "Vision" %}
         <span class="post-tag" data-tag="{{ tag[0] }}">{{ tag[0] }}</span>
       {% endif %}
     {% endfor %}
@@ -16,7 +16,7 @@ title: Python
   <hr/>
   <div class="tags-expo-section">
    <ul class="tags-expo-posts">  
-          {% for post in site.categories.Python %}
+          {% for post in site.categories.Vision %}
               <li class="temp" 
                   {% for i in (0..post.tags.size)%}
                     {% if i == post.tags.size %}
