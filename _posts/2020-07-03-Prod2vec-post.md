@@ -2,7 +2,7 @@
 layout: post
 title: Prod2Vec
 author: Jaeheon Kwon
-categories: Papers
+categories: Recommendation
 tags: [recommendation]
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: RL introduction
 author: Jaeheon Kwon
-categories: Ai
+categories: Reinforcement
 tags: [Reinforcement Learning]
 ---
 

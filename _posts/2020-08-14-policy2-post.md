@@ -2,7 +2,7 @@
 layout: post
 title: Policy gradient2
 author: Jaeheon Kwon
-categories: Ai
+categories: Reinforcement
 tags: [Reinforcement Learning]
 ---
 
