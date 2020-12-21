@@ -58,7 +58,7 @@ tags: [self_supervised]
 
 ConvNet 모델이 이미지에 적용된 회전 변환을 인식할 수 있으려면 이미지에서의 위치와 같은 이미지에 묘사된 객체의 개념을 이해해야 합니다.
 
-<img src = "https://py-tonic.github.io/images/rotation/1.PNG">
+<img src = "https://del-luna.github.io/images/rotation/1.PNG">
 
 ## Methodology
 
@@ -92,7 +92,7 @@ $loss(X_i,θ) = -\frac{1}{K}\sum\limits_{y=1}^{K}log(F^y(g(X_i\vert y)\vert θ))
 
 우리는 90도의 배수로 기하학적 변환 집합 G를 정의합니다.(2d image rotations by 0,90,180, and 270)
 
-<img src = "https://py-tonic.github.io/images/rotation/2.PNG">
+<img src = "https://del-luna.github.io/images/rotation/2.PNG">
 
  **Forcing the learning of semantic features** : 이러한 이미지 회전을 사용하는 핵심적인 이유(직관)는 모델이 객체의 클래스를 인식하고 감지하는 법을 처음으로 배우지 않으면 위의 회전 인식 작업을 효과적으로 수행하는 것이 불가능하다는 단순한 사실과 관련이 있습니다.
 
@@ -124,7 +124,7 @@ attention map은 Conv layer의 각 spatial cell에서 activation의 크기에 �
 
 **Implementing image rotations**: 이미지 회전을 90, 180, 및 270도 (0도는 기본 이미지)로 구현하기 위해 flip 및 transpose를 사용합니다.
 
-<img src = "https://py-tonic.github.io/images/rotation/3.PNG">
+<img src = "https://del-luna.github.io/images/rotation/3.PNG">
 
 **DISCUSSION**
 
@@ -144,9 +144,9 @@ Self-Supervised formulation의 단순함에도 불구하고, 논문의 실험 �
 
 ------
 
-<img src = "https://py-tonic.github.io/images/rotation/4.PNG">
+<img src = "https://del-luna.github.io/images/rotation/4.PNG">
 
-<img src = "https://py-tonic.github.io/images/rotation/5.PNG">
+<img src = "https://del-luna.github.io/images/rotation/5.PNG">
 
 
 
@@ -192,7 +192,7 @@ classifier는 객체 인식 작업에 대해 Supervised manner로 학습됩니�
 
 우리는 이를 모델의 깊이를 늘리면 헤드의 복잡성(최상위 레이어)이 이전 레이어의 feature를 회전 예측에 덜 구체적으로 허용할 수 있기 때문이라고 가정합니다.
 
-<img src = "https://py-tonic.github.io/images/rotation/6.PNG">
+<img src = "https://del-luna.github.io/images/rotation/6.PNG">
 
 > (a): 45°의 배수들인 8방향의 회전
 >
@@ -208,7 +208,7 @@ classifier는 객체 인식 작업에 대해 Supervised manner로 학습됩니�
 >
 > 이것은 아마도 이전 모델이 Unsupervised phase에서 0° 회전을 "보지" 않기 때문입니다.
 
-<img src = "https://py-tonic.github.io/images/rotation/7.PNG">
+<img src = "https://del-luna.github.io/images/rotation/7.PNG">
 
 **Exploring the quality of the learned features w.r.t. the number of recognized rotations**: 위의 테이블에서는 Self Supervised features의 quality가 각각의 rotation에 얼마나 영향을 받는지를 나타냅니다.
 
@@ -238,7 +238,7 @@ classifier는 객체 인식 작업에 대해 Supervised manner로 학습됩니�
 
 Unsupervised learned features를 fine-tuning하면 분류 성능이 더욱 향상되어 Supervised case와의 격차가 훨씬 줄어듭니다.
 
-<img src = "https://py-tonic.github.io/images/rotation/8.PNG">
+<img src = "https://del-luna.github.io/images/rotation/8.PNG">
 
 **Correlation between object classification task and rotation prediction task**: 위 그래프 (a)는 회전을 인식하는 Self-Supervised task를 해결하는데 사용되는 Training epoch의 함수로 객체 분류 정확도를 플로팅합니다. 
 

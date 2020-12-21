@@ -49,7 +49,7 @@ convex set은 직관적으로 표현하면 오목하게 들어가거나 내부�
 
 
 
-<img src = "https://py-tonic.github.io/images/convex/5.png">
+<img src = "https://del-luna.github.io/images/convex/5.png">
 
 
 

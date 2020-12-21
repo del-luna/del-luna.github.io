@@ -18,7 +18,7 @@ $$x1,x2 \in C, 0\leq a\leq 1 \rightarrow ax_1+(1-a)x_2 \in C$$
 
 
 
-<img src = "https://py-tonic.github.io/images/convex/0.png">
+<img src = "https://del-luna.github.io/images/convex/0.png">
 
 
 
@@ -37,9 +37,9 @@ $$x1,x2 \in C, 0\leq a\leq 1 \rightarrow ax_1+(1-a)x_2 \in C$$
 
 
 
-<img src = "https://py-tonic.github.io/images/convex/1.png">
+<img src = "https://del-luna.github.io/images/convex/1.png">
 
-<img src = "https://py-tonic.github.io/images/convex/2.png">
+<img src = "https://del-luna.github.io/images/convex/2.png">
 
 
 
@@ -51,13 +51,13 @@ $$x1,x2 \in C, 0\leq a\leq 1 \rightarrow ax_1+(1-a)x_2 \in C$$
 
 
 
-<img src = "https://py-tonic.github.io/images/convex/3.png">
+<img src = "https://del-luna.github.io/images/convex/3.png">
 
 - $f$의 epigraph가 Convex set 일 때, $f$ is  Convex function (역도 성립)
 
 
 
-<img src = "https://py-tonic.github.io/images/convex/4.png">
+<img src = "https://del-luna.github.io/images/convex/4.png">
 
 
 

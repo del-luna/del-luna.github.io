@@ -72,7 +72,7 @@ cdf의 기울기는 잉크가 증가하는 정도를 나타내고, 우리는 앞
 
 
 
-<img src = "https://py-tonic.github.io/images/cdfpdf/1.png">
+<img src = "https://del-luna.github.io/images/cdfpdf/1.png">
 
 
 

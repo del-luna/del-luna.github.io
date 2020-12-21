@@ -256,7 +256,7 @@ row vector들의 선형 조합으로 만들 수 있는 공간이지만... 조금
 
 
 
-<img src = "https://py-tonic.github.io/images/linear/1.png">
+<img src = "https://del-luna.github.io/images/linear/1.png">
 
 Null Space를 구해보면 [-1, 2, -1]과 같은데, 이 공간이 두 row vector와 직교하는지 내적을 통해 확인할 수 있다. 내적해서 0이되면 두 벡터 사이의 각도는 0이된다.
 
@@ -280,7 +280,7 @@ $A^Tx=0$에 대한 해를 구한다고 생각하면 된다. $[[1,2,3]^T, [4,5,6]
 
 
 
-<img src = "https://py-tonic.github.io/images/linear/2.png">
+<img src = "https://del-luna.github.io/images/linear/2.png">
 
 
 

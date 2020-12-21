@@ -97,7 +97,7 @@ stop_words length: 713
 
 - 워드 클라우드 라이브러리를 통한 시각화
 
-<img src = "https://py-tonic.github.io/images/keyword/download.png">
+<img src = "https://del-luna.github.io/images/keyword/download.png">
 
 ## Latent Dirichlet Allocation
 
@@ -196,7 +196,7 @@ LDA는 앞서 배운 빈도수 기반의 표현 방법인 BoW, DTM, TF-IDF를 �
 
 LDA는 한마디로 말하면 단어가 특정 토픽에 존재할 확률과 문서에 특정 토픽이 존재할 확률을 결합 확률로 추정하여 토픽을 추출합니다.
 
-<img src = "https://py-tonic.github.io/images/keyword/1.png">
+<img src = "https://del-luna.github.io/images/keyword/1.png">
 
 LDA에서 각 토픽에 할당된 모든 단어들의 확률을 합하면 1이되고,
 
@@ -245,11 +245,11 @@ topics = ldamodel.print_topics(num_words=5)
 
 
 
-<img src = "https://py-tonic.github.io/images/keyword/ezgif.com-video-to-gif.gif">
+<img src = "https://del-luna.github.io/images/keyword/ezgif.com-video-to-gif.gif">
 
-[시각화 페이지 링크](https://py-tonic.github.io/ai/2020/07/16/LDA-visualization-post/)
+[시각화 페이지 링크](https://del-luna.github.io/ai/2020/07/16/LDA-visualization-post/)
 
-[Github](https://github.com/py-tonic/Topic_Modeling)
+[Github](https://github.com/del-luna/Topic_Modeling)
 
 
 

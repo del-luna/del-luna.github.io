@@ -29,7 +29,7 @@ $$\frac{\vert\vert f(x)-f(y)\vert\vert}{\vert\vert x-y\vert\vert}\leq K $$
 
 이고 이는 기울기가 $K$이하인 함수로 아주 직관적으로 생각할 수 있다.
 
-<img src = "https://py-tonic.github.io/images/lipschitz/1.gif">
+<img src = "https://del-luna.github.io/images/lipschitz/1.gif">
 
 $f$의 기울기가 색칠된 영역 안에 존재함을 볼 수 있다!
 

@@ -52,11 +52,11 @@ $$P(w_1,w_2,...,w_n)=\prod_{i=2}^nP(w_i\vert w_{i-1})\tag{3}$$
 
 word2vec의 특징은 input, hidden, output 3가지 레이어로도 워드 임베딩이 가능하다는 점이다.
 
-<img src = "https://py-tonic.github.io/images/w2v/5.png">
+<img src = "https://del-luna.github.io/images/w2v/5.png">
 
 재밌는 사실은 인풋이 one-hot이기 때문에 W의 shape은 (input,hidden)이 될텐데 이 Weight 자체가 바로 word vector가 된다는 점이다.
 
-<img src = "https://py-tonic.github.io/images/w2v/zuSZWdL.png">
+<img src = "https://del-luna.github.io/images/w2v/zuSZWdL.png">
 
 학습된 파라미터 자체를 사용하기 때문에 lookup table처럼 사용 가능하고 word vector의 feature를 자신에 맞게 조절할 수 있다.
 
@@ -70,7 +70,7 @@ word2vec의 특징은 input, hidden, output 3가지 레이어로도 워드 임�
 
 ---
 
-<img src = "https://py-tonic.github.io/images/w2v/skip-gram.png">
+<img src = "https://del-luna.github.io/images/w2v/skip-gram.png">
 
 word2vec은 모델 구조에 따라 2가지로 나눌 수 있는데 CBOW와 Skip-Gram형식이다.
 
@@ -154,7 +154,7 @@ $$= \sum_{j=0,j\neq m}^{2m} H(\hat y,y_{c-m+j})\tag{16}$$
 
 Skip-Gram모델은 중심 단어에 대해서 주변 단어를 예측하며 Update하기 때문에 CBOW모델보다 각 단어에 대해서 update 기회가 더 많다(SkipGram모델을 CBOW보다 많이 쓰는 이유이기도 하다.). 아래 그림을 보면 Skip-Gram이 학습을 진행하는 과정에 대해서 볼 수 있다.
 
-<img src = "https://py-tonic.github.io/images/w2v/training_data.png">
+<img src = "https://del-luna.github.io/images/w2v/training_data.png">
 
 학습 과정을 보면 "the"와 다른 단어가 함께 training되는 경우가 많다는 것을 볼 수 있다.
 

@@ -44,7 +44,7 @@ tags: [Logistic Regression]
 
 
 
-<img src = "https://py-tonic.github.io/images/logistic/sigmoid.png">
+<img src = "https://del-luna.github.io/images/logistic/sigmoid.png">
 
 
 
@@ -124,7 +124,7 @@ $p(Y=1\vert X=\mathbf x) = \frac1{1+e^{-\beta\mathbf x}}\tag{5}$
 
 <hr>
 
-<img src = "https://py-tonic.github.io/images/logistic/logistic_separate_plane.png">
+<img src = "https://del-luna.github.io/images/logistic/logistic_separate_plane.png">
 
 
 
@@ -152,11 +152,11 @@ $\beta^T\mathbf x > 0$
 
 입력 벡터가 2차원인 경우 아래처럼 직선이 될테고 3차원이면 평면이 되겠죠?
 
-<img src = "https://py-tonic.github.io/images/logistic/geo.png">
+<img src = "https://del-luna.github.io/images/logistic/geo.png">
 
 
 
-<img src = "https://py-tonic.github.io/images/logistic/logistic_direction_vector.png">
+<img src = "https://del-luna.github.io/images/logistic/logistic_direction_vector.png">
 
 
 

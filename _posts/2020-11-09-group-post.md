@@ -38,13 +38,13 @@ tags: [linear algebra]
 
     
 
-    <img src = "https://py-tonic.github.io/images/group/Page2.jpg">
+    <img src = "https://del-luna.github.io/images/group/Page2.jpg">
 
-    <img src = "https://py-tonic.github.io/images/group/Page3.jpg">
+    <img src = "https://del-luna.github.io/images/group/Page3.jpg">
 
-    <img src = "https://py-tonic.github.io/images/group/Page4.jpg">
+    <img src = "https://del-luna.github.io/images/group/Page4.jpg">
 
-    <img src = "https://py-tonic.github.io/images/group/Page5.jpg">
+    <img src = "https://del-luna.github.io/images/group/Page5.jpg">
 
 
 

@@ -180,7 +180,7 @@ $q_{j\vert i}(\theta) = \frac{exp(w_i^Tw_j)}{exp(w_i^Tw_j)+\sum_{j'\in(V_{J-j})}
 
 
 
-<img src = "https://py-tonic.github.io/images/meta-prod2vec/1.png">
+<img src = "https://del-luna.github.io/images/meta-prod2vec/1.png">
 
 
 
@@ -233,7 +233,7 @@ $L_{MP2V} = L_{J\vert I} + \lambda \times (L_{M\vert I}+L_{J\vert M}+L_{M\vert M
 
 
 
-<img src = "https://py-tonic.github.io/images/meta-prod2vec/2.png">
+<img src = "https://del-luna.github.io/images/meta-prod2vec/2.png">
 
 
 
@@ -255,7 +255,7 @@ $L_{M\vert M}$: 입력 제품 메타 데이터가 주어진 주변 제품의 메
 
 
 
-<img src = "https://py-tonic.github.io/images/meta-prod2vec/3.png">
+<img src = "https://del-luna.github.io/images/meta-prod2vec/3.png">
 
 
 

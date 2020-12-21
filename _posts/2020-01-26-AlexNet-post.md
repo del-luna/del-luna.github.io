@@ -28,7 +28,7 @@ AlexNet은 2012년 개최된 ILSVRC대회 우승을 차지한 모델입니다. �
 
 AlexNet은 2개의 GPU를 사용하는 병렬 구조입니다. 
 
-<img src = "https://py-tonic.github.io/images/alexnet/download.png">
+<img src = "https://del-luna.github.io/images/alexnet/download.png">
 
 AlexNet은 5개의 convolution layer, 3개의 fully connected layer로 구성됩니다.
 
@@ -58,7 +58,7 @@ tanh는 sigmoid보단 낫지만 여전히 학습 속도가 느립니다. AlexNet
 
 아래 그래프에서 solid는 ReLU, dashed는 tanh입니다.
 
-<img src = "https://py-tonic.github.io/images/alexnet/2.PNG">
+<img src = "https://del-luna.github.io/images/alexnet/2.PNG">
 
 ## Dropout
 
@@ -107,7 +107,7 @@ AlexNet에서 사용했던 다른 테크닉에 대해 알아봅시다.
 
 서론이 길었는데 AlexNet에선 MaxPooling을 하지만 대부분의 모델에서 처럼 겹치는 부분 없이 풀링 하는 것이 아니라 겹쳐서 풀링을 수행합니다.
 
-<img src = "https://py-tonic.github.io/images/alexnet/over.png">
+<img src = "https://del-luna.github.io/images/alexnet/over.png">
 
 
 
@@ -115,7 +115,7 @@ AlexNet에서 사용했던 다른 테크닉에 대해 알아봅시다.
 
 Lateral inhibition 이라는 현상이 있습니다. 
 
-<img src = "https://py-tonic.github.io/images/alexnet/mach.jpg">
+<img src = "https://del-luna.github.io/images/alexnet/mach.jpg">
 
 위의 그림은 mach band라고 불리는데요 (음속을 측정하신 그분 맞습니다.) 
 
@@ -123,7 +123,7 @@ Lateral inhibition 이라는 현상이 있습니다.
 
 다른 예시로는 헤르만 격자라는 것이 있습니다.
 
-<img src = "https://py-tonic.github.io/images/alexnet/hermann_grid.png">
+<img src = "https://del-luna.github.io/images/alexnet/hermann_grid.png">
 
 검은 부분을 보고 강력하게 반응한 뉴런이 흰색으로 둘러싸인 측면에서 억제를 발생시키기 때문에 흰색이 더 반감되어 보인다고 합니다.
 

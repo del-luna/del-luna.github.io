@@ -22,7 +22,7 @@ sigmoid와 softmax의 차이점이 뭐에요?
 
 일단 기본적으로 sigmoid가 어떻게 생겼는지 보고 가자.
 
-<img src = "https://py-tonic.github.io/images/activation/sigmoidGraph.png">
+<img src = "https://del-luna.github.io/images/activation/sigmoidGraph.png">
 
 인공지능을 공부하면서 수 십번도 더 봤을 함수이다.
 

@@ -51,7 +51,7 @@ Pixel을 개별적으로 레이블링 하는 Binary segmentation map과 달리 G
 
 heatmap을 사용하여 region score와 affinity score 두 가지를 학습합니다.<br>
 
-<img src = "https://py-tonic.github.io/images/craft/3.PNG">
+<img src = "https://del-luna.github.io/images/craft/3.PNG">
 
 the label generation pipeline for a synthetic image.<br>
 
@@ -76,7 +76,7 @@ affinity box는 인접한 character box를 통해 다음과 같이 생성된다.
 
 ## 4. Weakly-Supervised Learning
 
-<img src = "https://py-tonic.github.io/images/craft/4.PNG">
+<img src = "https://del-luna.github.io/images/craft/4.PNG">
 
 synthetic datasets와 달리 real image에는 일반적으로 word-level annotations이 있습니다. 우리는 위 그림에 요약된 것 처럼 weakly-supervised manner를 통해 각 word-level annotations에서 c-box를 생성합니다.<br>
 
@@ -86,7 +86,7 @@ word-level annotations이 포함된 real image가 제공되면 학습된 임시 
 
 각 word box에 대한 the value of confidence map(신뢰도의 값)은 감지 된 characters 수를 GT characters 수로 나눈 비율에 비례하여 계산됩니다.<br>
 
-<img src = "https://py-tonic.github.io/images/craft/6.PNG">
+<img src = "https://del-luna.github.io/images/craft/6.PNG">
 
 위 그림은 Word-level annotation을 분리하는 절차를 보여줍니다.<br>
 
@@ -111,15 +111,15 @@ $l^c(w)$ : character bounding box and their corresponding length of characters<b
 
 $s_{conf}(w)$ : confidence score (실제 박스 수와 추정 박스 수가 같을 때 1, 다를 때 0에 가까워짐)<br>
 
-<img src = "https://py-tonic.github.io/images/craft/f1.PNG">
+<img src = "https://del-luna.github.io/images/craft/f1.PNG">
 
 딱 봐도 절댓값 안의 식이 같다면(실제 박스 수 = 추정 박스 수) min값이 0이되므로 전체 식이 1이 되는 것을 알 수 있습니다.<br>
 
 $S_c$ : pixel-wise confidence map ( 각 pixel마다의 confidence 값, $S_c$map 은 pixel마다 word length를 기반으로 하여 0~1 confidence 값을 지니게 됩니다.)<br>
 
-<img src = "https://py-tonic.github.io/images/craft/f2.PNG">
+<img src = "https://del-luna.github.io/images/craft/f2.PNG">
 
-<img src = "https://py-tonic.github.io/images/craft/f3.PNG">
+<img src = "https://del-luna.github.io/images/craft/f3.PNG">
 
 $S_r^*(p)$ :  Pseudo-GT로 생성된 region score<br>
 

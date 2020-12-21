@@ -37,7 +37,7 @@ Visual representation을 위해 제안된 방법은 여러 transfer learning 벤
 <hr>
 우리는 디텍션 및 분류 작업으로 transfer될 때 높은 성능을 제공하는 features를 구축하는 새로운 Self Supervised task인 직소 퍼즐 재조립 문제를 소개합니다.
 
- <img src = "https://py-tonic.github.io/images/jigsaw/1.PNG">
+ <img src = "https://del-luna.github.io/images/jigsaw/1.PNG">
 
 논문은 직소 퍼즐을 푸는 것이 객체가 어떤 부분(parts)로 구성되어 있고 이 parts가 무엇인지 모델을 가르치는데 사용될 수 있다고 주장합니다.
 
@@ -151,7 +151,7 @@ Representation learning은 머신 러닝의 작업을 해결하는데 유용한 
 >
 > CFN은 다르다고 표현합니다.
 
-<img src = "https://py-tonic.github.io/images/jigsaw/2.PNG">
+<img src = "https://del-luna.github.io/images/jigsaw/2.PNG">
 
  
 
@@ -237,7 +237,7 @@ CFN이 각 인덱스의 확률값을 벡터로 반환하도록 학습시켰습�
 
 실험을 통해 순열 집합이 네트워크가 학습하는 표현의 성능에 중요한 요소라는 것을 알게됐습니다.
 
- <img src = "https://py-tonic.github.io/images/jigsaw/3.PNG">
+ <img src = "https://del-luna.github.io/images/jigsaw/3.PNG">
 
 ### Training the CFN
 
@@ -305,7 +305,7 @@ CFN의 첫 번째 층은 stride = 2 이지만, 다른 모델과의 비교를 위
 
 **Pascal VOC** 데이터 셋의 분류 작업에 대해 직소 task를 통해 얻은 feature를 fine-tuning하여 여러 프레임 워크를 통해 비교합니다.
 
-<img src = "https://py-tonic.github.io/images/jigsaw/4.PNG">
+<img src = "https://del-luna.github.io/images/jigsaw/4.PNG">
 
 Pathak 방식은 Context-encoder 방식.
 
@@ -323,9 +323,9 @@ transfer learning의 맥락에서 범용 -> 특정 작업으로의 transfer는 �
 >
 > 레이어를 freeze했다가 풀면서 알아보겠다는 뜻인 것 같습니다.
 
-<img src = "https://py-tonic.github.io/images/jigsaw/5.PNG">
+<img src = "https://del-luna.github.io/images/jigsaw/5.PNG">
 
-<img src = "https://py-tonic.github.io/images/jigsaw/6.PNG">
+<img src = "https://del-luna.github.io/images/jigsaw/6.PNG">
 
 아무튼 위처럼 실험하게 되면 AlexNet 기준 57.4%의 정확도를 얻습니다.
 
@@ -377,7 +377,7 @@ transfer learning의 맥락에서 범용 -> 특정 작업으로의 transfer는 �
 
    앞에서 말한바와 같이 최소 거리는 작업을 덜 모호하게 만드는데 도움이 됩니다.
 
-<img src = "https://py-tonic.github.io/images/jigsaw/7.PNG">
+<img src = "https://del-luna.github.io/images/jigsaw/7.PNG">
 
 이 alblation study는 다음과 같은 최종 고려 사항을 지적하는 것 같습니다. 
 
@@ -431,7 +431,7 @@ ImageNet의 검증 셋에서 1M개의 patch(무작위로 뽑은  20개의 64x64)
 
 (d),(e)는 part detector임을 알 수 있습니다.
 
-<img src = "https://py-tonic.github.io/images/jigsaw/8.PNG">
+<img src = "https://del-luna.github.io/images/jigsaw/8.PNG">
 
 
 
@@ -441,9 +441,9 @@ ImageNet의 검증 셋에서 1M개의 patch(무작위로 뽑은  20개의 64x64)
 
 우리는 이 실험을 통해 CFN의 features가 비슷한 모양의 물체에 매우 민감하고 종종 같은 범주 내에 있음을 알 수 있습니다.(아래의 그림에서 (c))
 
-<img src = "https://py-tonic.github.io/images/jigsaw/9.PNG">
+<img src = "https://del-luna.github.io/images/jigsaw/9.PNG">
 
-<img src = "https://py-tonic.github.io/images/jigsaw/10.PNG">
+<img src = "https://del-luna.github.io/images/jigsaw/10.PNG">
 
 정량적으로 평가 했을 때 위와 같은 그래프가 나옵니다.
 

@@ -2,7 +2,7 @@
 layout: post
 title: What is markov?
 author: Jaeheon Kwon
-categories: Ai
+categories: Reinforcement
 tags: [Reinforcement Learning]
 ---
 
@@ -53,7 +53,7 @@ $$a_{ij}=P(o_t=v_j\vert o_{t-1}=v_i) \\ a_{ij}>0\: and\: \sum\limits_{j=1}^m a_{
 
 상태와 상태 전이 확률을 정리하여 diagram으로 아래와 같이 표현 할 수 있습니다.
 
-<img src = "https://py-tonic.github.io/images/markov/1.png">
+<img src = "https://del-luna.github.io/images/markov/1.png">
 
 
 
@@ -74,7 +74,7 @@ MRP는 마르코프 프로세스<$S$, $P$>의 각 상태에 리워드를 추가�
 >
 > Discount factor로 인해 수렴성이 증명이 된다고 하십니다. 수렴이 되야 거리함수를 정의할 수 있어서가 아닐까 조심스럽게 넘겨짚어봅니다.
 
-<img src = "https://py-tonic.github.io/images/markov/2.png">
+<img src = "https://del-luna.github.io/images/markov/2.png">
 
 return $G_t$는 $t$시간 이후 얻을 수 있는 리워드의 합을 의미하며 $\gamma$를 통해 다음과 같이 정의됩니다.
 
@@ -124,7 +124,7 @@ $$P^a_{ss'} = P(S_{t+1}=s'\vert S_t =s,A_t=a)$$
 
 MRP에서는 state마다 리워드를 받지만 MRP에서는 action마다 리워드를 받고 action을 통해 바로 state로 가는 것이 아니라 각 action에는 확률이 존재합니다.
 
-<img src = "https://py-tonic.github.io/images/markov/3.png">
+<img src = "https://del-luna.github.io/images/markov/3.png">
 
 MRP에서는 Policy가 존재하지 않습니다. 그냥 state에 있으면 자동으로 어떤 확률에 의해 다음 state로 넘어갔습니다. 하지만 MDP는 action에 의해 넘어가므로 Policy가 필요합니다.
 
@@ -166,7 +166,7 @@ $$q_{\pi}(s,a) = E_{\pi}[G_t\vert S_t=s,A_t=a]$$
 
 아래는 State-value function의 예시입니다.
 
-<img src = "https://py-tonic.github.io/images/markov/4.png">
+<img src = "https://del-luna.github.io/images/markov/4.png">
 
 벨만 기댓값 방정식을 통해 수식으로 나타내봅시다.(optimal 버전도 있음!)
 
@@ -192,7 +192,7 @@ $$v_{\pi}(s) = \sum\limits_{a\in A}\pi(a\vert s)q_{\pi}(s,a)$$
 >
 > 한줄 요약 : state s에서 action a를 했을 때 policy $\pi$를 따라서 게임을 끝까지 진행하면 얻을 수 있는 value
 
-<img src = "https://py-tonic.github.io/images/markov/5.png">
+<img src = "https://del-luna.github.io/images/markov/5.png">
 
 $$q_{\pi}(s,a) = R_a^s + \gamma \sum\limits_{s' \in S}P_{ss'}^a v_{\pi}(s')$$
 
@@ -204,13 +204,13 @@ $$q_{\pi}(s,a) = R_a^s + \gamma \sum\limits_{s' \in S}P_{ss'}^a v_{\pi}(s')$$
 >
 > $P^a_{ss'}$는 action후에 s'에 떨어질 확률이고, $v_\pi(s')$은 떨어진 state $s'$에서 value function이다.
 
-<img src = "https://py-tonic.github.io/images/markov/6.png">
+<img src = "https://del-luna.github.io/images/markov/6.png">
 
 $v$에 나오는 $q$자리에 위 식을 대입해 봅시다.
 
 $$v_{\pi}(s) = \sum\limits_{a\in A}\pi(a\vert s)(R_a^s + \gamma \sum\limits_{s' \in S}P_{ss'}^a v_{\pi}(s'))$$
 
-<img src = "https://py-tonic.github.io/images/markov/7.png">
+<img src = "https://del-luna.github.io/images/markov/7.png">
 
 > 당황하지 말고 천천히 해석해보자.
 >
@@ -230,7 +230,7 @@ $$v_{\pi}(s) = \sum\limits_{a\in A}\pi(a\vert s)(R_a^s + \gamma \sum\limits_{s' 
 
 $$q_{\pi}(s,a) = R_s^a + \gamma \sum\limits_{s' \in S}P_{ss'}^a \sum\limits_{a\in A}\pi(a'\vert s')q_{\pi}(s',a')$$
 
-<img src = "https://py-tonic.github.io/images/markov/8.png">
+<img src = "https://del-luna.github.io/images/markov/8.png">
 
 > 우선 state s에서 Reward를 하나 받습니다. $R^a_s$
 >

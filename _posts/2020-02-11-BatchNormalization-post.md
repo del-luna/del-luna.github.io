@@ -58,7 +58,7 @@ $$u+(b+\triangle b) - E[u+(b+\triangle b)] = y-E[y]$$
 
 - 레이어의 인풋과 아웃풋을 차원별로 독립적으로 정규화합니다.
 
-<img src = "https://py-tonic.github.io/images/Batch_normalization/1.PNG">
+<img src = "https://del-luna.github.io/images/Batch_normalization/1.PNG">
 
 > 차원별로 독립적인 정규화를 수행하려는 의미가 뭘까요?
 >
@@ -94,7 +94,7 @@ $$\gamma^{(k)} = \sqrt{var[x^{(k)}]} \\ \beta^{(k)}= E[x^{(k)}]$$
 
 
 
-<img src = "https://py-tonic.github.io/images/Batch_normalization/3.PNG">
+<img src = "https://del-luna.github.io/images/Batch_normalization/3.PNG">
 
 위 식에서 summation은 모두 각 차원별로 수행됩니다.
 
@@ -106,7 +106,7 @@ $\hat x^{(k)}$ 끼리 joint distribution이 학습 과정에서 변경되더라�
 
 또한, 위 linear transform 연산을 통해 단순 정규화된 $\hat x$가 네트워크를 최적화 하는 방향으로 변화할 것 이고, 파라미터가 learnable하므로 이전에 설명한 것 처럼 단순한 whitening방식에서 볼 수 있던 경사 하강법에서 편향이 사라져 버리는 문제를 방지할 수 있습니다.
 
-<img src = "https://py-tonic.github.io/images/Batch_normalization/6.png">
+<img src = "https://del-luna.github.io/images/Batch_normalization/6.png">
 
 
 

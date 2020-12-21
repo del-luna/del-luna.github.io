@@ -12,7 +12,7 @@ tags: [NLP]
 
 앞선 내용과 마찬가지로 lovit님의 블로그 글을 정리했습니다.
 
-제가 앞서 정리한 [Word2Vec](https://py-tonic.github.io/ai/2020/07/02/word2vec-post/) 포스팅과 함께 읽으면 좋으실 것 같습니다.
+제가 앞서 정리한 [Word2Vec](https://del-luna.github.io/ai/2020/07/02/word2vec-post/) 포스팅과 함께 읽으면 좋으실 것 같습니다.
 
 
 
@@ -53,7 +53,7 @@ W2V는 [a, little, cat, sit, on the, table]이라는 문장이 주어졌을 때,
 
 X, Y의 내적이 성립하려면 두 벡터의 차원의 크기가 같아야 합니다. [a, little, sit, on] 4 단어의 평균을 취하면 Y와 같은 차원의 벡터로 만들 수 있습니다.
 
-<img src = "https://py-tonic.github.io/images/softmax/word2vec_logistic_structure.png">
+<img src = "https://del-luna.github.io/images/softmax/word2vec_logistic_structure.png">
 
 W2V의 학습은 의미 공간에서 각 단어의 위치 좌표를 수정하는 것입니다.
 
@@ -63,7 +63,7 @@ W2V의 학습은 의미 공간에서 각 단어의 위치 좌표를 수정하는
 
 
 
-<img src = "https://py-tonic.github.io/images/softmax/word2vec_softmax.png">
+<img src = "https://del-luna.github.io/images/softmax/word2vec_softmax.png">
 
 > lovit님은 'cat' 벡터는 context-vector와의 유사도를 늘리고, 다른 의미를 갖는 벡터들은 밀어낸다고 표현했는데 위 그림을 보면 무슨 느낌인지 감이 오실 것 같습니다.
 

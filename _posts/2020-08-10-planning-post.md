@@ -2,7 +2,7 @@
 layout: post
 title: Planning by Dynamic Programming
 author: Jaeheon Kwon
-categories: Ai
+categories: Reinforcement
 tags: [Reinforcement Learning]
 ---
 
@@ -88,13 +88,13 @@ $$v_{k+1} = \sum\limits_{a\in A}\pi(a\vert s)(r(s,a) + \gamma v_k(s'))$$
 
 
 
-<img src = "https://py-tonic.github.io/images/rl/3.png">
+<img src = "https://del-luna.github.io/images/rl/3.png">
 
 
 
 너무 추상적이니까 그림을 통해 이해해봅시다.
 
-<img src = "https://py-tonic.github.io/images/rl/4.png">
+<img src = "https://del-luna.github.io/images/rl/4.png">
 
 MDP가 있고, policy가 존재할 때 value를 찾자!
 
@@ -104,7 +104,7 @@ random policy를 따르고 정 사면체 모양 주사위를 던져서 방향을
 
 어떻게 풀어야 할까요?
 
-<img src = "https://py-tonic.github.io/images/rl/5.png">
+<img src = "https://del-luna.github.io/images/rl/5.png">
 
 우선 $k=0$일 땐 모든 value가 0으로 초기화 됩니다.
 
@@ -112,7 +112,7 @@ random policy를 따르고 정 사면체 모양 주사위를 던져서 방향을
 
 벽에 부딪힐 경우 자기 자신의 위치로 돌아온다고 생각하면 됩니다.
 
-<img src = "https://py-tonic.github.io/images/rl/p0.png">
+<img src = "https://del-luna.github.io/images/rl/p0.png">
 
 - 모든 액션에 대한 가치함수의 합은 $V_1(s)=4\times0.25\times(-1)= -1$ 입니다.
 - 즉 $k=0$일 때 계산한 노란색 상태의 $k=1$에서 가치는 $-1$입니다.
@@ -121,7 +121,7 @@ random policy를 따르고 정 사면체 모양 주사위를 던져서 방향을
 
 $k=1$일 때는 어떻게 될까요?
 
-<img src = "https://py-tonic.github.io/images/rl/p1.png">
+<img src = "https://del-luna.github.io/images/rl/p1.png">
 
 - 왼쪽으로 갈 경우는 목표지점에 도달했기 때문에 여전히 수식이 $0.25\times (-1+0)$ 이지만,
 - 앞서 우리가 업데이트했던 지점들은 모두 가치가 $-1$이기 때문에 모든 액션에 대한 가치함수의 합은 $0.25\times(-1) + 3\times0.25\times(-2) = -1.75$ 입니다.
@@ -133,7 +133,7 @@ $k=1$일 때는 어떻게 될까요?
 
 계속 업데이트하면 다음과 같은 true value function을 얻을 수 있습니다.
 
-<img src = "https://py-tonic.github.io/images/rl/6.png">
+<img src = "https://del-luna.github.io/images/rl/6.png">
 
 
 
@@ -167,7 +167,7 @@ $$\pi'(s) = argmax_{a\in A}q_\pi(s,a)$$
     - Improve the policy by acting greedily with respect to $v_\pi$
         - $\pi' = greedy(v_\pi)$
 
-<img src = "https://py-tonic.github.io/images/rl/7.png">
+<img src = "https://del-luna.github.io/images/rl/7.png">
 
 초기 가치함수 $v$, 초기 정책 $\pi$가 존재할 때 가치함수를 평가 해서 업데이트 하고, 그 위에서 greedy하게 움직이는 정책을 구합니다.
 
@@ -257,13 +257,13 @@ $$v_*(s) = \max\limits_{a}(R_{t+1} + \gamma v_{*}(S_{t+1})\vert S_t=s,A_t=a)$$
 
 예시를 들어 봅시다.
 
-<img src = "https://py-tonic.github.io/images/rl/8.png">
+<img src = "https://del-luna.github.io/images/rl/8.png">
 
 policy가 없고 step이 지날 때 마다 value function이 업데이트 됩니다.
 
 
 
-<img src = "https://py-tonic.github.io/images/rl/v0.png">
+<img src = "https://del-luna.github.io/images/rl/v0.png">
 
 - $k=0$에서 각각의 상태에 대해 가치함수를 계산하면 모두 $-1$로 업데이트 됩니다.
 - $k=1$에서 노란색 상태의 가치함수는 여전히 $-1$입니다.( 최대 값이 왼쪽으로 갈 때 $-1$이고 나머진 $-2$)

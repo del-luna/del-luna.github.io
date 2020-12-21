@@ -16,7 +16,7 @@ MLE, MSE, OLS, KLD 등등 머신러닝 문제를 풀기 위해서 적용하는 �
 
 
 
-<img src = "https://py-tonic.github.io/images/estimation/1.jpeg">
+<img src = "https://del-luna.github.io/images/estimation/1.jpeg">
 
 
 
@@ -78,7 +78,7 @@ Likelihood는 가능도 라고 불립니다. (오래된 자료에선 우도라�
 
 실제로 $\theta=0.6$이 좋은 추정인지 확인해봅시다.
 
-<img src = "https://py-tonic.github.io/images/estimation/2.png">
+<img src = "https://del-luna.github.io/images/estimation/2.png">
 
 실제로 0~1 사이의 $\theta$값을 비교해봤을 때 0.6이 가장 확률이 높습니다. 
 
@@ -158,7 +158,7 @@ $$KL(P\vert\vert Q) \simeq \frac1N \sum\limits_{n=1}^N(ln\:P(x_n)-ln\:Q(x_n\vert
 
 우선 우리에게 친숙한 크로스 엔트로피를 수식으로 나타내 봅시다.
 
-> 혹시 엔트로피를 모르신다면 [여기](https://py-tonic.github.io/mathematics/2020/06/18/Information-Theory-post/)를 참고해주세요.
+> 혹시 엔트로피를 모르신다면 [여기](https://del-luna.github.io/mathematics/2020/06/18/Information-Theory-post/)를 참고해주세요.
 
 $$H(P,Q)= E_{X\sim Data}[-logQ(x)] = -\sum\limits_x P(x)logQ(x)$$
 

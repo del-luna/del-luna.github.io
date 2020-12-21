@@ -18,7 +18,7 @@ tags: [sr]
 
 이 subpixel 방식은 아래의 논문에 있는 그림을 통해 직관적으로 이해할 수 있습니다.  
 
-<img src = "https://py-tonic.github.io/images/SR/1.png">
+<img src = "https://del-luna.github.io/images/SR/1.png">
 
 기존의 DNN방식들이 LR -> HR 로 변환 후 Conv연산을 수행해서 SR을 진행했다면 이 논문에서는 Sub-pixel Conv 연산을 이용하여 SR space에서 Conv 연산으로 feature map들을 추출한 후에 pixel들의 재조합으로 HR 이미지를 생성합니다.  
 
@@ -30,9 +30,9 @@ LR 이미지의 feature map들을 input으로 받아서 HR 이미지를 만드�
 
 논문에선 수식으로 다음과 같이 표현합니다.  
 
-<img src = "https://py-tonic.github.io/images/SR/2.png">
+<img src = "https://del-luna.github.io/images/SR/2.png">
 
-<img src = "https://py-tonic.github.io/images/SR/3.png">
+<img src = "https://del-luna.github.io/images/SR/3.png">
 
 위의 그림과 수식을 비교해서 보시면 아시겠지만 feature map들의 $r^2$개의 채널들에서 pixel 들을 하나 하나 가져와서 순차적으로 붙이는 것입니다.
 

@@ -33,7 +33,7 @@ tags: [tips]
 
 사용도 엄청 쉽고 간편합니다.<br>
 
-<img src = "https://py-tonic.github.io/images/pytorch/tqdm.gif">
+<img src = "https://del-luna.github.io/images/pytorch/tqdm.gif">
 
 ```python
 for epoch in tqdm(range(training_epoch), position=0):
@@ -316,7 +316,7 @@ cfg가 커지면 따로 .cfg 파일로 빼서 사용한다고 합니다.(물론 
 
 Torch는 기본적으로 제공되는 초기화가 있습니다.<br>
 
-<img src = "https://py-tonic.github.io/images/pytorch/0.png">
+<img src = "https://del-luna.github.io/images/pytorch/0.png">
 
 Linear layer의 경우 위 처럼, Conv layer의경우 아래처럼 초기화 된다고 합니다.<br>
 

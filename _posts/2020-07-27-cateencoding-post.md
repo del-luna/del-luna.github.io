@@ -373,7 +373,7 @@ Accuracy :  0.6925333333333333
 
 모든 데이터를 고차원 벡터로 변환하는데 여기서 각 차원은 하나의 값만 1이고 나머지는 모두 0입니다.(아주 sparse 하겠죠?)
 
-<img src = "https://py-tonic.github.io/images/label_encoding/1.png">
+<img src = "https://del-luna.github.io/images/label_encoding/1.png">
 
 마찬가지로 sklearn 모듈을 통해 변환할 수 있습니다.(pd.get_dummies 라는 함수로도 가능합니다.)
 

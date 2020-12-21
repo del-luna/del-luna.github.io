@@ -18,7 +18,7 @@ tags: [Loss]
 
 ### CrossEntropy?
 
-예전 제 블로그 [포스팅](https://py-tonic.github.io/mathematics/2020/08/31/estimation-post/)에서 MLE를통해 가장 likelihood가 높은 파라미터를 추정하는 것이 사실상 KLD를 최소화하는 문제와 동일하며, KLD를 최소화 하는 문제가 바로 CrossEntropy를 최소화 하는 문제가 된다고 말씀 드렸습니다.
+예전 제 블로그 [포스팅](https://del-luna.github.io/mathematics/2020/08/31/estimation-post/)에서 MLE를통해 가장 likelihood가 높은 파라미터를 추정하는 것이 사실상 KLD를 최소화하는 문제와 동일하며, KLD를 최소화 하는 문제가 바로 CrossEntropy를 최소화 하는 문제가 된다고 말씀 드렸습니다.
 
 그렇다면 "MLE를 하는 것이 CrossEntropy loss를 최소화 하는 것과 동일하다." 라는 전제를 깔고 시작해봅시다.
 
@@ -137,7 +137,7 @@ CrossEntropy Loss를 도입해서 Loss를 수치화 해봅시다.
 
 CE Loss는 우리가 들었던 예시처럼 누가봐도 정답인데 오답을 뱉어낼 경우 더 큰 Loss를 얻게 됩니다. 첫 번째 식에서 0.1이라는 작은 확률을 정답으로 예측 했을 때의 패널티가 $-ln(0.1)$이니까 굉장히 큰 패널티겠죠?
 
-<img src = "https://py-tonic.github.io/images/msece/lnx.gif">
+<img src = "https://del-luna.github.io/images/msece/lnx.gif">
 
 그렇다면 MSE를 통해서 두 가지 경우에 대한 Loss를 측정하면 어떻게 될까요?
 

@@ -62,7 +62,7 @@ Inbound(수신..?)메일은 여전히 광고 타겟팅의 목적으로 충분히
 
 그러나 사용자와 전자 상거래 사이트가 통신한다는 사실만을 활용한 MRT 규칙을 넘기 위해서 광고주는 구매한 제품 이름 및 전자 메일의 본문의 일부인 가격과 같이 보다 자세한 데이터가 필요합니다.
 
-<img src = "https://py-tonic.github.io/images/e-commerce/1.png">
+<img src = "https://del-luna.github.io/images/e-commerce/1.png">
 
 
 
@@ -144,7 +144,7 @@ Direct Marketing Association의 전국 고객 이메일 보고서에 따르면 �
 
 이러한 강력하고 효율적인 모델은 대규모 텍스트 코포라에서 단어 사이의 구문적, 의미적 관계를 모두 포착하여 많은 NLP작업에서 최첨단의 결과를 얻음으로써 매우 유망한 결과를 보여주었습니다.
 
-<img src = "https://py-tonic.github.io/images/e-commerce/2.png">
+<img src = "https://del-luna.github.io/images/e-commerce/2.png">
 
 
 
@@ -258,7 +258,7 @@ m의 k번째 곱을 고려할 때 인접 이메일 영수증 $e_{m+j}, e_{m+j} =
 >
 > 솔직히 잘 모르겠다 각각의 $\theta$가 확률 변수로 사용되는 것 같음.
 
-<img src = "https://py-tonic.github.io/images/e-commerce/3.png">
+<img src = "https://del-luna.github.io/images/e-commerce/3.png">
 
 
 

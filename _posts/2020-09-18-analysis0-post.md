@@ -61,7 +61,7 @@ $a,b,c \in \mathbb R$에 대해, 다음의 성질들이 성립한다고 받아�
 
 
 
-<img src = "https://py-tonic.github.io/images/analysis/0.png">
+<img src = "https://del-luna.github.io/images/analysis/0.png">
 
 
 

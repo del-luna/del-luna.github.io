@@ -2,7 +2,7 @@
 layout: post
 title: Q-Learning
 author: Jaeheon Kwon
-categories: Ai
+categories: Reinforcement
 tags: [Reinforcement Learning]
 ---
 
@@ -57,7 +57,7 @@ $$Q(s_t,a_t) = \int(R_t + \gamma Q(s',a'))p(a'\vert s')p(s'\vert s_t,a_t)ds',a'$
 
 (아래 이미지 참조)
 
-<img src = "https://py-tonic.github.io/images/qlearning/optim.jpg">
+<img src = "https://del-luna.github.io/images/qlearning/optim.jpg">
 
 
 

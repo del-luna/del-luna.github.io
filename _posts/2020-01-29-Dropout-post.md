@@ -24,7 +24,7 @@ tags: [tech]
 
 
 
-<img src = "https://py-tonic.github.io/images/dropout/1.PNG">
+<img src = "https://del-luna.github.io/images/dropout/1.PNG">
 
 원리는 간단합니다. 학습 중에 무작위로 뉴런을 'Drop' 시킵니다.
 
@@ -40,7 +40,7 @@ tags: [tech]
 
 드롭아웃의 효과를 설명하려면 오버피팅에 대한 얘기를 해야합니다.
 
-<img src = "https://py-tonic.github.io/images/dropout/o.png">
+<img src = "https://del-luna.github.io/images/dropout/o.png">
 
 
 
@@ -70,7 +70,7 @@ $x'= x+\epsilon$ 이렇게 해도 $E[x'] = x$로 기대값은 변하진 않습�
 
 뉴런이 'Drop'될 확률을 $p$로 설정해봅시다.(논문에선 반대로 'retained' 될 확률을 p로 설정합니다.)
 
-<img src = "https://py-tonic.github.io/images/dropout/2.PNG">
+<img src = "https://del-luna.github.io/images/dropout/2.PNG">
 
 $$ h'=\begin{cases}0 \\ \frac{h}{1-p} \end{cases} \tag{1}$$
 
@@ -100,7 +100,7 @@ $$ h'=\begin{cases}0 \\ \frac{h}{1-p} \end{cases} \tag{1}$$
 
 특정 뉴런이 크게 활성화 되면 상대적으로 다른 뉴런들은 학습이 느려지게 됩니다. 드롭 아웃을 통해 특정 뉴런의 가중치나 바이어스가 지배적인 역할을 하는 것을 규제할 수 있습니다. 이를 통해 오버피팅을 막고 일반화 성능을 기대할 수 있습니다.
 
-<img src = "https://py-tonic.github.io/images/dropout/8.PNG">
+<img src = "https://del-luna.github.io/images/dropout/8.PNG">
 
 ### 3. Optimization
 
@@ -108,7 +108,7 @@ $$ h'=\begin{cases}0 \\ \frac{h}{1-p} \end{cases} \tag{1}$$
 
 드롭 아웃으로 인한 Noise + 규제를 통한 높은 learning rate를 통해 error space에서 더 넓은 공간을 탐색하여 최적의 해를 찾을 수 있습니다.
 
-<img src = "https://py-tonic.github.io/images/dropout/m.PNG">
+<img src = "https://del-luna.github.io/images/dropout/m.PNG">
 
 
 
@@ -116,7 +116,7 @@ $$ h'=\begin{cases}0 \\ \frac{h}{1-p} \end{cases} \tag{1}$$
 
 드롭 아웃의 부가적인 효과는 히든 유닛의 activation 값이 sparse해집니다. 심지어는 sparse해지지 않도록 정규화를 거쳐도 sparse해집니다.
 
-<img src = "https://py-tonic.github.io/images/dropout/9.PNG">
+<img src = "https://del-luna.github.io/images/dropout/9.PNG">
 
 ### Conclusion
 
@@ -126,7 +126,7 @@ $$ h'=\begin{cases}0 \\ \frac{h}{1-p} \end{cases} \tag{1}$$
 
 그게 bias를 추가하든, weight decay처럼 튀는 값을 애초에 제한하든, 차원 축소처럼 필요한 정보만 남기고 없애 버리든, 드롭 아웃처럼 파라미터를 줄이든 어떻게든 규제를 하기위해 애써야 오버피팅을 피할 수 있는 것 같습니다.
 
-<img src = "https://py-tonic.github.io/images/dropout/g.png">
+<img src = "https://del-luna.github.io/images/dropout/g.png">
 
 > P.S 오버피팅이 모델 복잡도랑 관련이 있는데 사실 딥러닝의 복잡도 하면 제일 먼저 떠올랐던건 activation function입니다. 애초에 이게 없으면 linear해지니까요 이 부분을 건드려도 오버피팅을 막을 수 있진 않을까? 생각해봤습니다. 물론 그냥 빼버리면 애초에 쌓는 이유가 없으니까.. 어떤 기믹이 있긴 있어야 겠죠..?
 

@@ -3,7 +3,7 @@ layout: post
 title: DCGAN
 author: Jaeheon Kwon
 categories: Papers
-tags: [cnn,gan]
+tags: [gan]
 ---
 
 #  Deep Convolutional Generative Adversarial Networks 
@@ -13,23 +13,23 @@ DCGAN은 GAN의 단점인 학습이 불안정하다는 것을 극복한 모델�
 이름에서 알 수 있듯 Convolution layer를 이용하여 이미지의 feature map을 추출하고 그것을 GAN모델에 이용하는 방식입니다.
 
 DCGAN의 Generator 구조는 아래와 같습니다.
-<img src = "https://py-tonic.github.io/images/DCGAN/0.PNG">
+<img src = "https://del-luna.github.io/images/DCGAN/0.PNG">
 
 CNN을 공부하셨다면 의문을 가질만한 그림입니다.
 
 Generator에서 Conv layer를 적용하는데 왜 image size가 커지지?
 그 해답은 Transpose Convolution입니다.
 
-<img src = "https://py-tonic.github.io/images/DCGAN/transe.gif">
+<img src = "https://del-luna.github.io/images/DCGAN/transe.gif">
 
 Transpose Convolution은 예전 [ESPCN]( https://jaeheondev.github.io/ESPCN(review)-post/ )을 다룰 때에도 논문에서 나왔던 내용인데요.
 기존의 CNN의 Conv연산을 Stretch하면 아래의 그림처럼 되겠죠?
-<img src = "https://py-tonic.github.io/images/DCGAN/T0.PNG">
+<img src = "https://del-luna.github.io/images/DCGAN/T0.PNG">
 
 input과 filter간의 element-wise 곱을 행렬의 곱으로 표현하기위해서 0이 추가된 것일 뿐 
 기존의 연산과 동일한 결과물입니다. (Y0를 만들기 위해 어떤 값들이 사용되었는지 확인해보세요!)
 이제 여기서 Sparse Matrix C를 Transpose하여 Y vector에 곱합니다.
-<img src = "https://py-tonic.github.io/images/DCGAN/T2.PNG">
+<img src = "https://del-luna.github.io/images/DCGAN/T2.PNG">
 
 짜란~ 그러면 Conv연산을 수행했는데 오히려 size가 커지게 되었죠?
 이것을 Transpose Conv연산이라고 부릅니다!
@@ -45,16 +45,16 @@ Word2Vec은 쉽게말해서 단어를 벡터화 한다는 의미입니다.
 
 image에서도 이게 된다는 말은 아래의 사진과 같습니다.
 
-<img src = "https://py-tonic.github.io/images/DCGAN/2.PNG">
+<img src = "https://del-luna.github.io/images/DCGAN/2.PNG">
 
 놀랍지않나요? 조금 기괴하긴 하지만 의미를 이해하고있다는 점이 중요합니다.
 회전 또한 가능합니다.
-<img src = "https://py-tonic.github.io/images/DCGAN/3.PNG">
+<img src = "https://del-luna.github.io/images/DCGAN/3.PNG">
 
 
 
 아래의 사진은 논문의 예제에서 DCGAN을 epoch별로 나타낸 그림입니다.
-<img src = "https://py-tonic.github.io/images/DCGAN/1.PNG">
+<img src = "https://del-luna.github.io/images/DCGAN/1.PNG">
 
 이렇게 epoch마다 변해가는 것을 보면서 논문에서는 "Walking in the latent space"라고 표현합니다.
 
@@ -62,17 +62,17 @@ image에서도 이게 된다는 말은 아래의 사진과 같습니다.
 
 
 DCGAN으로 생성한 mnist 데이터셋
-  <img src = "https://py-tonic.github.io/images/DCGAN/DCGAN.gif">
+  <img src = "https://del-luna.github.io/images/DCGAN/DCGAN.gif">
 
 GAN으로 생성한 mnist 데이터셋
-<img src = "https://py-tonic.github.io/images/DCGAN/gan.gif">
+<img src = "https://del-luna.github.io/images/DCGAN/gan.gif">
 
 어떠신가요? 기존의 GAN과 차이점이 느껴지시나요?
 중간중간에 학습이 잘되지않고 뭉친듯한 이미지가 있는데
 
-<img src = "https://py-tonic.github.io/images/DCGAN/011.png">
+<img src = "https://del-luna.github.io/images/DCGAN/011.png">
 
-<img src = "https://py-tonic.github.io/images/DCGAN/020.png">
+<img src = "https://del-luna.github.io/images/DCGAN/020.png">
 
 11.epoch과 20.epoch에서 위와 같은 이미지가 출력되었습니다.
 

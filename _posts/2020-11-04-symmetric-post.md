@@ -29,12 +29,12 @@ tags: [linear algebra]
 
 
 
-<img src = "https://py-tonic.github.io/images/symmetric/Page1.jpg">
+<img src = "https://del-luna.github.io/images/symmetric/Page1.jpg">
 
-<img src = "https://py-tonic.github.io/images/symmetric/Page2.jpg">
+<img src = "https://del-luna.github.io/images/symmetric/Page2.jpg">
 
-<img src = "https://py-tonic.github.io/images/symmetric/Page3.jpg">
+<img src = "https://del-luna.github.io/images/symmetric/Page3.jpg">
 
-<img src = "https://py-tonic.github.io/images/symmetric/Page4.jpg">
+<img src = "https://del-luna.github.io/images/symmetric/Page4.jpg">
 
-<img src = "https://py-tonic.github.io/images/symmetric/Page5.jpg">
+<img src = "https://del-luna.github.io/images/symmetric/Page5.jpg">

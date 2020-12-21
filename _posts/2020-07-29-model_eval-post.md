@@ -14,7 +14,7 @@ tags: [evaluation]
 
 머신러닝에서 자주 사용되는 여러 평가 지표를 알아봅시다.
 
-<img src = "https://py-tonic.github.io/images/eval/99DC064C5BE056CE10.png">
+<img src = "https://del-luna.github.io/images/eval/99DC064C5BE056CE10.png">
 
 
 
@@ -153,7 +153,7 @@ $$\frac{FalsePositive}{TrueNegative + FalsePositive}\tag{4}$$
 
 종합적으로 랭킹 모델을 평가하기 위해서는 서로 다른 Top N에서 Precision@N, Recall@N을 고려해야 하는데, 가장 좋은 방법은 P-R 곡선을 그려 보는 것입니다.
 
-<img src = "https://py-tonic.github.io/images/eval/T0kQr.png">
+<img src = "https://del-luna.github.io/images/eval/T0kQr.png">
 
 이를 통해 알 수 있는 점은 Precision과 Recall등 단편적인 평가 지표 만으로는 모델의 성능을 평가하기 힘들다는 것입니다. P-R 곡선의 전체적인 표현을 확인해야 모델에 대한 전면적인 평가가 가능합니다.
 
@@ -167,7 +167,7 @@ $$\frac{FalsePositive}{TrueNegative + FalsePositive}\tag{4}$$
 
 ROC curve는 x축엔 Fall-out(False-Positive rate), y축엔 Recall(True-Positive rate)를 사용한 그림입니다.
 
-<img src = "https://py-tonic.github.io/images/eval/roc.png">
+<img src = "https://del-luna.github.io/images/eval/roc.png">
 
 
 

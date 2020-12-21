@@ -30,7 +30,7 @@ NIN은 말그대로 network 안에 network를 집어 넣는 구조를 뜻합니�
 
 사실 Perceptron에 activation이 포함되어있기 때문에 직관적으로 생각해도 MLP를 추가하면 당연히 non-linearity가 증가할 것 같습니다.<br>
 
-<img src = "https://py-tonic.github.io/images/googlenet/0.PNG">
+<img src = "https://del-luna.github.io/images/googlenet/0.PNG">
 
 
 
@@ -150,7 +150,7 @@ Sparse는 성능이 좋고, Dense는 연산이 빠릅니다.<br>
 
 위의 레이어들을 결합하면 바로 naive한 Inception Module이 됩니다.(물론 이건 잘 동작안함)
 
-<img src = "https://py-tonic.github.io/images/googlenet/2.PNG">
+<img src = "https://del-luna.github.io/images/googlenet/2.PNG">
 
 
 
@@ -165,17 +165,17 @@ Sparse는 성능이 좋고, Dense는 연산이 빠릅니다.<br>
 - 1x1 Conv를 사용하면 채널수 줄이기가 가능하니까 connection이 줄고, 이로 인해 연산량이 줄어듭니다.<br>
 - ReLU를 포함하여 non-linearity를 늘릴 수 있다.<br>
 
-<img src = "https://py-tonic.github.io/images/googlenet/3.PNG">
+<img src = "https://del-luna.github.io/images/googlenet/3.PNG">
 
 사실 무작정 채널 수를 줄이게 되면 representation 할 수 있는 capacity가 줄어들지만 초기나 이후의 레이어에서도 네트워크 필터들이 상당히 유사한 점들이 많아서(highly correlated) dimension reduction을 수행해도 별 문제 없이 data representation이 가능합니다.<br>
 
-<img src = "https://py-tonic.github.io/images/googlenet/4.PNG">
+<img src = "https://del-luna.github.io/images/googlenet/4.PNG">
 
 
 
 
 
-<img src = "https://py-tonic.github.io/images/googlenet/5.PNG">
+<img src = "https://del-luna.github.io/images/googlenet/5.PNG">
 
 
 

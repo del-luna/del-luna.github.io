@@ -51,7 +51,7 @@ tags: [Reinforcement Learning]
 
 
 
-<img src = "https://py-tonic.github.io/images/rl/1.png">
+<img src = "https://del-luna.github.io/images/rl/1.png">
 
 State에 대해 좀 자세히 얘기해봅시다.
 
@@ -139,7 +139,7 @@ State는 우리가 정의하기 나름입니다. $H=\{h1,h2,h3\}$가 있을 때,
     - Policy and/or Value Function
     - Model
 
-<img src = "https://py-tonic.github.io/images/rl/2.png">
+<img src = "https://del-luna.github.io/images/rl/2.png">
 
 ## Reference
 
