@@ -1,9 +1,9 @@
 # Site Info
-title: 'Py-tonic'
+title: 'del-luna'
 #tagline: 
 description: 'Undergraduate'
 baseurl: ""
-url: https://py-tonic.github.io
+url: https://del-luna.github.io
 logo: '/images/avatar.jpg'
 
 # Site configurations
@@ -29,7 +29,7 @@ author:
   # gravatar: 3c2986ad7ac1f2230ea3596f44563328 # md5 hash of your email address
   contact:
     #linkedin:  https://www.linkedin.com/in/onsemy
-    github:    https://github.com/py-tonic
+    github:    https://github.com/del-luna
     # facebook:  <hide>
     #twitter:   https://twitter.com/onsemy
     # weibo:     http://weibo.com/41173780
@@ -45,9 +45,9 @@ nav:
     - '/blog/categories/'
     - { Ai: '/blog/ai/' }
     - { Papers: '/blog/papers/' }
-    - { Python: '/blog/python/' }
-    - { C++: '/blog/c++/' }
-    - { Kaggle: '/blog/kaggle/' }
+    #- { Python: '/blog/python/' }
+    #- { C++: '/blog/c++/' }
+    #- { Kaggle: '/blog/kaggle/' }
     - { Mathematics: '/blog/mathematics/' }
     
   #Temp:
