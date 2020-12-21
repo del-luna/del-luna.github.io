@@ -44,11 +44,14 @@ nav:
   Categories:
     - '/blog/categories/'
     - { Ai: '/blog/ai/' }
+    - { Vision: '/blog/vision/' }
+    - { Reinforcement: '/blog/rl/' }
+    - { Recommendation: '/blog/rec/' }
     - { Papers: '/blog/papers/' }
     #- { Python: '/blog/python/' }
     #- { C++: '/blog/c++/' }
     #- { Kaggle: '/blog/kaggle/' }
-    - { Mathematics: '/blog/mathematics/' }
+    - { Mathematics: '/blog/math/' }
     
   #Temp:
   #  - '/blog/temp/'
