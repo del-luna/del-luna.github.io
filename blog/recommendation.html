@@ -1,6 +1,6 @@
 ---
 layout: page
-title: C++
+title: Recommendation
 ---
 
 
@@ -8,7 +8,7 @@ title: C++
   <div class="tags-expo-list">
         <span class="post-tag" data-tag="ALL">ALL</span>
     {% for tag in site.tags %}
-      {% if tag[1][0].categories contains "C++" %}
+      {% if tag[1][0].categories contains "Recommendation" %}
         <span class="post-tag" data-tag="{{ tag[0] }}">{{ tag[0] }}</span>
       {% endif %}
     {% endfor %}
@@ -16,7 +16,7 @@ title: C++
   <hr/>
   <div class="tags-expo-section">
    <ul class="tags-expo-posts">  
-          {% for post in site.categories.C++ %}
+          {% for post in site.categories.Recommendation %}
               <li class="temp" 
                   {% for i in (0..post.tags.size)%}
                     {% if i == post.tags.size %}
