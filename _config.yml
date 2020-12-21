@@ -45,13 +45,13 @@ nav:
     - '/blog/categories/'
     - { Ai: '/blog/ai/' }
     - { Vision: '/blog/vision/' }
-    - { Reinforcement: '/blog/rl/' }
-    - { Recommendation: '/blog/rec/' }
+    - { Reinforcement: '/blog/reinforcement/' }
+    - { Recommendation: '/blog/recommendation/' }
     - { Papers: '/blog/papers/' }
     #- { Python: '/blog/python/' }
     #- { C++: '/blog/c++/' }
     #- { Kaggle: '/blog/kaggle/' }
-    - { Mathematics: '/blog/math/' }
+    - { Mathematics: '/blog/mathematics/' }
     
   #Temp:
   #  - '/blog/temp/'
