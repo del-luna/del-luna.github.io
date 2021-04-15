@@ -2,7 +2,7 @@
 layout: post
 title: Information Theory
 author: Jaeheon Kwon
-categories: Mathematics
+categories: Ai
 tags: [information]
 ---
 

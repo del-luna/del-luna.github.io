@@ -2,7 +2,7 @@
 layout: post
 title: Planning by Dynamic Programming
 author: Jaeheon Kwon
-categories: Ais
+categories: Ai
 tags: [Reinforcement Learning]
 ---
 
