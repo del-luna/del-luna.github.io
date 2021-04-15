@@ -2,7 +2,7 @@
 layout: post
 title: What is markov?
 author: Jaeheon Kwon
-categories: Reinforcement
+categories: Ai
 tags: [Reinforcement Learning]
 ---
 

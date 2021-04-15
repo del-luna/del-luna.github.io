@@ -2,7 +2,7 @@
 layout: post
 title: parameter estimation in ML
 author: Jaeheon Kwon
-categories: Mathematics
+categories: Ai
 tags: [statistics]
 ---
 
