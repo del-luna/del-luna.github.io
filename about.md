@@ -6,7 +6,7 @@ permalink: /about/
 
 ![]({{ site.baseurl }}/images/cola.jpg)
 
-컴퓨터공학과 학부생입니다.
-<br>
-취미로 개발 블로그를 하고 있으며 파이썬과 인공지능에 관심이 많습니다.
+- undergraduate student in computer science<br>
+- interested in deep learning.<br>
+- Mail : del.luna@kakao.com
 
