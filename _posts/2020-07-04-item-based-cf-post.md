@@ -8,6 +8,26 @@ tags: [Recommend]
 
 svd와 마찬가지로 sarwar의 논문 item-based CF에 대한 내용을 다룬다.
 
+## Summary
+
+- User-Based
+  - PROS
+    - LSA를 사용하면 퍼포먼스의 향상이 있다.
+    - 추천 프로세스의 다양성이 있다.(Serendipity)
+  - CONS
+    - Sparsity
+    - Cold start
+    - Scalability
+- Item-Based
+  - PROS
+    - 전반적으로 User-based보다 퍼포먼스가 좋다.
+    - 아이템이 유저에 비해 static 하기 때문에 precomputationl cost가 적다(즉, scalability가 좋다.)
+  - CONS
+    - LSA를 사용하면 부정적인 영향을 미친다.
+    - User-Based에 비해 Serendipity가 떨어진다.
+
+
+
 CF기반의 추천 시스템은 두 가지 챌린지가 있는데
 
 - Scalability
@@ -54,3 +74,10 @@ n개의 아이템이 존재할 때 소요되는 시간은 $O(n^2)$이라고 한�
 앞선 저자들이 제안한 Adjust Cosine이 실험에서 MAE가 가장 낮게 나와 성능이 좋다는 것을 실험적으로 보여주고 있고, 또한 regression based 알고리즘이 잘 동작한다는 것도 실험 적으로 보여준다.
 
 <img src = "https://del-luna.github.io/images/item-based/0.PNG">
+
+
+
+## Reference
+
+- [paper](http://www.ra.ethz.ch/cdstore/www10/papers/pdf/p519.pdf)
+- [medium](https://medium.com/recommendation-systems/user-based-vs-item-based-collaborative-filtering-d40bb49c7060)
