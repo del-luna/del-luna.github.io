@@ -237,3 +237,27 @@ kumar et ad. 에서 제한된 조건에서의 단순한 협업 필터링 알고�
   - 이를 해결하기 위해 유저간의 유사도를 구할 때 유저 프로필 정보를 사용하는 방법이 있음.
   - 이러한 확장을 'demographic filtering' 이라고 함.
   - 그 외에도 SVD 같은 차원 축소 알고리즘을 사용하는 접근 방식도 존재함.
+
+
+
+## Hybrid System
+
+여러 추천 시스템은 CF, CB를 결합하여 사용하는 하이브리드 접근 방식을 사용할 수 있음.
+
+이는 위의 두 가지 방식에 한계를 피하는데 도움이 된다.
+
+다음과 같은 4가지 타입의 하이브리드 시스템이 존재한다.
+
+- CB, CF를 각각 구현한 뒤 예측을 결합
+  - 개별적으로 추천 시스템에서 얻은 아웃풋에 linear combination 또는 보팅을 사용하여 하나의 최종 추천으로 결합.
+  - 혹은 개별 추천 모델 중 'quality'가 좋은 모델을 metric 기반으로 하나 뽑아서 사용함.
+- CB의 특성을 CF에 결합
+  - CF 자체가 sparse한 데이터를 사용하기 때문에 content-based profile을 사용하여 이를 회피함.
+- CF의 특성을 CB에 결합
+  - content-based profile 그룹에 dimension reduction 기술을 사용하는 방식(LSA)
+  - 당연히 기존의 term vector(TF-IDF) 사용할 때 보다 성능 좋아짐.(빈도수가 아니라 의미까지 고려하니까.)
+- 둘 다 통합하는 일반적인 단일 모델을 구성
+  - single rule-based classifier에서 content based 및 collaborative 특성을 사용하는 방식
+
+
+
