@@ -166,3 +166,45 @@ $\lambda_2$는 다음과 같이 표현 가능한데,
 
 아래의 성질을 보면 $x$와 $w_1$은 수직이어야 하며 오른쪽의 수식의 값을 최소화 하는 x는 고유 벡터이고 이 때 $\lambda_2$의 값이 오른쪽 수식이다.
 
+행렬에 M 대신 L을 넣어주고, $x^TLx$의 결과는 다음과 같다. (증명은 아래 레퍼런스에서 18p 참조)
+
+$$\sum\limits_{(i,j)\in E}(x_i - x_j)^2$$
+
+x를 unit vector로 하고 두 위 식과 결합하면 최종적인 $\lambda_2$에 대한 식은 다음과 같다.
+
+<img src = "https://del-luna.github.io/images/spectral/9.PNG">
+
+
+
+이제 다시 Optimal cut 문제로 돌아와보자.
+
+우선 벡터 y를 다음과 같이 정의한다.
+
+<img src = "https://del-luna.github.io/images/spectral/10.PNG">
+
+
+
+이제 cut problem은 다음과 같이 최소화 되는 y를 찾는 문제로 정의된다.
+
+<img src = "https://del-luna.github.io/images/spectral/11.PNG">
+
+
+
+
+
+Rayleigh Theorem에 의해 위 식을 최소화 시키는 y는 라플라시안 행렬 L에 대해 $\lambda_2$는 f(y)의 최소값이 되고, 이를 최소화 하는 벡터 y는 그에 해당하는 고유 벡터가 된다.
+
+그리고 이 두 속성을 이용한 클러스터링은 conductance를 최소화 한다고 한다.
+
+<img src = "https://del-luna.github.io/images/spectral/12.PNG">
+
+
+
+
+
+
+
+## Reference
+
+- [cs224w slides](https://web.stanford.edu/class/cs224w/slides/05-spectral.pdf)
+
