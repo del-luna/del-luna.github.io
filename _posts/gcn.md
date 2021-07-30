@@ -16,3 +16,9 @@
 
 
 
+$$H^{(l+1)} = \sigma(\tilde D^{-\frac12}\tilde A \tilde D^{-\frac12}H^{(l)}W{(l)})$$
+
+- $H^{(l)}$ : $l$번째 레이어의 히든 스테이트, $H^0 = X$ 는 Graph node init feature
+- $\tilde A$ : $A+I_N$ 
+- $\tilde D$ : 
+
