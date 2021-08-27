@@ -2,7 +2,7 @@
 layout: post
 title: Matrix Factorization Techniques for Recommender Systems
 author: Jaeheon Kwon
-categories: Paper
+categories: Papers
 tags: [Recommend]
 ---
 
