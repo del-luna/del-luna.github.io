@@ -48,7 +48,7 @@ nav:
     #- { Reinforcement: '/blog/reinforcement/' }
     #- { Recommendation: '/blog/recommendation/' }
     - { Papers: '/blog/papers/' }
-    #- { Python: '/blog/python/' }
+    - { PS: '/blog/ps/' }
     #- { C++: '/blog/c++/' }
     #- { Kaggle: '/blog/kaggle/' }
     #- { Mathematics: '/blog/mathematics/' }
