@@ -2,7 +2,7 @@
 layout: post
 title: Collaborative Filtering for Implicit Feedback Datasets
 author: Jaeheon Kwon
-categories: Ai
+categories: Papers
 tags: [Recommend]
 ---
 
