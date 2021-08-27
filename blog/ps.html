@@ -1,0 +1,72 @@
+---
+layout: page
+title: PS
+---
+
+
+<div class="tags-expo">
+  <div class="tags-expo-list">
+        <span class="post-tag" data-tag="ALL">ALL</span>
+    {% for tag in site.tags %}
+      {% if tag[1][0].categories contains "PS" %}
+        <span class="post-tag" data-tag="{{ tag[0] }}">{{ tag[0] }}</span>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <hr/>
+  <div class="tags-expo-section">
+   <ul class="tags-expo-posts">  
+          {% for post in site.categories.PS %}
+              <li class="temp" 
+                  {% for i in (0..post.tags.size)%}
+                    {% if i == post.tags.size %}
+                      {% break %}
+                    {% else %}
+                      data-{{post.tags[i]}}
+                    {% endif %}
+                  {% endfor %}>
+                <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">    
+                    {{post.title}}
+                    <br>
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                  {% for top_tag in post.tags %}
+                    <span class="mini-post-tag" data-tag="{{top_tag}}">{{top_tag}}</span>
+                  {% endfor %}
+                  <br>
+                  &nbsp;
+                  &nbsp;
+                  &nbsp;
+                  <small class="post-date">{{ post.date | date_to_string }}</small>
+                </a>  
+                <hr/>
+              </li>  
+          {% endfor %}    
+   </ul>           
+  </div>
+</div>
+
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+  $("[data-tag]").click((e) => {
+   currentTag = e.target.dataset.tag;
+   filterByTagName(currentTag);
+  })
+  function filterByTagName(tagName) {
+    $('.hidden').removeClass('hidden');
+    if (tagName != 'ALL'){
+    $('.temp').each((index, elem) => {
+      if (!elem.hasAttribute(`data-${tagName}`)) {
+        $(elem).addClass('hidden');
+      } 
+    });
+    }  
+    $(`.post-tag`).removeClass('tag-selected');
+    $(`.post-tag[data-tag=${tagName}]`).addClass('tag-selected');
+    $(`.mini-post-tag`).removeClass('tag-selected');
+    $(`.mini-post-tag[data-tag=${tagName}]`).addClass('tag-selected');
+  }
+</script>
