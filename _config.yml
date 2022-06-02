@@ -66,7 +66,7 @@ category_page: '/blog/categories/'
 
 hero:
   image: /images/home_1.jpg
-  caption: Hakuna Matata
+  caption: 아카이브용이며 더 이상 업데이트 되지 않습니다. -> https://delluna.notion.site/Blog-022f7f94c2d544a7b8cf5f69c34ce13c
 
 # Plugins
 mathjax: true # whether support mathjax
